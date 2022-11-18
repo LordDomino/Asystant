@@ -1,4 +1,5 @@
 # Cobast
+### About
 This is the Cobast (Console-Based Records Trackers) Project.
 
 Written by Loui Dominic Naquita, Lance Resurreccion, Ryl Robin Pangilinan, and Zeamon Erwin Cruz, for the demands and ease of
