@@ -78,7 +78,6 @@ public class Datatypes {
         String d_checkbox_medicationforasthma_details;
         String d_checkbox_medicationforpresentpastillnesssickness_details;
         String d_checkbox_others_details;
-
         // Form Reference Section E
         boolean e_is_asthma;
         boolean e_is_g6pd;
