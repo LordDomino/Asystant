@@ -5,13 +5,14 @@
 1. Determined datatypes and formfields
 2. Initiliazed the folder structure
 
-    ASSIGNMENTS:
-    a) Determine formfield datatypes for form section G [Lance]
-    b) Initial documentation in Google Docs [Ryl, Zeamon]
-    c) Countercheck / verify datatypes [Ryl]
-    d) Create the GitHub repository for CoBart [Loui]
-    e) Compute memory size for all formfield datatypes [Loui, Lance]
-        - Count all string, int, float, and bool variables from the 125 formfields;
+ASSIGNMENTS:
+- [ ] Determine formfield datatypes for form section G *[Lance]*
+- [ ] Initial documentation in Google Docs *[Ryl, Zeamon]*
+- [ ] Countercheck / verify datatypes *[Ryl]*
+- [ ] Create the GitHub repository for CoBart *[Loui]*
+- [ ] **Compute memory size for all formfield datatypes *[Loui, Lance]*:**
+
+    Count all string, int, float, and bool variables from the 125 formfields;
         - Set maximum string length (how many characters): 500 chars per string
         - Count how many bytes per variable
             500 bytes per String (66 String)*
