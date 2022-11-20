@@ -78,7 +78,7 @@ public class Datatypes {
         String d_checkbox_medicationforasthma_details;
         String d_checkbox_medicationforpresentpastillnesssickness_details;
         String d_checkbox_others_details;
-        
+
         // Form Reference Section E
         boolean e_is_asthma;
         boolean e_is_g6pd;
@@ -138,5 +138,23 @@ public class Datatypes {
         boolean f_is_flu;
         boolean f_is_others;
         String f_others_details;
+    
+        // Form Reference Section G
+
+        boolean              g_hasthechildcontractedcovid_19virus;
+        String               g_if_true_provideinformatioString;
+        String               g_if_true_dates_contractedvirus;
+        int | Date           g_if_true_dates_contractedvirus;
+        boolean              g_if_true_undergocovid19confirmatorytest;
+        boolean | String     g_if_yes_checkcovid19confirmatorytest;
+        String               g_if_yes_checkcovid19confirmatorytest_others;
+        boolean              g_is_Asymtomatic;
+        boolean              g_is_quarantinedinfacilityorhomeisolation;
+        String               g_if_yes_statelocationanddateofisolationquarantine;
+        boolean              g_totaldaysofisolation;
+        boolean              g_if_yourchildhasalreadygivencovid19vaccine;
+
+
+
     }
 }
