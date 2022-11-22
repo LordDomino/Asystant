@@ -10,7 +10,7 @@ package main;
 public class Datatypes {
     public static void main(String[] args) {
         /**
-         * Datatypes in cobast dummy commit
+         * Datatypes in cobast
          * 
          * 
          */
