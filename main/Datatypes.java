@@ -153,8 +153,5 @@ public class Datatypes {
         String               g_if_yes_statelocationanddateofisolationquarantine;
         boolean              g_totaldaysofisolation;
         boolean              g_if_yourchildhasalreadygivencovid19vaccine;
-
-
-
     }
 }
