@@ -1,5 +1,7 @@
 package Cobast;
 
+import Cobast.input.Image;
+
 public class Main {
     public static void main(String[] args) {
         scan_image(new Image("Hello world!"));

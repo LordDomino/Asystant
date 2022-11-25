@@ -1,4 +1,4 @@
-package Cobast;
+package Cobast.input;
 
 public class Image {
 
