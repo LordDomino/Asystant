@@ -68,7 +68,7 @@ public class Main {
                         break;
                     case 2:
                         clear_console();
-                        System.out.println();
+                        System.out.println(cprint_submenu_dir);
                         break;
                     case 3:
                         break;
