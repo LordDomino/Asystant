@@ -5,7 +5,7 @@
  * @version Pre-alpha ...
  */
 
-package main;
+package Cobast;
 
 public class Datatypes {
     public static void main(String[] args) {
@@ -14,6 +14,8 @@ public class Datatypes {
          * 
          * 
          */
+
+        // Student
         String      vi_001, a_student_fullname;
         String      vi_002, a_student_firstname;
         String      vi_003, a_student_middlename;
@@ -39,6 +41,8 @@ public class Datatypes {
         float       vi_023, a_height_m;
         float       vi_024, a_weight_kg;
         float       vi_025, a_weight_lbs;
+
+        
         String      vi_026, a_mother_fullname;
         String      vi_027, a_mother_firstname;
         String      vi_028, a_mother_middlename;

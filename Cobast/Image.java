@@ -1,4 +1,4 @@
-package main;
+package Cobast;
 
 public class Image {
 
