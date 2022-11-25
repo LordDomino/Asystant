@@ -7,6 +7,7 @@
 
 package Cobast;
 
+
 public class Datatypes {
     public static void main(String[] args) {
         /**
@@ -42,7 +43,7 @@ public class Datatypes {
         float       vi_024, a_weight_kg;
         float       vi_025, a_weight_lbs;
 
-        
+        // Mother
         String      vi_026, a_mother_fullname;
         String      vi_027, a_mother_firstname;
         String      vi_028, a_mother_middlename;
@@ -51,6 +52,8 @@ public class Datatypes {
         String      vi_031, a_mother_occupation;
         int         vi_032, a_mother_contactno;
         String      vi_033, a_mother_email;
+
+        // Father
         String      vi_034, a_father_fullname;
         String      vi_035, a_father_firstname;
         String      vi_036, a_father_middlename;
@@ -59,6 +62,8 @@ public class Datatypes {
         String      vi_039, a_father_occupation;
         int         vi_040, a_father_contactno;
         String      vi_041, a_father_email;
+
+        // ContactPerson
         String      vi_042, b_contactperson_fullname;
         String      vi_043, b_contactperson_firstname;
         String      vi_044, b_contactperson_middlename;
@@ -66,6 +71,8 @@ public class Datatypes {
         String      vi_046, b_contactperson_lastname;
         String      vi_047, b_contactperson_relationship; // does not denote if "single" or "married"!
         int         vi_048, b_contactperson_contactno;
+
+
         boolean     vi_049, c_question1;
         String      vi_050, c_question1_details;
         boolean     vi_051, c_checkbox_food;
