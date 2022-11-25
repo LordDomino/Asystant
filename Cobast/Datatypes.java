@@ -16,6 +16,7 @@ public class Datatypes {
          * 
          */
 
+        // FormSectionA
         // Student
         String      vi_001, a_student_fullname;
         String      vi_002, a_student_firstname;
@@ -44,7 +45,7 @@ public class Datatypes {
         float       vi_025, a_weight_lbs;
         //          vi_22-23 can be converted based on forms
         //          vi_24-25 weight conversion
-        //          vi_15-19 can be converted to Date(more efficient) 
+        //          vi_15-19 can be converted to Date (more efficient) 
 
 
         // Mother
@@ -103,7 +104,7 @@ public class Datatypes {
         String      vi_068, d_checkbox_medicationforpresentpastillnesssickness_details;
         String      vi_069, d_checkbox_others_details;
         
-        // Medical History
+        // MedicalHistory
         boolean     vi_070, e_is_asthma;
         boolean     vi_071, e_is_g6pd;
         boolean     vi_072, e_is_stomachproblems;
@@ -149,7 +150,7 @@ public class Datatypes {
         String      vi_112, e_otheractivemedicalconditions_details;
         String      vi_113, e_eyegrade;
         
-        //  Immunization&Vaccines
+        //  ImmunizationAndVaccines
         boolean     vi_114, f_is_basicimmunization;
         boolean     vi_115, f_is_hepatitisB;
         boolean     vi_116, f_is_dtap;
@@ -163,7 +164,7 @@ public class Datatypes {
         boolean     vi_124, f_is_others;
         String      vi_125, f_others_details;
         
-        //  Covid-19HealthDeclarationRecord
+        //  Covid19HealthDeclarationRecord
         boolean     vi_126, g_hascontractedcovid19;
         String      vi_127, g_hascontractedcovid19_if_true_details;
         String      vi_128, g_hascontractedcovid19_if_true_dates;
