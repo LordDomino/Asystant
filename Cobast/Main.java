@@ -38,8 +38,8 @@ public class Main {
 
         String cprint_submenu_dir = cprint_mainHeader + "\n"
                                 + "  DIRECTORY\n"
-                                + "    This application uses a so-called \"scan directory\" where"
-                                + "    files are detected for data operations.\n\n"
+                                + "    This application uses a so-called \"scan directory\"\n"
+                                + "    where files are detected for data operations.\n\n"
                                 + "    Choose an action from below.\n";
 
         String cprint_integerprompt = ">> Type the digit of your choice from the menu: ";
@@ -69,12 +69,14 @@ public class Main {
                     case 2:
                         clear_console();
                         System.out.println(cprint_submenu_dir);
+                        userin_int = promptInputInteger(cprint_integerprompt, console_in);
                         break;
                     case 3:
                         break;
                     case 4:
                         break;
                     case 5:
+                        console_is_mainloop = false;
                         break;
                 }
             }
