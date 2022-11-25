@@ -22,25 +22,31 @@ public class Main {
                                 + "     1  About Cobast\n"
                                 + "     2  Edit scan directory\n"
                                 + "     3  Begin scan query\n"
-                                + "     4  Report bugs";
+                                + "     4  Report bugs\n\n"
+                                + "     5  Exit application";
         
         int cprint_menu_MAIN_start = 1;
-        int cprint_menu_MAIN_stop = 4;
+        int cprint_menu_MAIN_stop = 5;
     
-        String cprint_menu_about = cprint_mainHeader + "\n"
-                                + "   ABOUT " + Version._name + " " + Version._version + "\n"
-                                + "     The Cobast (Console-Based Records Tracker) service is\n"
-                                + "     a java application authored by Loui Naquita, Lance\n"
-                                + "     Resurreccion, Ryl Pangilinan, and Zeamon Cruz.\n\n"
-                                + "     Version name:    " + Version._name + "\n"
-                                + "     Version:         " + Version._version;
+        String cprint_submenu_about = cprint_mainHeader + "\n"
+                                + "  ABOUT " + Version._name + " " + Version._version + "\n"
+                                + "    The Cobast (Console-Based Records Tracker) service is\n"
+                                + "    a java application authored by Loui Naquita, Lance\n"
+                                + "    Resurreccion, Ryl Pangilinan, and Zeamon Cruz.\n\n"
+                                + "    Version name:    " + Version._name + "\n"
+                                + "    Version:         " + Version._version;
+
+        String cprint_submenu_dir = cprint_mainHeader + "\n"
+                                + "  DIRECTORY\n"
+                                + "    This application uses a so-called \"scan directory\" where"
+                                + "    files are detected for data operations.\n\n"
+                                + "    Choose an action from below.\n";
 
         String cprint_integerprompt = ">> Type the digit of your choice from the menu: ";
 
         // Begin initial printing for menu
         while (console_is_mainloop == true) {
-            System.out.print("\033[H\033[2J");
-            System.out.flush();
+            clear_console();
 
             System.out.println(cprint_menu_MAIN);
             userin_int = promptInputInteger(cprint_integerprompt, console_in);
@@ -51,9 +57,8 @@ public class Main {
                 switch (userin_int) {
                     case 1:
                         while (is_submenu == true) {
-                            System.out.print("\033[H\033[2J");
-                            System.out.flush();
-                            System.out.println(cprint_menu_about);
+                            clear_console();
+                            System.out.println(cprint_submenu_about);
                             userin_string = promptInputString(">> Type \"R\" to go back to main menu: ", console_in);
                             
                             if (userin_string.equals("R")) {
@@ -62,14 +67,23 @@ public class Main {
                         }
                         break;
                     case 2:
+                        clear_console();
+                        System.out.println();
                         break;
                     case 3:
                         break;
                     case 4:
                         break;
+                    case 5:
+                        break;
                 }
             }
         }
+    }
+
+    public static void clear_console() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 
     public static int promptInputInteger(String prompt_text, Scanner scanner) {
