@@ -42,6 +42,10 @@ public class Datatypes {
         float       vi_023, a_height_m;
         float       vi_024, a_weight_kg;
         float       vi_025, a_weight_lbs;
+        //          vi_22-23 can be converted based on forms
+        //          vi_24-25 weight conversion
+        //          vi_15-19 can be converted to Date(more efficient) 
+
 
         // Mother
         String      vi_026, a_mother_fullname;
@@ -72,17 +76,21 @@ public class Datatypes {
         String      vi_047, b_contactperson_relationship; // does not denote if "single" or "married"!
         int         vi_048, b_contactperson_contactno;
 
-
+        // HealthSafetyConditions
         boolean     vi_049, c_question1;
         String      vi_050, c_question1_details;
         boolean     vi_051, c_checkbox_food;
         boolean     vi_052, c_checkbox_insectbite;
         boolean     vi_053, c_checkbox_medication;
         boolean     vi_054, c_checkbox_others;
-        String      vi_055, c_checkbox_food_details;
-        String      vi_056, c_checkbox_insectbite_details;
-        String      vi_057, c_checkbox_medication_details;
-        String      vi_058, c_checkbox_others_details;
+        String      vi_055, c_if_true_checkbox_food_details;
+        String      vi_056, c_if_true_checkbox_insectbite_details;
+        String      vi_057, c_if_true_checkbox_medication_details;
+        String      vi_058, c_if_true_checkbox_others_details;
+        
+        //          vi_55-58 used if true statement to prevent unnecessary details
+
+        // Medications
         boolean     vi_059, d_question1;
         boolean     vi_060, d_checkbox_vitamins;
         boolean     vi_061, d_checkbox_medicationforallergy;
@@ -94,6 +102,8 @@ public class Datatypes {
         String      vi_067, d_checkbox_medicationforasthma_details;
         String      vi_068, d_checkbox_medicationforpresentpastillnesssickness_details;
         String      vi_069, d_checkbox_others_details;
+        
+        // Medical History
         boolean     vi_070, e_is_asthma;
         boolean     vi_071, e_is_g6pd;
         boolean     vi_072, e_is_stomachproblems;
@@ -138,6 +148,8 @@ public class Datatypes {
         String      vi_111, e_hearingdifficult_details;
         String      vi_112, e_otheractivemedicalconditions_details;
         String      vi_113, e_eyegrade;
+        
+        //  Immunization&Vaccines
         boolean     vi_114, f_is_basicimmunization;
         boolean     vi_115, f_is_hepatitisB;
         boolean     vi_116, f_is_dtap;
@@ -150,6 +162,8 @@ public class Datatypes {
         boolean     vi_123, f_is_flu;
         boolean     vi_124, f_is_others;
         String      vi_125, f_others_details;
+        
+        //  Covid-19HealthDeclarationRecord
         boolean     vi_126, g_hascontractedcovid19;
         String      vi_127, g_hascontractedcovid19_if_true_details;
         String      vi_128, g_hascontractedcovid19_if_true_dates;
