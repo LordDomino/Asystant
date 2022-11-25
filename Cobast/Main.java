@@ -1,20 +1,89 @@
 package cobast;
 
+import cobast.Version;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         
-        boolean console_mainloop = true;
+        boolean console_is_mainloop = true;
+        Scanner console_in = new Scanner(System.in);
         
+        int userin_int;
+        String userin_string;
+
+        boolean is_submenu;
+
         // Menu variables
-        String 
+        String cprint_mainHeader = "===== CLINIC RECORDS TRACKER ===============================\n";
+        String cprint_menu_MAIN = cprint_mainHeader
+                                + "  Service program provided through Cobast Pre-alpha 0.1\n\n"
+                                + "  MENU\n"
+                                + "     1  About Cobast\n"
+                                + "     2  Edit scan directory\n"
+                                + "     3  Begin scan query\n"
+                                + "     4  Report bugs";
+        
+        int cprint_menu_MAIN_start = 1;
+        int cprint_menu_MAIN_stop = 4;
+    
+        String cprint_menu_about = cprint_mainHeader + "\n"
+                                + "   ABOUT " + Version._name + " " + Version._version + "\n"
+                                + "     The Cobast (Console-Based Records Tracker) service is\n"
+                                + "     a java application authored by Loui Naquita, Lance\n"
+                                + "     Resurreccion, Ryl Pangilinan, and Zeamon Cruz.\n\n"
+                                + "     Version name:    " + Version._name + "\n"
+                                + "     Version:         " + Version._version;
 
-        while (console_mainloop == true) {
-            // Begin initial printing for menu
+        String cprint_integerprompt = ">> Type the digit of your choice from the menu: ";
 
+        // Begin initial printing for menu
+        while (console_is_mainloop == true) {
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
 
-            System.out.println("");
+            System.out.println(cprint_menu_MAIN);
+            userin_int = promptInputInteger(cprint_integerprompt, console_in);
+            
+            
+            if (userin_int >= cprint_menu_MAIN_start && userin_int <= cprint_menu_MAIN_stop) {
+                is_submenu = true;
+                switch (userin_int) {
+                    case 1:
+                        while (is_submenu == true) {
+                            System.out.print("\033[H\033[2J");
+                            System.out.flush();
+                            System.out.println(cprint_menu_about);
+                            userin_string = promptInputString(">> Type \"R\" to go back to main menu: ", console_in);
+                            
+                            if (userin_string.equals("R")) {
+                                is_submenu = false;
+                            }
+                        }
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                }
+            }
         }
+    }
+
+    public static int promptInputInteger(String prompt_text, Scanner scanner) {
+        System.out.print("\n" + prompt_text);
+        if (scanner.hasNextInt()) {
+            return scanner.nextInt();
+        } else {
+            scanner.nextLine();
+            return -1;
+        }
+    }
+
+    public static String promptInputString(String prompt_text, Scanner scanner) {
+        System.out.print("\n" + prompt_text);
+        return scanner.nextLine();
     }
 }
