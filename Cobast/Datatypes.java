@@ -104,7 +104,7 @@ public class Datatypes {
         String      vi_068, d_checkbox_medicationforpresentpastillnesssickness_details;
         String      vi_069, d_checkbox_others_details;
         
-        //          vi_65-69 
+        //          
 
         // MedicalHistory
         boolean     vi_070, e_is_asthma;
