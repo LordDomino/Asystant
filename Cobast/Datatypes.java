@@ -5,7 +5,7 @@
  * @version Pre-alpha ...
  */
 
-package Cobast;
+package cobast;
 
 
 public class Datatypes {
@@ -16,7 +16,7 @@ public class Datatypes {
          * 
          */
 
-        // FormSectionA
+        // FormSection_A
         // Student
         String      vi_001, a_student_fullname;
         String      vi_002, a_student_firstname;
@@ -68,6 +68,7 @@ public class Datatypes {
         int         vi_040, a_father_contactno;
         String      vi_041, a_father_email;
 
+        // FormSection_B
         // ContactPerson
         String      vi_042, b_contactperson_fullname;
         String      vi_043, b_contactperson_firstname;

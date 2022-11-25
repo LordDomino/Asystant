@@ -1,6 +1,6 @@
-package Cobast;
+package cobast;
 
-import Cobast.input.Image;
+import cobast.input.Image;
 
 public class Main {
     public static void main(String[] args) {
