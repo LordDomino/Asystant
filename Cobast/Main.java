@@ -4,9 +4,22 @@ import cobast.Version;
 import java.util.Scanner;
 
 public class Main {
+
+    public static boolean console_is_mainloop = true;
+
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_BLACK = "\u001B[30m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_WHITE = "\u001B[37m";
+    public static final String ANSI_BOLD = "\u001b[1m";
+
     public static void main(String[] args) {
         
-        boolean console_is_mainloop = true;
         Scanner console_in = new Scanner(System.in);
         
         int userin_int;
@@ -76,11 +89,16 @@ public class Main {
                     case 4:
                         break;
                     case 5:
-                        console_is_mainloop = false;
+                        exit(); // do exit() first as program leaves "watermarks" of console
+                        clear_console(); // do clear_console() to clear the leftover watermarks
                         break;
                 }
             }
         }
+    }
+
+    public static void exit() {
+        Main.console_is_mainloop = false;
     }
 
     public static void clear_console() {
@@ -89,17 +107,22 @@ public class Main {
     }
 
     public static int promptInputInteger(String prompt_text, Scanner scanner) {
-        System.out.print("\n" + prompt_text);
+        System.out.print("\n" + ANSI_YELLOW + prompt_text + ANSI_RESET + ANSI_BOLD);
         if (scanner.hasNextInt()) {
-            return scanner.nextInt();
+            int _userin_int = scanner.nextInt();
+            System.out.println(ANSI_RESET);
+            return _userin_int;
         } else {
             scanner.nextLine();
+            System.out.println(ANSI_RESET);
             return -1;
         }
     }
 
     public static String promptInputString(String prompt_text, Scanner scanner) {
-        System.out.print("\n" + prompt_text);
-        return scanner.nextLine();
+        System.out.print("\n" + ANSI_YELLOW + prompt_text + ANSI_RESET + ANSI_BOLD);
+        String _userin_str = scanner.nextLine();
+        System.out.print(ANSI_RESET);
+        return _userin_str;
     }
 }
