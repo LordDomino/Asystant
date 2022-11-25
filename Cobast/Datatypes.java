@@ -104,6 +104,8 @@ public class Datatypes {
         String      vi_068, d_checkbox_medicationforpresentpastillnesssickness_details;
         String      vi_069, d_checkbox_others_details;
         
+        //          vi_65-69 
+
         // MedicalHistory
         boolean     vi_070, e_is_asthma;
         boolean     vi_071, e_is_g6pd;
@@ -164,7 +166,7 @@ public class Datatypes {
         boolean     vi_124, f_is_others;
         String      vi_125, f_others_details;
         
-        //  Covid19HealthDeclarationRecord
+        //  Covid19HealthDeclaration
         boolean     vi_126, g_hascontractedcovid19;
         String      vi_127, g_hascontractedcovid19_if_true_details;
         String      vi_128, g_hascontractedcovid19_if_true_dates;
