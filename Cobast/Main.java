@@ -66,6 +66,7 @@ public class Main {
                     case 3:
                         break;
                     case 4:
+                        System.out.println("Wow");
                         break;
                 }
             }
