@@ -78,7 +78,7 @@ public class Datatypes {
         String      vi_047, b_contactperson_relationship; // does not denote if "single" or "married"!
         int         vi_048, b_contactperson_contactno;
 
-        // HealthSafetyConditions
+        // FormSection_C
         boolean     vi_049, c_question1;
         String      vi_050, c_question1_details;
         boolean     vi_051, c_checkbox_food;
@@ -92,7 +92,7 @@ public class Datatypes {
         
         //          vi_55-58 used if true statement to prevent unnecessary details
 
-        // Medications
+        // FormSection_D
         boolean     vi_059, d_question1;
         boolean     vi_060, d_checkbox_vitamins;
         boolean     vi_061, d_checkbox_medicationforallergy;
@@ -107,7 +107,7 @@ public class Datatypes {
         
         //          vi_65-69 
 
-        // MedicalHistory
+        // FormSection_E
         boolean     vi_070, e_is_asthma;
         boolean     vi_071, e_is_g6pd;
         boolean     vi_072, e_is_stomachproblems;
@@ -153,7 +153,7 @@ public class Datatypes {
         String      vi_112, e_otheractivemedicalconditions_details;
         String      vi_113, e_eyegrade;
         
-        //  ImmunizationAndVaccines
+        // FormSection_F
         boolean     vi_114, f_is_basicimmunization;
         boolean     vi_115, f_is_hepatitisB;
         boolean     vi_116, f_is_dtap;
@@ -167,7 +167,7 @@ public class Datatypes {
         boolean     vi_124, f_is_others;
         String      vi_125, f_others_details;
         
-        //  Covid19HealthDeclaration
+        // FormSection_G
         boolean     vi_126, g_hascontractedcovid19;
         String      vi_127, g_hascontractedcovid19_if_true_details;
         String      vi_128, g_hascontractedcovid19_if_true_dates;
