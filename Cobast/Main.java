@@ -1,5 +1,8 @@
 package cobast;
 
+import java.io.File;
+import java.io.IOException;
+import java.awt.Desktop;
 import cobast.Version;
 import java.util.Scanner;
 
@@ -31,7 +34,7 @@ public class Main {
         String cprint_mainHeader = "===== CLINIC RECORDS TRACKER ===============================\n";
         String cprint_menu_MAIN = cprint_mainHeader
                                 + "  Service program provided through Cobast Pre-alpha 0.1\n\n"
-                                + "  MENU\n"
+                                + "  MAIN MENU\n"
                                 + "     1  About Cobast\n"
                                 + "     2  Edit scan directory\n"
                                 + "     3  Begin scan query\n"
@@ -47,13 +50,17 @@ public class Main {
                                 + "    a java application authored by Loui Naquita, Lance\n"
                                 + "    Resurreccion, Ryl Pangilinan, and Zeamon Cruz.\n\n"
                                 + "    Version name:    " + Version._name + "\n"
-                                + "    Version:         " + Version._version;
+                                + "    Version:         " + Version._version + "\n\n"
+                                + "     R  Return to main menu";
 
         String cprint_submenu_dir = cprint_mainHeader + "\n"
-                                + "  DIRECTORY\n"
+                                + "  SCAN DIRECTORY\n"
                                 + "    This application uses a so-called \"scan directory\"\n"
                                 + "    where files are detected for data operations.\n\n"
-                                + "    Choose an action from below.\n";
+                                + "    Choose an action from below.\n\n"
+                                + "     R  Return to main menu\n\n"
+                                + "     1  Open scan directory in Explorer\n"
+                                + "     2  Change scan directory";
 
         String cprint_integerprompt = ">> Type the digit of your choice from the menu: ";
 
@@ -64,6 +71,7 @@ public class Main {
             System.out.println(cprint_menu_MAIN);
             userin_int = promptInputInteger(cprint_integerprompt, console_in);
             
+            clear_console();
             
             if (userin_int >= cprint_menu_MAIN_start && userin_int <= cprint_menu_MAIN_stop) {
                 is_submenu = true;
@@ -80,9 +88,26 @@ public class Main {
                         }
                         break;
                     case 2:
-                        clear_console();
-                        System.out.println(cprint_submenu_dir);
-                        userin_int = promptInputInteger(cprint_integerprompt, console_in);
+                        while (is_submenu == true) {
+                            clear_console();
+                            System.out.println(cprint_submenu_dir);
+                            userin_string = promptInputString(cprint_integerprompt, console_in);
+                        
+                            switch (userin_string) {
+                                case "R":
+                                    is_submenu = false;
+                                    break;
+                                case "1":
+                                    try {
+                                        Desktop.getDesktop().open(new File("C:/Users/Loui Dominic/Documents/GR11 -- SHS"));
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                    break;
+                                case "2":
+                                    break;
+                            }
+                        }
                         break;
                     case 3:
                         break;
@@ -94,6 +119,7 @@ public class Main {
                         break;
                 }
             }
+            
         }
     }
 
