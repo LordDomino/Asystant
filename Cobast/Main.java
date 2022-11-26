@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.awt.Desktop;
 import cobast.Version;
+import cobast.config.Directory;
+
 import java.util.Scanner;
 
 public class Main {
@@ -44,7 +46,7 @@ public class Main {
         int cprint_menu_MAIN_start = 1;
         int cprint_menu_MAIN_stop = 5;
     
-        String cprint_submenu_about = cprint_mainHeader + "\n"
+        String CPRINT_SUBMENU_ABOUT = cprint_mainHeader + "\n"
                                 + "  ABOUT " + Version._name + " " + Version._version + "\n"
                                 + "    The Cobast (Console-Based Records Tracker) service is\n"
                                 + "    a java application authored by Loui Naquita, Lance\n"
@@ -53,7 +55,7 @@ public class Main {
                                 + "    Version:         " + Version._version + "\n\n"
                                 + "     R  Return to main menu";
 
-        String cprint_submenu_dir = cprint_mainHeader + "\n"
+        String CPRINT_SUBMENU_DIR = cprint_mainHeader + "\n"
                                 + "  SCAN DIRECTORY\n"
                                 + "    This application uses a so-called \"scan directory\"\n"
                                 + "    where files are detected for data operations.\n\n"
@@ -62,14 +64,20 @@ public class Main {
                                 + "     1  Open scan directory in Explorer\n"
                                 + "     2  Change scan directory";
 
-        String cprint_integerprompt = ">> Type the digit of your choice from the menu: ";
+        String CPRINT_SUBMENU_DIR_FRESHDIR = cprint_mainHeader + "\n"
+                                + "  SCAN DIRECTORY: Initialization\n\n"
+                                + "    It looks like your scan directory path is empty.\n\n"
+                                + "    You should only see this section once to initialize\n"
+                                + "    your scan folder directory.";
+
+        String CPRINT_INTEGERPROMPT = ">> Type the digit of your choice from the menu: ";
 
         // Begin initial printing for menu
         while (console_is_mainloop == true) {
             clear_console();
 
             System.out.println(cprint_menu_MAIN);
-            userin_int = promptInputInteger(cprint_integerprompt, console_in);
+            userin_int = promptInputInteger(CPRINT_INTEGERPROMPT, console_in);
             
             clear_console();
             
@@ -79,7 +87,7 @@ public class Main {
                     case 1:
                         while (is_submenu == true) {
                             clear_console();
-                            System.out.println(cprint_submenu_about);
+                            System.out.println(CPRINT_SUBMENU_ABOUT);
                             userin_string = promptInputString(">> Type \"R\" to go back to main menu: ", console_in);
                             
                             if (userin_string.equals("R")) {
@@ -88,24 +96,29 @@ public class Main {
                         }
                         break;
                     case 2:
-                        while (is_submenu == true) {
-                            clear_console();
-                            System.out.println(cprint_submenu_dir);
-                            userin_string = promptInputString(cprint_integerprompt, console_in);
-                        
-                            switch (userin_string) {
-                                case "R":
-                                    is_submenu = false;
-                                    break;
-                                case "1":
-                                    try {
-                                        Desktop.getDesktop().open(new File("C:/Users/Loui Dominic/Documents/GR11 -- SHS"));
-                                    } catch (IOException e) {
-                                        e.printStackTrace();
-                                    }
-                                    break;
-                                case "2":
-                                    break;
+                        clear_console();
+                        if (Directory.isScanDirectoryEmpty()) {
+                            System.out.println();
+                        } else {
+                            while (is_submenu == true) {
+                                clear_console();
+                                System.out.println(CPRINT_SUBMENU_DIR);
+                                userin_string = promptInputString(CPRINT_INTEGERPROMPT, console_in);
+                            
+                                switch (userin_string) {
+                                    case "R":
+                                        is_submenu = false;
+                                        break;
+                                    case "1":
+                                        try {
+                                            Desktop.getDesktop().open(new File("C:/Users/Loui Dominic/Documents/GR11 -- SHS"));
+                                        } catch (IOException e) {
+                                            e.printStackTrace();
+                                        }
+                                        break;
+                                    case "2":
+                                        break;
+                                }
                             }
                         }
                         break;
