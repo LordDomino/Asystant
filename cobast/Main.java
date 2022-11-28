@@ -6,6 +6,7 @@ import java.awt.Desktop;
 import java.util.Scanner;
 
 import cobast.Version;
+import static cobast.console.UI.*;
 import cobast.config.Directory;
 
 public class Main {
@@ -13,17 +14,6 @@ public class Main {
     public static boolean console_is_mainloop = true;
     public static boolean is_reload = true;
     public static boolean userin_is_invalid = false;
-
-    public static final String ANSI_RESET = "\u001B[0m";
-    public static final String ANSI_BLACK = "\u001B[30m";
-    public static final String ANSI_RED = "\u001B[31m";
-    public static final String ANSI_GREEN = "\u001B[32m";
-    public static final String ANSI_YELLOW = "\u001B[33m";
-    public static final String ANSI_BLUE = "\u001B[34m";
-    public static final String ANSI_PURPLE = "\u001B[35m";
-    public static final String ANSI_CYAN = "\u001B[36m";
-    public static final String ANSI_WHITE = "\u001B[37m";
-    public static final String ANSI_BOLD = "\u001b[1m";
 
     public static void main(String[] args) {
         
