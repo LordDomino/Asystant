@@ -1,4 +1,4 @@
-package cobast.input;
+package Cobast.input;
 
 public class Covid19HealthDeclaration {
     

@@ -5,7 +5,7 @@
  * @version Pre-alpha ...
  */
 
-package cobast;
+package Cobast;
 
 
 public class Datatypes {
