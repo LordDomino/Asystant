@@ -1,4 +1,4 @@
-package Cobast.input;
+package cobast.input;
 
 public class Student {
     
