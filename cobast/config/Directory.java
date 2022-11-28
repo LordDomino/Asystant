@@ -1,4 +1,4 @@
-package Cobast.config;
+package cobast.config;
 
 import java.io.File;
 

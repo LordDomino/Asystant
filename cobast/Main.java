@@ -1,12 +1,12 @@
-package Cobast;
+package cobast;
 
 import java.io.File;
 import java.io.IOException;
 import java.awt.Desktop;
 import java.util.Scanner;
 
-import Cobast.Version;
-import Cobast.config.Directory;
+import cobast.Version;
+import cobast.config.Directory;
 
 public class Main {
 

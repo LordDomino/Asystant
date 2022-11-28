@@ -1,4 +1,4 @@
-package Cobast;
+package cobast;
 
 public class Version {
     static float _version = 0.1f;
