@@ -205,6 +205,7 @@ public class Main {
     public static void exit() {
         Main.console_is_mainloop = false;
         Main.is_reload = false;
+        System.out.println("Exited");
     }
 
     public static void clear_console() {
