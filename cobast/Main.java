@@ -5,29 +5,37 @@ import java.io.IOException;
 import java.awt.Desktop;
 import java.util.Scanner;
 
-import cobast.Version;
-import static cobast.console.UI.*;
+import static cobast.console.Console.*;
 import cobast.config.Directory;
+import cobast.console.Console;
 
 public class Main {
 
     public static boolean console_is_mainloop = true;
-    public static boolean is_reload = true;
+    /** Reload boolean to allow the loop to be reloaded */
+    public static boolean console_is_reload = true;
     public static boolean userin_is_invalid = false;
 
+    /** Default console scanner */
+    public static final Scanner console_in = new Scanner(System.in);
     public static void main(String[] args) {
-        
-        Scanner console_in = new Scanner(System.in);
-        
+       
         int userin_int;
         String userin_string;
 
         boolean is_submenu;
         
+        Console.setConsoleLength(60);
+        Console.setHeader('=', " CLINIC RECORDS MANAGER ", 5);
+        Console.startloop();
 
-        while (console_is_mainloop == true) {
+        while (Console.mainloop == true) {
+
+            // update the values
+            update();
+
             // Menu variables
-            String cprint_mainHeader = "===== CLINIC RECORDS TRACKER ===============================\n";
+            String cprint_mainHeader = Console.getHeader() + "\n";
             String cprint_menu_MAIN = cprint_mainHeader
                                     + "  Service program provided through Cobast Pre-alpha 0.1\n\n"
                                     + "  MAIN MENU\n"
@@ -36,10 +44,7 @@ public class Main {
                                     + "     3  Begin scan query\n"
                                     + "     4  Report bugs\n\n"
                                     + "     5  Exit application";
-            
-            int cprint_menu_MAIN_start = 1;
-            int cprint_menu_MAIN_stop = 5;
-        
+                    
             String CPRINT_SUBMENU_ABOUT = cprint_mainHeader + "\n"
                                     + "  ABOUT " + Version._name + " " + Version._version + "\n"
                                     + "    The Cobast (Console-Based Records Tracker) service is\n"
@@ -76,16 +81,17 @@ public class Main {
             String CPRINT_INTEGERPROMPT = ">> Type the digit of your choice from the menu: ";
 
             // Begin initial printing for menu
-            while (is_reload == true) {
+            while (Console.mainhold == true) {
                 clear_console();
 
                 System.out.println(cprint_menu_MAIN);
                 userin_int = promptInputInteger(CPRINT_INTEGERPROMPT, console_in);
                 
-                clear_console();
-                
-                if (userin_int >= cprint_menu_MAIN_start && userin_int <= cprint_menu_MAIN_stop) {
+                if (userin_int >= 1 && userin_int <= 5) {
+
+                    // Enable submenu
                     is_submenu = true;
+
                     switch (userin_int) {
                         case 1:
                             while (is_submenu == true) {
@@ -99,7 +105,7 @@ public class Main {
                             }
                             break;
                         case 2:
-                            while (is_submenu == true && is_reload == true) {
+                            while (is_submenu == true && Console.mainhold == true) {
                                 clear_console();
                                 
                                 if (Directory.isScanDirectoryEmpty()) {
@@ -115,14 +121,14 @@ public class Main {
                                             continue;
                                         } else if (userin_string.equals("default")) {
                                             Directory.setToDefaultPath();
-                                            is_reload = false;
+                                            collapse();
                                             continue;
                                         } else {
                                             if (new File(userin_string).exists()) {
                                                 Directory.changePath(userin_string);
-                                                is_reload = false;
+                                                collapse();
                                             } else {
-                                                userin_is_invalid = true;
+                                                invalidate();
                                                 continue;
                                             }
                                         }
@@ -156,19 +162,19 @@ public class Main {
                                                     continue;
                                                 } else if (userin_string.equals("default")) {
                                                     Directory.setToDefaultPath();
-                                                    is_reload = false;
+                                                    collapse();
                                                     continue;
                                                 } else {
                                                     if (new File(userin_string).exists()) {
                                                         Directory.changePath(userin_string);
-                                                        is_reload = false;
-                                                        userin_is_invalid = false;
+                                                        collapse();
+                                                        reassure();
                                                     } else {
-                                                        userin_is_invalid = true;
+                                                        invalidate();
                                                         continue;
                                                     }
                                                 } 
-                                            } while (userin_is_invalid == true);
+                                            } while (Console.invalid == true);
                                             break;        
                                         }
                                    
@@ -180,21 +186,18 @@ public class Main {
                         case 4:
                             break;
                         case 5:
-                            exit(); // do exit() first as program leaves "watermarks" of console
+                            exit(); // do exit() first; program leaves "watermarks" of console
                             clear_console(); // do clear_console() to clear the leftover watermarks
                             break;
                     }
                 }
             }
-
-            userin_is_invalid = false;
-            is_reload = true;
         }
     }
 
     public static void exit() {
         Main.console_is_mainloop = false;
-        Main.is_reload = false;
+        Main.console_is_reload = false;
         System.out.println("Exited");
     }
 
