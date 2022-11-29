@@ -19,11 +19,11 @@ public class Main {
 	/** Default console scanner */
 	public static final Scanner console_in = new Scanner(System.in);
 	public static void main(String[] args) {
-			 
+
 		int userin_int;
 		String userin_string;
 		boolean is_submenu;
-				
+
 		Console.setConsoleLength(60);
 		Console.setHeader('=', " CLINIC RECORDS MANAGER ", 5);
 		Console.startloop();
@@ -85,7 +85,7 @@ public class Main {
 
 				System.out.println(cprint_menu_MAIN);
 				userin_int = promptInputInteger(CPRINT_INTEGERPROMPT, console_in);
-						
+
 				if (userin_int >= 1 && userin_int <= 5) {
 
 					// Enable submenu if user's input is valid within if conditions
@@ -98,24 +98,24 @@ public class Main {
 								clear_console();
 								System.out.println(CPRINT_SUBMENU_ABOUT);
 								userin_string = promptInputString(">> Type \"R\" to go back to main menu: ", console_in, "");
-																
+
 								// Exit character
 								if (userin_string.equals("R")) {
 									is_submenu = false;
 								}
 							}
 							break;
-												
+
 						case 2:
 							while (is_submenu == true && Console.mainhold == true) {
 								clear_console();
-																
+
 								// Check if directory is empty
 								if (Directory.isScanDirectoryEmpty()) {
 									do {
 										clear_console();
 										System.out.println(CPRINT_SUBMENU_DIR_FRESHDIR);
-																				
+
 										userin_string = promptInputString("Enter the new scan folder directory. Type \"default\"\n"
 																										+ "to use the default scan directory.\n"
 																										, console_in, "Directory does not exist!");
@@ -137,11 +137,11 @@ public class Main {
 										}
 
 									} while (Directory.isScanDirectoryEmpty());
-								} else {    
+								} else {
 									clear_console();
 									System.out.println(CPRINT_SUBMENU_DIR);
 									userin_string = promptInputString(CPRINT_INTEGERPROMPT, console_in, "");
-									
+
 									switch (userin_string) {
 										case "R":
 											is_submenu = false;
@@ -157,7 +157,7 @@ public class Main {
 											do {
 												clear_console();
 												System.out.println(CPRINT_SUBMENU_DIR_NEWDIR);
-																						
+
 												userin_string = promptInputString("Enter the new scan folder directory. Type \"default\"\n"
 																												+ "to use the default scan directory.\n"
 																												, console_in, "Directory does not exist!");
@@ -176,10 +176,10 @@ public class Main {
 														invalidate();
 														continue;
 													}
-												} 
+												}
 											} while (Console.invalid == true);
-											break;        
-									}									 
+											break;
+									}
 								}
 							}
 							break;
