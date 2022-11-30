@@ -30,12 +30,15 @@ public class Console {
 
 	public static int console_length = _def_console_length;
 	public static String header = _def_header;
+
 	/** Boolean that determines running state of the program. */
 	public static boolean mainloop = false;
+
 	/** Boolean that prevents screen state from reloading. Use this for screens
 	 * that require reloading and screen updates.
 	*/
 	public static boolean mainhold = true;
+	
 	/** Boolean that indicates invalidity in program. This can be used as a flag
 	 * to trigger warnings and errors.
 	*/
