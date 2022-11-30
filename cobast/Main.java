@@ -35,47 +35,51 @@ public class Main {
 
 			// Menu variables
 			String cprint_mainHeader = Console.getHeader() + "\n";
-			String cprint_menu_MAIN = cprint_mainHeader
-															+ "  Service program provided through Cobast Pre-alpha 0.1\n\n"
-															+ "  MAIN MENU\n"
-															+ "     1  About Cobast\n"
-															+ "     2  Edit scan directory\n"
-															+ "     3  Begin scan query\n"
-															+ "     4  Report bugs\n\n"
-															+ "     5  Exit application";
+			String cprint_menu_MAIN =
+												cprint_mainHeader
+											+ "  Service program provided through Cobast Pre-alpha 0.1\n\n"
+											+ "  MAIN MENU\n"
+											+ "     1  About Cobast\n"
+											+ "     2  Edit scan directory\n"
+											+ "     3  Begin scan query\n"
+											+ "     4  Report bugs\n\n"
+											+ "     5  Exit application";
 
-			String CPRINT_SUBMENU_ABOUT = cprint_mainHeader + "\n"
-															+ "  ABOUT " + Version._name + " " + Version._version + "\n"
-															+ "    The Cobast (Console-Based Records Tracker) service is\n"
-															+ "    a java application authored by Loui Naquita, Lance\n"
-															+ "    Resurreccion, Ryl Pangilinan, and Zeamon Cruz.\n\n"
-															+ "    Version name:    " + Version._name + "\n"
-															+ "    Version:         " + Version._version + "\n\n"
-															+ "     R  Return to main menu";
+			String CPRINT_SUBMENU_ABOUT =
+												cprint_mainHeader + "\n"
+											+ "  ABOUT " + Version._name + " " + Version._version + "\n"
+											+ "    The Cobast (Console-Based Records Tracker) service is\n"
+											+ "    a java application authored by Loui Naquita, Lance\n"
+											+ "    Resurreccion, Ryl Pangilinan, and Zeamon Cruz.\n\n"
+											+ "    Version name:    " + Version._name + "\n"
+											+ "    Version:         " + Version._version + "\n\n"
+											+ "     R  Return to main menu";
 
-			String CPRINT_SUBMENU_DIR = cprint_mainHeader + "\n"
-															+ "  SCAN DIRECTORY\n"
-															+ "    This application uses a so-called \"scan directory\"\n"
-															+ "    where files are detected for data operations.\n\n"
-															+ "    Current scan directory:\n"
-															+ "    " + Directory.getScanDirectoryPath() + "\n\n"
-															+ "    Choose an action from below.\n\n"
-															+ "     R  Return to main menu\n\n"
-															+ "     1  Open scan directory in Explorer\n"
-															+ "     2  Change scan directory";
+			String CPRINT_SUBMENU_DIR =
+												cprint_mainHeader + "\n"
+											+ "  SCAN DIRECTORY\n"
+											+ "    This application uses a so-called \"scan directory\"\n"
+											+ "    where files are detected for data operations.\n\n"
+											+ "    Current scan directory:\n"
+											+ "    " + Directory.getScanDirectoryPath() + "\n\n"
+											+ "    Choose an action from below.\n\n"
+											+ "     R  Return to main menu\n\n"
+											+ "     1  Open scan directory in Explorer\n"
+											+ "     2  Change scan directory";
 
 			String CPRINT_SUBMENU_DIR_FRESHDIR = cprint_mainHeader + "\n"
-															+ "  DIRECTORY: Initialization\n\n"
-															+ "    This application uses a so-called \"scan directory\"\n"
-															+ "    where files are detected for data operations.\n\n"
-									 + ANSI_RED + "    It looks like your scan directory path is empty.\n\n" + ANSI_RESET
-															+ "    You should only see this section once to initialize\n"
-															+ "    your scan folder directory.";
+											+ "  DIRECTORY: Initialization\n\n"
+											+ "    This application uses a so-called \"scan directory\"\n"
+											+ "    where files are detected for data operations.\n\n"
+					 + ANSI_RED + "    It looks like your scan directory path is empty.\n\n" + ANSI_RESET
+											+ "    You should only see this section once to initialize\n"
+											+ "    your scan folder directory.";
+
 			String CPRINT_SUBMENU_DIR_NEWDIR = cprint_mainHeader + "\n"
-															+ "  DIRECTORY\n\n"
-															+ "    This application uses a so-called \"scan directory\"\n"
-															+ "    where files are detected for data operations.\n\n"
-															+ "    Change scan directory?";
+											+ "  DIRECTORY\n\n"
+											+ "    This application uses a so-called \"scan directory\"\n"
+											+ "    where files are detected for data operations.\n\n"
+											+ "    Change scan directory?";
 
 			String CPRINT_INTEGERPROMPT = ">> Type the digit of your choice from the menu: ";
 
@@ -226,7 +230,7 @@ public class Main {
 
 	public static String promptInputString(String prompt_text, Scanner scanner, String error_text) {
 		System.out.print("\n" + ANSI_YELLOW + prompt_text + ANSI_RESET);
-		if (userin_is_invalid == true){
+		if (Console.invalid == true){
 			System.out.println(ANSI_RED + "!! BAD INPUT: " + error_text + ANSI_RESET);
 		}
 		System.out.print(ANSI_YELLOW + ">> " + ANSI_BOLD);
