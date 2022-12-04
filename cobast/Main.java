@@ -12,6 +12,7 @@ import cobast.console.Console;
 public class Main {
 
 	public static boolean console_is_mainloop = true;
+
 	/** Reload boolean to allow the loop to be reloaded */
 	public static boolean console_is_reload = true;
 	public static boolean userin_is_invalid = false;
