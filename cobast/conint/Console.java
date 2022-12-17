@@ -1,5 +1,7 @@
 package cobast.conint;
 
+import java.util.List;
+import java.util.ArrayList;
 import cobast.conint.menusys.ConsoleObject;
 
 /**
@@ -7,11 +9,13 @@ import cobast.conint.menusys.ConsoleObject;
  * 
  * A console object handles all console interface (conint) operations.
  */
-public class Console extends ConsoleObject {
+public class Console {
 	/* All private, usually finals, variables below. These are the base defaults
 	 * that are internally hard-coded in the program. Hence, these variables are
 	 * specified as "private" variables.
 	*/
+
+	public List<ConsoleObject> children = new ArrayList<>();
 
 	/** Default console length; is static and immutable */
 	public static final int _def_console_length = 50;

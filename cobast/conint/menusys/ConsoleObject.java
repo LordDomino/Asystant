@@ -14,8 +14,6 @@ public class ConsoleObject {
 	public ConsoleObject(ConsoleObject parent, int layer) {
 		this.parent = parent;
 		this.layer = layer;
-
-		sendToParent();
 	}
 
 	public void sendToParent() {
