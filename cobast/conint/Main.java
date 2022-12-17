@@ -1,13 +1,14 @@
-package cobast;
+package cobast.conint;
 
 import java.io.File;
 import java.io.IOException;
 import java.awt.Desktop;
 import java.util.Scanner;
 
-import static cobast.console.Console.*;
+import static cobast.conint.menusys.ConsoleUtils.*;
+import static cobast.conint.Console.*;
 import cobast.config.Directory;
-import cobast.console.Console;
+
 
 public class Main {
 
