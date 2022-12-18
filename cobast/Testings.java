@@ -5,14 +5,19 @@ import cobast.conint.menusys.*;
 
 public class Testings {
 	public static void main(String[] args) {
-		Screen screen1 = new Screen(new Console("test"), 0);
+
+		Console console = new Console();
+
+		Screen screen1 = new Screen(console, 0);
 		Menu menu1 = new Menu(screen1, 0, "Blah");
 		Menu menu2 = new Menu(screen1, 1, "BLAH");
 		Menu menu3 = new Menu(screen1, 3, "TITLE");
 
-		Menu menusub = new Menu(menu3, 0, "Sample");
+		MenuOption menuopt1 = new MenuOption(menu3, 0, "456");
 
 		System.out.println(screen1.children);
 		System.out.println(menu3.children);
+
+		console.run();
 	}
 }

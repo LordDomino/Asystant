@@ -3,6 +3,7 @@ package cobast.conint;
 import java.util.List;
 import java.util.ArrayList;
 import cobast.conint.menusys.ConsoleObject;
+import cobast.conint.menusys.Screen;
 
 /**
  * Console class for instantiating an entire console object.
@@ -15,12 +16,12 @@ public class Console {
 	 * specified as "private" variables.
 	*/
 
-	public List<ConsoleObject> children = new ArrayList<>();
+	public static List<Screen> children = new ArrayList<>();
 
 	/** Default console length; is static and immutable */
 	public static final int _def_console_length = 50;
 
-	/** Default header length which is the same length as the default console length */
+	/** Default header length, which is the same length as the default console length */
 	public static final String _def_header = new String(new char[_def_console_length]).replace("\0", "=");
 
 	/* All public, mutable variables below */
@@ -41,10 +42,12 @@ public class Console {
 	*/
 	public static boolean invalid = false;
 
-	public Console(String console_name) {}
+	public static void run() {
+		int screen_layer;
 
-	public static void main(String[] args) {
-		System.out.println(header);
+		for (Screen c: children) {
+			c.show();
+		}
 	}
 
 	/** Set the console length.

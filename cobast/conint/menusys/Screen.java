@@ -15,6 +15,12 @@ public class Screen extends ConsoleObject {
 	}
 
 	public void sendToParent() {
-		this.parent.children.add(this);
+		Console.children.add(this);
+	}
+
+	public void show() {
+		for (ConsoleObject cobj: this.children) {
+			cobj.execute();
+		}
 	}
 }

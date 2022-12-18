@@ -12,4 +12,16 @@ public class Menu extends ConsoleObject {
 
 		sendToParent();
 	}
+
+	void execute() {
+		executefinalize();
+
+		for (ConsoleObject obj: this.children) {
+			obj.execute();
+		}
+	}
+
+	void executefinalize() {
+		System.out.println(title);
+	}
 }

@@ -16,7 +16,19 @@ public class ConsoleObject {
 		this.layer = layer;
 	}
 
-	public void sendToParent() {
+	void sendToParent() {
 		this.parent.children.add(this);
 	}
+
+	void execute() {
+		if (children.size() == 0) {
+			this.executefinalize();
+		} else {
+			for (ConsoleObject cobj: this.children) {
+				cobj.execute();
+			}
+		}
+	}
+
+	void executefinalize() {}
 }
