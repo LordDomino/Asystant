@@ -1,10 +1,14 @@
 package cobast.conint.menusys;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class Menu extends ConsoleObject {
 	
 	public static final char def_header_decor = '-';
 	public static final int indent = 2;
 	public static final int flush = 3;
+	public List<MenuObject> children = new ArrayList<MenuObject>();
 	public String title;
 
 	public Menu(ConsoleObject parent, int layer, String title) {
@@ -19,9 +23,10 @@ public class Menu extends ConsoleObject {
 	}
 
 	void execute() {
+		// Menu title is executed first before its children options
 		executefinalize();
 
-		for (ConsoleObject obj: this.children) {
+		for (MenuObject obj: this.children) {
 			obj.execute();
 		}
 	}

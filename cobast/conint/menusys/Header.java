@@ -11,5 +11,7 @@ public class Header extends ConsoleObject {
 		this.layer = layer;
 		this.text = text;
 		this.decoration = decoration;
+
+		sendToParent();
 	}
 }

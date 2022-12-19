@@ -1,9 +1,9 @@
 package cobast.conint.menusys;
 
-public class MenuOption extends ConsoleObject {
+public class MenuOption extends MenuObject {
 	public String text;
 
-	public MenuOption(ConsoleObject parent, int layer, String text) {
+	public MenuOption(Menu parent, int layer, String text) {
 		super(parent, layer);
 		this.parent = parent;
 		this.layer = layer;
@@ -12,6 +12,7 @@ public class MenuOption extends ConsoleObject {
 		sendToParent();
 	}
 
+	@Override
 	void executefinalize() {
 		System.out.println(text);
 	}

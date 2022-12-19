@@ -8,6 +8,7 @@ import cobast.conint.Console;
  * Base class for all console elements.
  */
 public class ConsoleObject {
+	
 	public ConsoleObject parent;
 	public int layer;
 	public List<ConsoleObject> children = new ArrayList<>();
