@@ -8,6 +8,7 @@ import java.util.Scanner;
 import static cobast.conint.menusys.ConsoleUtils.*;
 import static cobast.conint.Console.*;
 import cobast.config.Directory;
+import cobast.Version;
 
 
 public class Main {

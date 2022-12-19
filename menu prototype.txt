@@ -1,0 +1,40 @@
+--- Blah ----------------------------------------
+123456789
+=================================================
+  
+  PAGE TITLE
+    Title has 4 spaces indention. All contents
+	are indented 2 spaces.
+
+  --- MENU ------------------------------------
+      1  Menu Option 1
+           Contents here
+
+      2  Menu Option2
+           Contents here blah blah.
+           Additional paragraph
+
+      3  Menu Option3
+      4  Option4
+
+      E  Exit
+  ---------------------------------------------
+
+  INFO PAGE
+    Details of info pane
+
+  +--------+--------+
+  | Field1 | Field2 |
+  +--------+--------+
+  | value1 | 56     |
+  | value2 | 55     |
+  | value3 | 567    |
+  | value4 | 390    |
+  | value5 | 143    |
+  | value6 | 1216   |
+  +--------+--------+
+
+>> Prompt in here to input text: >>
+?? Question prompt (often yes/no questions, green)? >>
+!! Error messages here (red)
+!! Warning messages (orange)

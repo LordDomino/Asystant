@@ -11,7 +11,7 @@ public class Testings {
 		Screen screen1 = new Screen(console, 0);
 		Menu menu1 = new Menu(screen1, 0, "Blah");
 		Menu menu2 = new Menu(screen1, 1, "BLAH");
-		Menu menu3 = new Menu(screen1, 3, "TITLE");
+		Menu menu3 = new Menu(screen1, 3, "wow");
 
 		MenuOption menuopt1 = new MenuOption(menu3, 0, "456");
 
