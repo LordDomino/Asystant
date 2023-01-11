@@ -1,4 +1,4 @@
-package cobast.conint.menusys;
+package cobast.consoleinterface.menusys;
 
 public class ConsoleUtils {
 	public static final String ANSI_RESET = "\u001B[0m";

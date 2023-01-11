@@ -1,7 +1,7 @@
 package cobast;
 
-import cobast.conint.*;
-import cobast.conint.menusys.*;
+import cobast.consoleinterface.*;
+import cobast.consoleinterface.menusys.*;
 
 public class Testings {
 	public static void main(String[] args) {

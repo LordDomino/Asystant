@@ -1,4 +1,4 @@
-package cobast.conint.menusys;
+package cobast.consoleinterface.menusys;
 
 public class MenuObject extends ConsoleObject {
 	public MenuObject(ConsoleObject parent, int layer) {

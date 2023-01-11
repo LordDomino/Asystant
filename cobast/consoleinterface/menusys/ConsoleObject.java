@@ -1,8 +1,9 @@
-package cobast.conint.menusys;
+package cobast.consoleinterface.menusys;
 
 import java.util.ArrayList;
 import java.util.List;
-import cobast.conint.Console;
+
+import cobast.consoleinterface.Console;
 
 /**
  * Base class for all console elements.

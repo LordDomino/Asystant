@@ -1,6 +1,6 @@
-package cobast.conint.menusys;
+package cobast.consoleinterface.menusys;
 
-import cobast.conint.Console;
+import cobast.consoleinterface.Console;
 
 public class Screen extends ConsoleObject {
 

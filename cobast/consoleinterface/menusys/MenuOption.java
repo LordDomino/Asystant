@@ -1,4 +1,4 @@
-package cobast.conint.menusys;
+package cobast.consoleinterface.menusys;
 
 public class MenuOption extends MenuObject {
 	public String text;
