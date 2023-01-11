@@ -16,4 +16,9 @@ public class MenuOption extends MenuObject {
 	void executefinalize() {
 		System.out.println(text);
 	}
+
+	@Override
+	void sendToParent() {
+		this.parent.children.add(this);
+	}
 }

@@ -1,6 +1,6 @@
 package cobast.conint.menusys;
 
-public class MenuDescription extends MenuObject{
+public class MenuDescription extends MenuObject {
 	
 	String text;
 

@@ -12,6 +12,7 @@ public class ConsoleObject {
 	public ConsoleObject parent;
 	public int layer;
 	public List<ConsoleObject> children = new ArrayList<>();
+	public List<Object> children_types = new ArrayList<>();
 	public int indent;
 	public String print_str;
 	int max_render_length = Console.console_length;
@@ -36,4 +37,8 @@ public class ConsoleObject {
 	}
 
 	void executefinalize() {}
+
+	void verifyChildren() {
+
+	}
 }

@@ -8,7 +8,6 @@ public class Menu extends ConsoleObject {
 	public static final char def_header_decor = '-';
 	public static final int indent = 2;
 	public static final int flush = 3;
-	public List<MenuObject> children = new ArrayList<MenuObject>();
 	public String title;
 
 	public Menu(ConsoleObject parent, int layer, String title) {
@@ -26,7 +25,7 @@ public class Menu extends ConsoleObject {
 		// Menu title is executed first before its children options
 		executefinalize();
 
-		for (MenuObject obj: this.children) {
+		for (ConsoleObject obj: this.children) {
 			obj.execute();
 		}
 	}
@@ -35,7 +34,7 @@ public class Menu extends ConsoleObject {
 		System.out.println(print_str);
 	}
 
-	public void setHeader() {
+	void setHeader() {
 		// create string of decor chars with length based on console length
 		String temp_header = new String(new char[this.max_render_length]).replace("\0", String.valueOf(def_header_decor));
 
@@ -48,4 +47,6 @@ public class Menu extends ConsoleObject {
 						+ temp_header.substring(flush + this.title.length() + 3);
 		}
 	}
+
+	void verifyChildren(MenuObject obj) {}
 }
