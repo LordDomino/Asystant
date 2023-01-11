@@ -14,11 +14,13 @@ public class Testings {
 		Menu menu3 = new Menu(screen1, 3, "wow");
 
 		MenuOption menuopt1 = new MenuOption(menu3, 0, "456");
-		Header header = new Header(menu3, 0, "wow", '-');
+		Header head = new Header(menu3, 0, "wow", 'h');
 
 		System.out.println(screen1.children);
 		System.out.println(menu3.children);
 
 		console.run();
+
+		final int my_age = 5;
 	}
 }
