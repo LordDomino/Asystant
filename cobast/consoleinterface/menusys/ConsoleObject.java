@@ -27,7 +27,6 @@ public class ConsoleObject {
 
 	public ConsoleObject(ConsoleObject parent, String str) {
 		this.parent = parent;
-		this.render_str = rendertext(str);
 		sendToParent();
 	}
 
@@ -37,7 +36,6 @@ public class ConsoleObject {
 	}
 
 	public ConsoleObject(ConsoleObject parent, String str, int widget_length) {
-		this.render_str = rendertext(str);
 		this.widget_length = widget_length;
 		sendToParent();
 	}

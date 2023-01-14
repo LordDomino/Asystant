@@ -12,7 +12,7 @@ public class Testings {
 		ConsoleObject screen_1 = new ConsoleObject(null);
 		ConsoleObject screen_2 = new ConsoleObject(null);
 
-		Header head = new Header(screen_1, "asd", '=', 50);
-		head.rendertext("asd");
+		Header head = new Header(screen_1, "This is a COBAST Header", '=', 70);
+		System.out.println(head.execute());
 	}
 }

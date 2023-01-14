@@ -11,4 +11,9 @@ public class ElementWidget extends Widget {
 	public ElementWidget(ConsoleObject parent, String str) {
 		super(parent, str);
 	}
+
+	@Override
+	public String execute() {
+		return this.render_str;
+	}
 }
