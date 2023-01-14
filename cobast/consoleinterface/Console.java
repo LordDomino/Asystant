@@ -3,7 +3,6 @@ package cobast.consoleinterface;
 import java.util.List;
 
 import cobast.consoleinterface.menusys.ConsoleObject;
-import cobast.consoleinterface.menusys.Screen;
 
 import java.util.ArrayList;
 
@@ -17,8 +16,6 @@ public class Console {
 	 * that are internally hard-coded in the program. Hence, these variables are
 	 * specified as "private" variables.
 	*/
-
-	public static List<Screen> children = new ArrayList<>();
 
 	/** Default console length; is static and immutable */
 	public static final int _def_console_length = 50;
@@ -43,14 +40,6 @@ public class Console {
 	 * to trigger warnings and errors.
 	*/
 	public static boolean invalid = false;
-
-	public static void run() {
-		int screen_layer;
-
-		for (Screen c: children) {
-			c.show();
-		}
-	}
 
 	/** Set the console length.
 	 * @param length The length of the console interface; default length is 50
