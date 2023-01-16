@@ -4,9 +4,9 @@ import cobast.consoleinterface.menusys.ConsoleObject;
 
 public class Header extends ElementWidget{
 
-	public char decor_char = '=';
-	public int widget_length = this.parent.place_length;
-	public int indent_length = 5;
+	char decor_char = '=';
+	int widget_length = this.parent.place_length;
+	int indent_length = 5;
 
 	public Header(ConsoleObject parent, String text, char decor_char) {
 		super(parent, text);
