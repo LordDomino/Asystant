@@ -3,8 +3,8 @@
 =================================================
   
   PAGE TITLE
-    Title has 4 spaces indention. All contents
-	are indented 2 spaces.
+    Title content has 4 spaces indention. All
+  contents are indented 2 spaces.
 
   --- MENU ------------------------------------
       1  Menu Option 1

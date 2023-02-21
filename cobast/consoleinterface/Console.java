@@ -1,11 +1,5 @@
 package cobast.consoleinterface;
 
-import java.util.List;
-
-import cobast.consoleinterface.menusys.ConsoleObject;
-
-import java.util.ArrayList;
-
 /**
  * Console class for instantiating an entire console object.
  * 
@@ -18,7 +12,7 @@ public class Console {
 	*/
 
 	/** Default console length; is static and immutable */
-	public static final int _def_console_length = 50;
+	public static final int _def_console_length = 75;
 
 	/** Default header length, which is the same length as the default console length */
 	public static final String _def_header = new String(new char[_def_console_length]).replace("\0", "=");
