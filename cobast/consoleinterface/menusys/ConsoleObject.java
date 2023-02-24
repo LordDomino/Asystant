@@ -11,8 +11,10 @@ import cobast.consoleinterface.Utils;
  */
 public class ConsoleObject {
 	
-	ConsoleObject parent;
-	ArrayList<ConsoleObject> children = new ArrayList<ConsoleObject>();
+	public ConsoleObject parent;
+	public ArrayList<ConsoleObject> children = new ArrayList<ConsoleObject>();
+
+	ConsoleObject() {}
 
 	ConsoleObject(ConsoleObject parent) {
 		this.parent = parent;
