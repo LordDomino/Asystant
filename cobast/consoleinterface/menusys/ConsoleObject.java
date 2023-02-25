@@ -11,17 +11,16 @@ import cobast.consoleinterface.Utils;
  */
 public class ConsoleObject {
 	
-	public ConsoleObject parent;
-	public ArrayList<ConsoleObject> children = new ArrayList<ConsoleObject>();
+	protected ConsoleObject parent;
+	protected ArrayList<ConsoleObject> children = new ArrayList<ConsoleObject>();
 
 	ConsoleObject() {}
 
 	ConsoleObject(ConsoleObject parent) {
 		this.parent = parent;
-		sendToParent();
 	}
 
-	void sendToParent() {
+	public void sendToParent() {
 		if (this.parent == null) {
 			Utils.printdebug("Cannot send " + this + " to a null parent!");
 		} else {

@@ -6,7 +6,7 @@ import cobast.consoleinterface.Console;
 
 public class Widget extends ConsoleObject {
 
-	public ArrayList<Widget> children;
+	public ArrayList<Widget> children = new ArrayList<Widget>();
 	public int widget_length = Console.console_length;
 	public int widget_margin;
 	public int widget_padding;
@@ -19,7 +19,10 @@ public class Widget extends ConsoleObject {
 
 	Widget(ConsoleObject parent) {
 		super(parent);
+		this.children = new ArrayList<Widget>();
 		this.render_str_list = extractWidgetStyle();
+
+		sendToParent();
 
 		if (this instanceof ElementWidget) {
 			this.render_str = renderString();
