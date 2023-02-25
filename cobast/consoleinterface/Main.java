@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 
 import static cobast.consoleinterface.Console.*;
-import static cobast.consoleinterface.menusys.ConsoleUtils.*;
 
 import java.awt.Desktop;
 import java.util.Scanner;

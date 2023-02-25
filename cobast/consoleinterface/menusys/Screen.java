@@ -10,17 +10,14 @@ public class Screen extends ContainerWidget {
 
 	public Screen() {
 		super();
-		this.children = new ArrayList<Widget>();
 		screen_list.add(this);
 	}
 
 	public void executeScreen() {
 		ArrayList<String> print_list = new ArrayList<String>();
 
-		if (this.children != null) {
-			for (Widget obj : this.children) {
-				print_list.addAll(obj.extractWidgetStyle());
-			}
+		for (Widget obj : this.children) {
+			print_list.addAll(obj.extractWidgetStyle());
 		}
 
 		for (String line : print_list) {

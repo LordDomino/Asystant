@@ -2,28 +2,20 @@ package cobast.consoleinterface.menusys;
 
 import java.util.ArrayList;
 
-import cobast.consoleinterface.Utils;
-
-
-
-/**
- * Base class for all console elements.
- */
 public class ConsoleObject {
 	
-	protected ConsoleObject parent;
-	protected ArrayList<ConsoleObject> children = new ArrayList<ConsoleObject>();
+	public ConsoleObject parent;
+	public ArrayList<ConsoleObject> children = new ArrayList<ConsoleObject>();
 
 	ConsoleObject() {}
 
 	ConsoleObject(ConsoleObject parent) {
 		this.parent = parent;
+		sendToParent();
 	}
 
 	public void sendToParent() {
-		if (this.parent == null) {
-			Utils.printdebug("Cannot send " + this + " to a null parent!");
-		} else {
+		if (this.parent != null) {
 			this.parent.children.add(this);
 		}
 	}

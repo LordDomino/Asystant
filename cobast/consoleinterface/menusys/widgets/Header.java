@@ -7,17 +7,24 @@ import cobast.consoleinterface.menusys.ElementWidget;
 
 public class Header extends ElementWidget {
 
-	ContainerWidget parent;
-	int header_indent;
-	char decor_char;
+	public int header_indent;
+	public char decor_char;
 
 	public Header(ContainerWidget parent, String prompt_str, int header_indent) {
 		super(parent, prompt_str);
+		this.parent = parent;
 		this.prompt_str = prompt_str;
 		this.header_indent = header_indent;
 		this.render_str = renderString();
+	}
 
-		sendToParent();
+	@Override
+	public void sendToParent() {
+		if (this.parent == null) {
+
+		} else {
+			this.parent.children.add(this);
+		}
 	}
 
 	@Override
