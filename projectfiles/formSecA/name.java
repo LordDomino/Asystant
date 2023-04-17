@@ -2,13 +2,14 @@
 
 package projectfiles.formSecA;
 
-import javax.swing.*;
+import javax.swing.JFrame;
 
 public class name {
+    JFrame frame;
+
     name() {
-        JFrame f = new JFrame();
-        f.setSize(400, 400);
-        f.setLayout(null);
-        f.setVisible(true);
+        frame = new JFrame();
+        frame.setSize(400, 400);
+        frame.setVisible(true);
     }
 }
