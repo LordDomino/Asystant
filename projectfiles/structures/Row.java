@@ -15,6 +15,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+
+
+/**
+ * A {@code}Row{@code} is a structure containing a horizontal array of fields.
+ */
 public class Row {
 
     JFrame mainframe; // create mainframe for future instance
@@ -31,7 +36,7 @@ public class Row {
     }
 
     /**
-     * Creates a new split partition
+     * Creates a new split partition for the entire row.
      * @param fields - string array of fields
      * @param label - overall label for the entire partition
      */
@@ -68,6 +73,9 @@ public class Row {
         mainframe.pack();
     }
 
+    /**
+     * Sets the current {@code}Row{@code} instance to be visible.
+     */
     public void wrap() {
         mainframe.setVisible(true);
     }
