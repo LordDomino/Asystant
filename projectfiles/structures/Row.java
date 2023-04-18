@@ -23,16 +23,17 @@ import javax.swing.JTextField;
 public class Row {
 
     JFrame mainframe; // create mainframe for future instance
+    boolean showTextfields = false; // default flag to show textfields
 
     /**
      * Constructor for a {@code}Row{@code} instance.
      */
     public Row() {
-        mainframe = new JFrame(); // instantiate JFrame class
+        this.mainframe = new JFrame(); // instantiate JFrame class
         // mainframe.setSize(500, 100);
-        mainframe.setLayout(new FlowLayout(FlowLayout.LEFT)); // set layout as FlowLayout to align left to right
-        mainframe.pack();
-        mainframe.setResizable(false);
+        this.mainframe.setLayout(new FlowLayout(FlowLayout.LEFT)); // set layout as FlowLayout to align left to right
+        this.mainframe.pack();
+        this.mainframe.setResizable(false);
     }
 
     /**
@@ -69,14 +70,22 @@ public class Row {
 
         panel.setSize(300, 100);
         panel.setBorder(border);
-        mainframe.add(panel);
-        mainframe.pack();
+        this.mainframe.add(panel);
+        this.mainframe.pack();
+    }
+
+    /**
+     * Sets the 
+     * @param b
+     */
+    public void showTextfields(boolean b) {
+        this.showTextfields = true;
     }
 
     /**
      * Sets the current {@code}Row{@code} instance to be visible.
      */
     public void wrap() {
-        mainframe.setVisible(true);
+        this.mainframe.setVisible(true);
     }
 }
