@@ -5,7 +5,8 @@ import projectfiles.structures.Row;
 
 public class Main {
     public static void main(String args[]) {
-        SectionA secA = new SectionA();
+        SectionB secB = new SectionB();
+        
     }
 }
 
@@ -23,8 +24,16 @@ class SectionA {
     }
 }
 
-class SectionC {
-    SectionC () {
+class SectionB {
+    SectionB () {
+       Row nameofContactPerson = new Row();
+       String[] nameofContactPerson_fields1 = {"(Last name)", "(First name)", "(Middle initial)"};
+       String[] nameofContactPerson_fields2 = {"Relationship:"};
+       String[] nameofContactPerson_fields3 = {"Contact No. :"};
 
+       nameofContactPerson.createPartition(nameofContactPerson_fields1, "Name:");
+       nameofContactPerson.createPartition(nameofContactPerson_fields2,"");
+       nameofContactPerson.createPartition(nameofContactPerson_fields3, "");
+       nameofContactPerson.wrap();
     }
 }
