@@ -40,6 +40,11 @@ class SectionA {
         row1.wrap();
         row2.wrap();
         row3.wrap();
+    }
+}
+
+class SectionC {
+    static void pack() {
         Row healthandsafety = new Row();
         String[] healthandsafety_fields1 = {"Is your child subject to seizures, fainting, epilepsy, bleeding, asthma or" 
                                            + " any other condition that may affect his or her safety?"};
@@ -62,3 +67,5 @@ class SectionB {
        nameofContactPerson.wrap();
     }
 }
+
+
