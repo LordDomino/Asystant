@@ -15,18 +15,32 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+
+
+/**
+ * A {@code}Row{@code} is a structure containing a horizontal array of fields.
+ */
 public class Row {
 
     JFrame mainframe; // create mainframe for future instance
+    boolean showTextfields = false; // default flag to show textfields
 
+    /**
+     * Constructor for a {@code}Row{@code} instance.
+     */
     public Row() {
-        mainframe = new JFrame(); // instantiate JFrame class
+        this.mainframe = new JFrame(); // instantiate JFrame class
         // mainframe.setSize(500, 100);
-        mainframe.setLayout(new FlowLayout(FlowLayout.LEFT)); // set layout as FlowLayout to align left to right
-        mainframe.pack();
-        mainframe.setResizable(false);
+        this.mainframe.setLayout(new FlowLayout(FlowLayout.LEFT)); // set layout as FlowLayout to align left to right
+        this.mainframe.pack();
+        this.mainframe.setResizable(false);
     }
 
+    /**
+     * Creates a new split partition for the entire row.
+     * @param fields - string array of fields
+     * @param label - overall label for the entire partition
+     */
     public void createPartition(String fields[], String label) {
         Font defaulFont = new Font("Arial", 0, 18);
         JPanel panel = new JPanel(new GridBagLayout()); // container panel for all fields
@@ -48,19 +62,30 @@ public class Row {
             panel.add(fieldLabel);
         }
 
-        for(int i = 1; i <= fields.length; i++) {
-            JTextField textField = new JTextField();
-            textField.setFont(defaulFont);
-            panel.add(textField);
-        }
+        // for(int i = 1; i <= fields.length; i++) {
+        //     JTextField textField = new JTextField();
+        //     textField.setFont(defaulFont);
+        //     panel.add(textField);
+        // }
 
         panel.setSize(300, 100);
         panel.setBorder(border);
-        mainframe.add(panel);
-        mainframe.pack();
+        this.mainframe.add(panel);
+        this.mainframe.pack();
     }
 
+    /**
+     * Sets the  
+     * @param b
+     */
+    public void showTextfields(boolean b) {
+        this.showTextfields = true;
+    }
+
+    /**
+     * Sets the current {@code}Row{@code} instance to be visible.
+     */
     public void wrap() {
-        mainframe.setVisible(true);
+        this.mainframe.setVisible(true);
     }
 }
