@@ -14,6 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import java.util.ArrayList;
 
 
 
@@ -24,7 +25,7 @@ public class Row {
 
     JFrame mainframe; // create mainframe for future instance
     boolean showTextfields = false; // default flag to show textfields
-    String[][] partitionFields;
+    ArrayList<ArrayList<String>> partitionFields = new ArrayList()<>;
 
     /**
      * Constructor for a {@code}Row{@code} instance.
@@ -42,7 +43,10 @@ public class Row {
      * @param fields - string array of fields
      * @param label - overall label for the entire partition
      */
-    public void createPartition(String fields[], String label) {
+    public void createPartition(ArrayList<String> fields, String label) {
+        
+        this.partitionFields.add(fields);
+
         Font defaulFont = new Font("Arial", 0, 18);
         JPanel panel = new JPanel(new GridBagLayout()); // container panel for all fields
         MatteBorder border = new MatteBorder(1, 1, 1, 1, new Color(0, 0, 0)); // border for the panel
@@ -74,6 +78,8 @@ public class Row {
         this.mainframe.add(panel);
         this.mainframe.pack();
     }
+
+    private void constructPartition() {}
 
     /**
      * Sets the boolean {@code}showTextfields{@code} to whether or not the text
