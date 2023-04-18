@@ -14,11 +14,30 @@ public class Main {
  */
 class SectionA {
     static void pack() {
-        Row nameAndSection = new Row();
-        String[] nameAndSection_fields1 = {"(Last name)", "(First name)", "(Middle initial)"};
-        String[] nameAndSection_fields2 = {"Level and Section"};
-        nameAndSection.createPartition(nameAndSection_fields1, "Name: ");
-        nameAndSection.createPartition(nameAndSection_fields2, "");
-        nameAndSection.wrap();
+        Row row1 = new Row();
+        Row row2 = new Row();
+        Row row3 = new Row();
+
+        String[] row1_part1_fields = {"(Last name)", "(First name)", "(Middle initial)"};
+        String[] row1_part2_fields = {"Level/Section:"};
+        String[] row2_fields = {"Address:"};
+        String[] row3_part1_fields = {"(Mobile / Landline number):"};
+        String[] row3_part2_fields = {"Date of birth:"};
+        String[] row3_part3_fields = {"Age"};
+        String[] row3_part4_fields = {"Height (in ft.):"};
+        String[] row3_part5_fields = {"Weight (in kg.):"};
+        
+        row1.createPartition(row1_part1_fields, "Name:");
+        row1.createPartition(row1_part2_fields, "");
+        row2.createPartition(row2_fields, "");
+        row3.createPartition(row3_part1_fields, "Contact numbers:");
+        row3.createPartition(row3_part2_fields, "");
+        row3.createPartition(row3_part3_fields, "");
+        row3.createPartition(row3_part4_fields, "");
+        row3.createPartition(row3_part5_fields, "");
+
+        row1.wrap();
+        row2.wrap();
+        row3.wrap();
     }
 }

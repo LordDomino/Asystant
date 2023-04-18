@@ -24,6 +24,7 @@ public class Row {
 
     JFrame mainframe; // create mainframe for future instance
     boolean showTextfields = false; // default flag to show textfields
+    String[][] partitionFields;
 
     /**
      * Constructor for a {@code}Row{@code} instance.
@@ -75,7 +76,8 @@ public class Row {
     }
 
     /**
-     * Sets the  
+     * Sets the boolean {@code}showTextfields{@code} to whether or not the text
+     * fields under the labels will show.
      * @param b
      */
     public void showTextfields(boolean b) {
