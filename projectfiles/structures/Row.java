@@ -75,7 +75,7 @@ public class Row {
     }
 
     /**
-     * Sets the 
+     * Sets the  
      * @param b
      */
     public void showTextfields(boolean b) {
