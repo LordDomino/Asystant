@@ -5,10 +5,11 @@
 package projectfiles.structures;
 
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
+import java.awt.Insets;
 import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
+
 import javax.swing.border.MatteBorder;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -16,6 +17,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import java.util.ArrayList;
 
+import projectfiles.Config;
 
 
 /**
@@ -23,19 +25,17 @@ import java.util.ArrayList;
  */
 public class Row {
 
-    JFrame mainframe; // create mainframe for future instance
+    JPanel mainframe; // create mainframe for future instance
     boolean showTextfields = false; // default flag to show textfields
-    ArrayList<ArrayList<String>> partitionFields = new ArrayList<ArrayList<String>>();
+    ArrayList<ArrayList<String>> partitionFieldsList = new ArrayList<ArrayList<String>>();
+    ArrayList<String> partitionLabelsList = new ArrayList<String>();
 
     /**
      * Constructor for a {@code}Row{@code} instance.
      */
     public Row() {
-        this.mainframe = new JFrame(); // instantiate JFrame class
-        // mainframe.setSize(500, 100);
-        this.mainframe.setLayout(new FlowLayout(FlowLayout.LEFT)); // set layout as FlowLayout to align left to right
-        this.mainframe.pack();
-        this.mainframe.setResizable(false);
+        this.mainframe = new JPanel(); // instantiate JFrame class
+        this.mainframe.setLayout(new GridBagLayout()); // set layout as FlowLayout to align left to right
     }
 
     /**
@@ -45,55 +45,85 @@ public class Row {
      */
     public void createPartition(ArrayList<String> fields, String label) {
         
-        this.partitionFields.add(fields);
+        this.partitionFieldsList.add(fields);
+        this.partitionLabelsList.add(label);
+    }
 
-        Font defaulFont = new Font("Arial", 0, 18);
+    private void constructPartition(ArrayList<String> fields, String label) {
         JPanel panel = new JPanel(new GridBagLayout()); // container panel for all fields
         MatteBorder border = new MatteBorder(1, 1, 1, 1, new Color(0, 0, 0)); // border for the panel
         
         if (label != "") {
+            GridBagConstraints gbc = new GridBagConstraints();
+            gbc.insets = new Insets(5, 10, 5, 10);
+            gbc.weightx = 1.0;
+            gbc.weighty = 1.0;
+            gbc.fill = GridBagConstraints.BOTH;
             JTextArea panelLabel = new JTextArea(label);
-            panelLabel.setFont(defaulFont);
-            panelLabel.setLineWrap(true);
+            panelLabel.setFont(Config.defaultFont);
             panelLabel.setEditable(false);
-            panel.add(panelLabel);
+            panel.add(panelLabel, gbc);
         } else {}
 
         for(String field : fields) {
+            GridBagConstraints gbc = new GridBagConstraints();
+            gbc.insets = new Insets(5, 10, 5, 10);
+            gbc.weightx = 1.0;
+            gbc.weighty = 1.0;
+            gbc.fill = GridBagConstraints.BOTH;
             JTextArea fieldLabel = new JTextArea(field);
-            // fieldLabel.setLineWrap(true);
+            fieldLabel.setFont(Config.defaultFont);
             fieldLabel.setEditable(false);
-            fieldLabel.setFont(defaulFont);
-            panel.add(fieldLabel);
+            panel.add(fieldLabel, gbc);
         }
 
-        // for(int i = 1; i <= fields.length; i++) {
-        //     JTextField textField = new JTextField();
-        //     textField.setFont(defaulFont);
-        //     panel.add(textField);
-        // }
+        if(showTextfields) {
+            for(int i = 1; i <= fields.size(); i++) {
+                GridBagConstraints gbc = new GridBagConstraints();
+                gbc.insets = new Insets(0, 10, 5, 10);
+                
+                if(label != "") {
+                    gbc.gridx = i;
+                } else {
+                    gbc.gridx = i - 1;
+                }
 
-        panel.setSize(300, 100);
+                gbc.weightx = 1.0;
+                gbc.weighty = 1.0;
+                gbc.fill = GridBagConstraints.BOTH;
+                JTextField textField = new JTextField();
+                textField.setFont(Config.defaultFont);
+                panel.add(textField, gbc);
+            } 
+        }
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(0, 2, 0, 2);
+        gbc.weightx = gbc.weighty = 1.0;
+        gbc.fill = GridBagConstraints.BOTH;
+
         panel.setBorder(border);
-        this.mainframe.add(panel);
-        this.mainframe.pack();
+        this.mainframe.add(panel, gbc);
     }
-
-    private void constructPartition() {}
 
     /**
      * Sets the boolean {@code}showTextfields{@code} to whether or not the text
      * fields under the labels will show.
-     * @param b
+     * @param b is the boolean to set the flag
      */
-    public void showTextfields(boolean b) {
-        this.showTextfields = true;
+    public void setShowTextfields(boolean b) {
+        this.showTextfields = b;
     }
 
     /**
      * Sets the current {@code}Row{@code} instance to be visible.
      */
     public void wrap() {
-        this.mainframe.setVisible(true);
+
+        int index = 0;
+        for(ArrayList<String> partitionFieldSet : this.partitionFieldsList) {
+            constructPartition(partitionFieldSet, this.partitionLabelsList.get(index));
+            index++;
+        }
     }
 }
