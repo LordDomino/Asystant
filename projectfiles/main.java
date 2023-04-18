@@ -15,12 +15,13 @@ public class Main {
  */
 class SectionA {
     static void pack() {
-        Row nameAndSection = new Row();
-        String[] nameAndSection_fields1 = {"(Last name)", "(First name)", "(Middle initial)"};
-        String[] nameAndSection_fields2 = {"Level and Section"};
-        nameAndSection.createPartition(nameAndSection_fields1, "Name: ");
-        nameAndSection.createPartition(nameAndSection_fields2, "");
-        nameAndSection.wrap();
+        Row healthandsafety = new Row();
+        String[] healthandsafety_fields1 = {"Is your child subject to seizures, fainting, epilepsy, bleeding, asthma or" 
+                                           + " any other condition that may affect his or her safety?"};
+        String[] healthandsafety_fields2 = {"  YES/NO  "};
+        healthandsafety.createPartition(healthandsafety_fields1, "");
+        healthandsafety.createPartition(healthandsafety_fields2, "");
+        healthandsafety.wrap();
     }
 }
 
