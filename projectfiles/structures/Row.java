@@ -19,6 +19,9 @@ public class Row {
 
     JFrame mainframe; // create mainframe for future instance
 
+    /**
+     * Constructor for a {@code}Row{@code} instance.
+     */
     public Row() {
         mainframe = new JFrame(); // instantiate JFrame class
         // mainframe.setSize(500, 100);
@@ -27,6 +30,11 @@ public class Row {
         mainframe.setResizable(false);
     }
 
+    /**
+     * Creates a new split partition
+     * @param fields - string array of fields
+     * @param label - overall label for the entire partition
+     */
     public void createPartition(String fields[], String label) {
         Font defaulFont = new Font("Arial", 0, 18);
         JPanel panel = new JPanel(new GridBagLayout()); // container panel for all fields
@@ -48,11 +56,11 @@ public class Row {
             panel.add(fieldLabel);
         }
 
-        for(int i = 1; i <= fields.length; i++) {
-            JTextField textField = new JTextField();
-            textField.setFont(defaulFont);
-            panel.add(textField);
-        }
+        // for(int i = 1; i <= fields.length; i++) {
+        //     JTextField textField = new JTextField();
+        //     textField.setFont(defaulFont);
+        //     panel.add(textField);
+        // }
 
         panel.setSize(300, 100);
         panel.setBorder(border);
