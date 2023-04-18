@@ -57,14 +57,14 @@ class SectionC {
 
 class SectionB {
     static void pack() {
-       Row nameofContactPerson = new Row();
-       String[] nameofContactPerson_fields1 = {"(Last name)", "(First name)", "(Middle initial)"};
-       String[] nameofContactPerson_fields2 = {"Relationship:"};
-       String[] nameofContactPerson_fields3 = {"Contact No. :"};
-       nameofContactPerson.createPartition(nameofContactPerson_fields1, "Name:");
-       nameofContactPerson.createPartition(nameofContactPerson_fields2,"");
-       nameofContactPerson.createPartition(nameofContactPerson_fields3, "");
-       nameofContactPerson.wrap();
+       Row row = new Row();
+       String[] row_part1_fields = {"(Last name)", "(First name)", "(Middle initial)"};
+       String[] row_part2_fields = {"Relationship:"};
+       String[] row_part3_fields = {"Contact No. :"};
+       row.createPartition(nameofContactPerson_fields1, "Name:");
+       row.createPartition(nameofContactPerson_fields2,"");
+       row.createPartition(nameofContactPerson_fields3, "");
+       row.wrap();
     }
 }
 
