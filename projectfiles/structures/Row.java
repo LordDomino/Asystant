@@ -43,8 +43,6 @@ public class Row {
      * @param label - overall label for the entire partition
      */
     public void createPartition(String fields[], String label) {
-        String[][] tmp_partitionFields
-        this.partitionFields
         Font defaulFont = new Font("Arial", 0, 18);
         JPanel panel = new JPanel(new GridBagLayout()); // container panel for all fields
         MatteBorder border = new MatteBorder(1, 1, 1, 1, new Color(0, 0, 0)); // border for the panel
