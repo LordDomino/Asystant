@@ -6,11 +6,14 @@ package projectfiles.structures;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.FlowLayout;
 import javax.swing.border.MatteBorder;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 public class Row {
 
@@ -18,7 +21,7 @@ public class Row {
 
     public Row() {
         mainframe = new JFrame(); // instantiate JFrame class
-        mainframe.setSize(500, 100);
+        // mainframe.setSize(500, 100);
         mainframe.setLayout(new FlowLayout(FlowLayout.LEFT)); // set layout as FlowLayout to align left to right
         mainframe.pack();
         mainframe.setResizable(false);
@@ -26,7 +29,7 @@ public class Row {
 
     public void createPartition(String fields[], String label) {
         Font defaulFont = new Font("Arial", 0, 18);
-        JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT)); // container panel for all fields
+        JPanel panel = new JPanel(new GridBagLayout()); // container panel for all fields
         MatteBorder border = new MatteBorder(1, 1, 1, 1, new Color(0, 0, 0)); // border for the panel
         
         if (label != "") {
@@ -43,6 +46,12 @@ public class Row {
             fieldLabel.setEditable(false);
             fieldLabel.setFont(defaulFont);
             panel.add(fieldLabel);
+        }
+
+        for(int i = 1; i <= fields.length; i++) {
+            JTextField textField = new JTextField();
+            textField.setFont(defaulFont);
+            panel.add(textField);
         }
 
         panel.setSize(300, 100);
