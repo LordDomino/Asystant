@@ -5,7 +5,7 @@ import projectfiles.structures.Row;
 
 public class Main {
     public static void main(String args[]) {
-        SectionB secB = new SectionB();
+        SectionB.pack();
         SectionA.pack();
     }
 }
@@ -51,7 +51,7 @@ class SectionA {
 }
 
 class SectionB {
-    SectionB () {
+    static void pack() {
        Row nameofContactPerson = new Row();
        String[] nameofContactPerson_fields1 = {"(Last name)", "(First name)", "(Middle initial)"};
        String[] nameofContactPerson_fields2 = {"Relationship:"};
