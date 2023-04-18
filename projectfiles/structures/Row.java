@@ -25,7 +25,7 @@ public class Row {
 
     JFrame mainframe; // create mainframe for future instance
     boolean showTextfields = false; // default flag to show textfields
-    ArrayList<ArrayList<String>> partitionFields = new ArrayList()<>;
+    ArrayList<ArrayList<String>> partitionFields = new ArrayList<ArrayList<String>>();
 
     /**
      * Constructor for a {@code}Row{@code} instance.
