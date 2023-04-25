@@ -12,11 +12,8 @@ import projectfiles.structures.Section;
  */
 public final class SectionA extends Section {
 
-    SectionA() {
+    public SectionA() {
         super("PERSONAL INFORMATION");
-    }
-
-    public static void pack() {
         Row row1 = new Row(); row1.setShowTextfields(true);
         Row row2 = new Row(); row2.setShowTextfields(true);
         Row row3 = new Row(); row3.setShowTextfields(true);
@@ -43,10 +40,8 @@ public final class SectionA extends Section {
         row2.wrap();
         row3.wrap();
 
-        sec.addRow(row1);
-        sec.addRow(row2);
-        sec.addRow(row3);
-
-        sec.wrap();
+        addRow(row1);
+        addRow(row2);
+        addRow(row3);
     }
 }

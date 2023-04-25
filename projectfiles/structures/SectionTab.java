@@ -27,15 +27,15 @@ public final class SectionTab extends JTabbedPane {
 
     public SectionTab() {
         super();
-        initSection(); // this is a special method for setting attributes of this instance
+        initialize(); // this is a special method for setting attributes of this instance
     }
 
     public SectionTab (int tabPlacement) {
         super(tabPlacement);
-        initSection(); // this is a special method for setting attributes of this instance
+        initialize(); // this is a special method for setting attributes of this instance
     }
 
-    protected void initSection() {
+    protected void initialize() {
         this.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
     }
 }

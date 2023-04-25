@@ -2,38 +2,23 @@ package projectfiles;
 
 import java.util.ArrayList;
 
-import projectfiles.formSections.SectionA;
+import javax.swing.JFrame;
+
+import projectfiles.formSections.*;
 import projectfiles.structures.Row;
 import projectfiles.structures.Section;
 import projectfiles.structures.SectionTab;
 
 public class Main {
+
+    JFrame
+
     public static void main(String args[]) {
-        SectionA.pack();
-        SectionB.pack();
-        SectionC.pack();
+        packMain();
     }
-}
 
-class SectionB {
-
-    static Section sec = new Section("CONTACT PERSON IN CASE OF EMERGENCY");
-
-    static void pack() {
-        Row row1 = new Row(); row1.setShowTextfields(true);
-        
-        ArrayList<String> row1_part1_fields = Util.newArray(new String[]{"(Last name)", "(First name)", "(Middle initial)"});;
-        ArrayList<String> row1_part2_fields = Util.newArray(new String[]{"Relationship:"});
-        ArrayList<String> row1_part3_fields = Util.newArray(new String[]{"Contact no.:"});
-        
-        row1.createPartition(row1_part1_fields, "Name:", "Name:");
-        row1.createPartition(row1_part2_fields,"");
-        row1.createPartition(row1_part3_fields, "");
-        row1.wrap();
-
-        sec.addRow(row1);
-        
-        sec.wrap();
+    void packMain() {
+        add(new SectionA());
     }
 }
 
@@ -52,7 +37,5 @@ class SectionC {
         row1.wrap();
 
         sec.addRow(row1);
-        
-        sec.wrap();
     }
 }
