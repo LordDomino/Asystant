@@ -35,6 +35,9 @@ class SectionC {
         String row1_label = "Is your child subject to seizures, fainting, epilepsy, bleeding, asthma or any other condition that may affect his or her safety?";
         
         row1.createPartition(row1_fields1, row1_label);
+
+aspdoad = new JCheckbox();
+
         row1.wrap();
 
         sec.addRow(row1);
