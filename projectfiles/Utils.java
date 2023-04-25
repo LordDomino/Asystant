@@ -5,9 +5,9 @@ import java.util.ArrayList;
 
 public class Utils {
     /**
-     * Creates an ArrayList directly from a String[] array object.
+     * Creates an ArrayList directly from String arguments.
      */
-    public static ArrayList<String> newArray(String[] array) {
-        return new ArrayList<String>(Arrays.asList(array));
+    public static ArrayList<String> newArray(String ... args) {
+        return new ArrayList<String>(Arrays.asList(args));
     }
 }
