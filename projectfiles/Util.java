@@ -3,7 +3,7 @@ package projectfiles;
 import java.util.Arrays;
 import java.util.ArrayList;
 
-public class Utils {
+public class Util {
     /**
      * Creates an ArrayList directly from String arguments.
      */

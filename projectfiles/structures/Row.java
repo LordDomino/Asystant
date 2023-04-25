@@ -43,10 +43,14 @@ public class Row {
      * @param fields - string array of fields
      * @param label - overall label for the entire partition
      */
-    public void createPartition(ArrayList<String> fields, String label) {
+    public void createPartition(ArrayList<String> fields, String ... label) {
         
         this.partitionFieldsList.add(fields);
-        this.partitionLabelsList.add(label);
+        if (label.length > 0)  {
+            this.partitionLabelsList.add(label[0]);
+        } else {
+            this.partitionLabelsList.add("");
+        }
     }
 
     private void constructPartition(ArrayList<String> fields, String label) {
@@ -119,7 +123,6 @@ public class Row {
      * Sets the current {@code}Row{@code} instance to be visible.
      */
     public void wrap() {
-
         int index = 0;
         for(ArrayList<String> partitionFieldSet : this.partitionFieldsList) {
             constructPartition(partitionFieldSet, this.partitionLabelsList.get(index));

@@ -2,57 +2,16 @@ package projectfiles;
 
 import java.util.ArrayList;
 
+import projectfiles.formSections.SectionA;
 import projectfiles.structures.Row;
 import projectfiles.structures.Section;
 import projectfiles.structures.SectionTab;
 
 public class Main {
     public static void main(String args[]) {
-        SectionB.pack();
         SectionA.pack();
+        SectionB.pack();
         SectionC.pack();
-    }
-}
-
-/**
- * Written by Loui Dominic Naquita
- */
-class SectionA {
-
-    static Section sec = new Section("PERSONAL INFO");
-
-    static void pack() {
-        Row row1 = new Row(); row1.setShowTextfields(true);
-        Row row2 = new Row(); row2.setShowTextfields(true);
-        Row row3 = new Row(); row3.setShowTextfields(true);
-
-        ArrayList<String> row1_part1_fields = Utils.newArray("(Last name)", "(First name)", "(Middle initial)");
-        ArrayList<String> row1_part2_fields = Utils.newArray("Level/Section");
-        ArrayList<String> row2_part1_fields = Utils.newArray("Address");
-        ArrayList<String> row3_part1_fields = Utils.newArray("(Mobile / Landline number)");
-        ArrayList<String> row3_part2_fields = Utils.newArray("Date of birth:");
-        ArrayList<String> row3_part3_fields = Utils.newArray("Age");
-        ArrayList<String> row3_part4_fields = Utils.newArray("Height (in ft.)");
-        ArrayList<String> row3_part5_fields = Utils.newArray("Weight (in kg.)");
-        
-        row1.createPartition(row1_part1_fields, "Name:");
-        row1.createPartition(row1_part2_fields, "");
-        row2.createPartition(row2_part1_fields, "");
-        row3.createPartition(row3_part1_fields, "Contact numbers:");
-        row3.createPartition(row3_part2_fields, "");
-        row3.createPartition(row3_part3_fields, "");
-        row3.createPartition(row3_part4_fields, "");
-        row3.createPartition(row3_part5_fields, "");
-
-        row1.wrap();
-        row2.wrap();
-        row3.wrap();
-
-        sec.addRow(row1);
-        sec.addRow(row2);
-        sec.addRow(row3);
-
-        sec.wrap();
     }
 }
 
@@ -63,11 +22,11 @@ class SectionB {
     static void pack() {
         Row row1 = new Row(); row1.setShowTextfields(true);
         
-        ArrayList<String> row1_part1_fields = Utils.newArray(new String[]{"(Last name)", "(First name)", "(Middle initial)"});;
-        ArrayList<String> row1_part2_fields = Utils.newArray(new String[]{"Relationship:"});
-        ArrayList<String> row1_part3_fields = Utils.newArray(new String[]{"Contact no.:"});
+        ArrayList<String> row1_part1_fields = Util.newArray(new String[]{"(Last name)", "(First name)", "(Middle initial)"});;
+        ArrayList<String> row1_part2_fields = Util.newArray(new String[]{"Relationship:"});
+        ArrayList<String> row1_part3_fields = Util.newArray(new String[]{"Contact no.:"});
         
-        row1.createPartition(row1_part1_fields, "Name:");
+        row1.createPartition(row1_part1_fields, "Name:", "Name:");
         row1.createPartition(row1_part2_fields,"");
         row1.createPartition(row1_part3_fields, "");
         row1.wrap();
@@ -85,7 +44,7 @@ class SectionC {
     static void pack() {
         Row row1 = new Row(); row1.setShowTextfields(true);
 
-        ArrayList<String> row1_fields1 = Utils.newArray(new String[]{"YES / NO"});
+        ArrayList<String> row1_fields1 = Util.newArray(new String[]{"YES / NO"});
         
         String row1_label = "Is your child subject to seizures, fainting, epilepsy, bleeding, asthma or any other condition that may affect his or her safety?";
 
