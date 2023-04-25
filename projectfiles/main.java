@@ -33,8 +33,6 @@ class SectionC {
         ArrayList<String> row1_fields1 = Util.newArray(new String[]{"YES / NO"});
         
         String row1_label = "Is your child subject to seizures, fainting, epilepsy, bleeding, asthma or any other condition that may affect his or her safety?";
-
-        specificmeds = new JCheckbox("name of medicine, dosage, and no.of times taken", JCheckbox.WEST);
         
         row1.createPartition(row1_fields1, row1_label);
         row1.wrap();
