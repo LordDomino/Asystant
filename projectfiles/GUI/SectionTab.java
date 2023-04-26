@@ -3,8 +3,10 @@
  */
 package projectfiles.GUI;
 
+import java.awt.FlowLayout;
 import java.awt.GridBagLayout;
 
+import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
@@ -13,12 +15,12 @@ import projectfiles.formSections.*;
 import projectfiles.structures.Section;
 
 public final class SectionTab extends JTabbedPane {
-    
+
     public void wrap() {
         Section secA = new SectionA();
         Section secB = new SectionB();
         Section secC = new SectionC();
-
+        
         add(secA);
         add(secB);
         add(secC);

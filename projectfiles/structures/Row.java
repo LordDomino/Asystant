@@ -7,6 +7,8 @@ package projectfiles.structures;
 import java.awt.Color;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 
@@ -26,7 +28,8 @@ import projectfiles.Config;
 public class Row {
 
     JPanel mainframe; // create mainframe for future instance
-    boolean showTextfields = false; // default flag to show textfields
+    boolean showTextfields = true; // default flag to show textfields
+    boolean isWrappable = false; // default flag to wrap text
     ArrayList<ArrayList<String>> partitionFieldsList = new ArrayList<ArrayList<String>>();
     ArrayList<String> partitionLabelsList = new ArrayList<String>();
 
@@ -60,12 +63,18 @@ public class Row {
         if (label != "") {
             GridBagConstraints gbc = new GridBagConstraints();
             gbc.insets = new Insets(5, 10, 5, 10);
-            gbc.fill = GridBagConstraints.HORIZONTAL;
+            gbc.fill = GridBagConstraints.BOTH;
             gbc.weightx = 1;
-            gbc.weighty = 0;
+            gbc.weighty = 1;
+
             JTextArea panelLabel = new JTextArea(label);
             panelLabel.setFont(Config.defaultFont);
             panelLabel.setEditable(false);
+        
+            if (isWrappable) {
+                panelLabel.setLineWrap(true);
+            }
+
             panel.add(panelLabel, gbc);
         } else {}
 
@@ -74,13 +83,20 @@ public class Row {
             gbc.insets = new Insets(5, 10, 5, 10);
             gbc.fill = GridBagConstraints.BOTH;
             gbc.weightx = 1;
-            gbc.weighty = 0;
+            gbc.weighty = 1;
+
             JTextArea fieldLabel = new JTextArea(field);
             fieldLabel.setFont(Config.defaultFont);
             fieldLabel.setEditable(false);
+            
+            if (isWrappable) {
+                fieldLabel.setLineWrap(true);
+            }
+
             panel.add(fieldLabel, gbc);
         }
 
+        // text fields
         if(showTextfields) {
             for(int i = 1; i <= fields.size(); i++) {
                 GridBagConstraints gbc = new GridBagConstraints();
@@ -94,17 +110,19 @@ public class Row {
 
                 gbc.weightx = 1.0;
                 gbc.weighty = 0.0;
-                gbc.fill = GridBagConstraints.HORIZONTAL;
+                gbc.fill = GridBagConstraints.BOTH;
+
                 JTextField textField = new JTextField();
                 textField.setFont(Config.defaultFont);
+
                 panel.add(textField, gbc);
             }
         }
 
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(0, 2, 0, 2);
-        gbc.weightx = 1.0;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.weightx = gbc.weighty = 1;
+        gbc.fill = GridBagConstraints.BOTH;
 
         panel.setBorder(border);
         this.mainframe.add(panel, gbc);

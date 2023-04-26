@@ -14,11 +14,11 @@ public final class SectionA extends Section {
 
     public SectionA() {
         super("PERSONAL INFORMATION");
-        Row row1 = new Row(); row1.setShowTextfields(true);
-        Row row2 = new Row(); row2.setShowTextfields(true);
-        Row row3 = new Row(); row3.setShowTextfields(true);
-        Row row4 = new Row(); row4.setShowTextfields(true);
-        Row row5 = new Row(); row5.setShowTextfields(true);
+        Row row1 = new Row();
+        Row row2 = new Row();
+        Row row3 = new Row();
+        Row row4 = new Row();
+        Row row5 = new Row();
 
         ArrayList<String> row1_part1_fields = Util.newArray("(Last name)", "(First name)", "(Middle initial)");
         ArrayList<String> row1_part2_fields = Util.newArray("Level/Section");

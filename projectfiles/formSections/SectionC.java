@@ -13,7 +13,7 @@ public class SectionC extends Section {
         super("HEALTH AND SAFETY CONDITIONS");
         Row row1 = new Row(); row1.setShowTextfields(true);
 
-        ArrayList<String> row1_fields1 = Util.newArray(new String[]{"YES / NO"});
+        ArrayList<String> row1_fields1 = Util.newArray("YES / NO");
         
         String row1_label = "Is your child subject to seizures, fainting, epilepsy, bleeding, asthma or any other condition that may affect his or her safety?";
 
