@@ -13,22 +13,15 @@ import projectfiles.formSections.*;
 
 public final class SectionTab extends JTabbedPane {
     
-    public static void main(String args[]) {
-        JFrame mainFrame = new JFrame();
-        SectionTab demo = new SectionTab();
+    public void wrap() {
         Section secA = new SectionA();
         Section secB = new SectionB();
 
-        demo.add(secA);
-        demo.add(secB);
+        add(secA);
+        add(secB);
 
-        demo.setTitleAt(0, "Section A");
-        demo.setTitleAt(1, "Section B");
-
-        mainFrame.add(demo);
-        mainFrame.setSize(100, 100);
-        mainFrame.pack();
-        mainFrame.setVisible(true);
+        setTitleAt(0, "Section A");
+        setTitleAt(1, "Section B");
     }
 
     public SectionTab() {

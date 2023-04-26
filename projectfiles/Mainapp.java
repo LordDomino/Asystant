@@ -21,8 +21,9 @@ public class Mainapp extends JFrame{
     }
 
     static void packMain() {
-        mainFrame.add(new SectionA());
-        mainFrame.add(new SectionB());
+        SectionTab sections = new SectionTab();
+        sections.wrap();
+        mainFrame.add(sections);
         mainFrame.setSize(400, 400);
         mainFrame.pack();
         
