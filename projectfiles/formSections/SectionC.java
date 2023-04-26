@@ -2,6 +2,8 @@ package projectfiles.formSections;
 
 import java.util.ArrayList;
 
+import javax.swing.JRadioButton;
+
 import projectfiles.Util;
 import projectfiles.structures.Row;
 import projectfiles.structures.Section;
