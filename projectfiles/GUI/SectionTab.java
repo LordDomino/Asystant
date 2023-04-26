@@ -1,7 +1,7 @@
 /**
  * Written by Loui Dominic Naquita
  */
-package projectfiles.structures;
+package projectfiles.GUI;
 
 import java.awt.GridBagLayout;
 
@@ -10,6 +10,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 
 import projectfiles.formSections.*;
+import projectfiles.structures.Section;
 
 public final class SectionTab extends JTabbedPane {
     

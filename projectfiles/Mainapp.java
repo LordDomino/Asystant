@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 
+import projectfiles.GUI.SectionTab;
 import projectfiles.formSections.*;
 import projectfiles.structures.Row;
 import projectfiles.structures.Section;
-import projectfiles.structures.SectionTab;
 
 public class Mainapp extends JFrame{
 

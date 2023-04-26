@@ -19,10 +19,6 @@ public class Section extends JPanel {
     String sectionTitle;
     int rowCount;
 
-    public Section() {
-        this.initialize();
-    }
-
     public Section(String sectionTitle) {
         this.sectionTitle = sectionTitle;
         this.initialize();
