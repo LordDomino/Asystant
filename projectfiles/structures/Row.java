@@ -60,9 +60,9 @@ public class Row {
         if (label != "") {
             GridBagConstraints gbc = new GridBagConstraints();
             gbc.insets = new Insets(5, 10, 5, 10);
-            gbc.weightx = 1.0;
-            gbc.weighty = 1.0;
-            gbc.fill = GridBagConstraints.BOTH;
+            gbc.fill = GridBagConstraints.HORIZONTAL;
+            gbc.weightx = 1;
+            gbc.weighty = 0;
             JTextArea panelLabel = new JTextArea(label);
             panelLabel.setFont(Config.defaultFont);
             panelLabel.setEditable(false);
@@ -72,9 +72,9 @@ public class Row {
         for(String field : fields) {
             GridBagConstraints gbc = new GridBagConstraints();
             gbc.insets = new Insets(5, 10, 5, 10);
-            gbc.weightx = 1.0;
-            gbc.weighty = 1.0;
             gbc.fill = GridBagConstraints.BOTH;
+            gbc.weightx = 1;
+            gbc.weighty = 0;
             JTextArea fieldLabel = new JTextArea(field);
             fieldLabel.setFont(Config.defaultFont);
             fieldLabel.setEditable(false);
@@ -93,18 +93,18 @@ public class Row {
                 }
 
                 gbc.weightx = 1.0;
-                gbc.weighty = 1.0;
-                gbc.fill = GridBagConstraints.BOTH;
+                gbc.weighty = 0.0;
+                gbc.fill = GridBagConstraints.HORIZONTAL;
                 JTextField textField = new JTextField();
                 textField.setFont(Config.defaultFont);
                 panel.add(textField, gbc);
-            } 
+            }
         }
 
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(0, 2, 0, 2);
-        gbc.weightx = gbc.weighty = 1.0;
-        gbc.fill = GridBagConstraints.BOTH;
+        gbc.weightx = 1.0;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
 
         panel.setBorder(border);
         this.mainframe.add(panel, gbc);

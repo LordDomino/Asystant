@@ -1,7 +1,10 @@
 package projectfiles;
 
+import java.awt.BorderLayout;
+import java.awt.Component;
 import java.util.ArrayList;
 
+import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 
 import projectfiles.formSections.*;
@@ -9,16 +12,21 @@ import projectfiles.structures.Row;
 import projectfiles.structures.Section;
 import projectfiles.structures.SectionTab;
 
-public class Main {
+public class Mainapp extends JFrame{
 
-    JFrame
+    static JFrame mainFrame = new JFrame();
 
-    public static void main(String args[]) {
-        packMain();
+    public static void main(String [] args) {
+        Mainapp.packMain();
     }
 
-    void packMain() {
-        add(new SectionA());
+    static void packMain() {
+        mainFrame.add(new SectionA());
+        mainFrame.add(new SectionB());
+        mainFrame.setSize(400, 400);
+        mainFrame.pack();
+        
+        mainFrame.setVisible(true);
     }
 }
 

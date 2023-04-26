@@ -3,25 +3,31 @@
  */
 package projectfiles.structures;
 
+import java.awt.GridBagLayout;
+
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
+
+import projectfiles.formSections.*;
 
 public final class SectionTab extends JTabbedPane {
     
     public static void main(String args[]) {
         JFrame mainFrame = new JFrame();
         SectionTab demo = new SectionTab();
-        JTextArea label = new JTextArea("Hello world!");
-        JTextArea label2 = new JTextArea("Hello world 2!");
-        JTextArea label3 = new JTextArea("Hello world 3!");
+        Section secA = new SectionA();
+        Section secB = new SectionB();
 
-        demo.add(label);
-        demo.add(label2);
-        demo.add(label3);
-        demo.setTitleAt(0, "Tab 1");
+        demo.add(secA);
+        demo.add(secB);
+
+        demo.setTitleAt(0, "Section A");
+        demo.setTitleAt(1, "Section B");
+
         mainFrame.add(demo);
         mainFrame.setSize(100, 100);
+        mainFrame.pack();
         mainFrame.setVisible(true);
     }
 
@@ -30,12 +36,13 @@ public final class SectionTab extends JTabbedPane {
         initialize(); // this is a special method for setting attributes of this instance
     }
 
-    public SectionTab (int tabPlacement) {
+    public SectionTab(int tabPlacement) {
         super(tabPlacement);
         initialize(); // this is a special method for setting attributes of this instance
     }
 
     protected void initialize() {
         this.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
+        // this.setLayout(new GridBagLayout());
     }
 }
