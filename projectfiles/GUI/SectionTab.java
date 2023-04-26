@@ -17,12 +17,15 @@ public final class SectionTab extends JTabbedPane {
     public void wrap() {
         Section secA = new SectionA();
         Section secB = new SectionB();
+        Section secC = new SectionC();
 
         add(secA);
         add(secB);
+        add(secC);
 
         setTitleAt(0, "Section A");
         setTitleAt(1, "Section B");
+        setTitleAt(2, "Section C");
     }
 
     public SectionTab() {
