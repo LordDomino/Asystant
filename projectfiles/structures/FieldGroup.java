@@ -6,9 +6,9 @@ import java.awt.GridBagLayout;
 import javax.swing.JPanel;
 
 public class FieldGroup extends JPanel {
-    private String groupLabel;
-    private JPanel labelsPanel;
-    private JPanel fieldsPanel;
+    
+    private String groupLabel; // This is the label of the field group.
+    private String[] fieldLabels;
 
     /**
      * Constructor for a {@code}FieldGroup{@code} instance, intended to be used
@@ -19,6 +19,9 @@ public class FieldGroup extends JPanel {
      * representing a field label in a form.
      */
     public FieldGroup(String ... fieldLabels) {
+        super();
+        this.groupLabel = "";
+        this.fieldLabels = fieldLabels;
         this.initialize();
     }
 
@@ -34,6 +37,7 @@ public class FieldGroup extends JPanel {
      */
     public FieldGroup(String groupLabel, String ... fieldLabels) {
         this.groupLabel = groupLabel;
+        this.fieldLabels = fieldLabels;
         this.initialize();
     }
 
@@ -45,19 +49,12 @@ public class FieldGroup extends JPanel {
     private void initialize() {
         this.setLayout(new GridBagLayout());
 
-        // A FieldGroup contains two child JPanels that acts as rows for the labels and for the fields.
-        this.labelsPanel = new JPanel();
-        this.fieldsPanel = new JPanel();
-
-        // Both JPanels use the GridBagLayout layout manager.
-        this.labelsPanel.setLayout(new GridBagLayout());
-        this.fieldsPanel.setLayout(new GridBagLayout());
-
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.weightx = 1;
         gbc.fill = GridBagConstraints.BOTH;
 
-        gbc.gridy = 0; this.add(this.labelsPanel);
-        gbc.gridy = 1; this.add(this.fieldsPanel);
+        for(String label : this.fieldLabels) {
+
+        }
     }
 }

@@ -2,6 +2,7 @@ package projectfiles;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.GridBagConstraints;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
@@ -26,5 +27,10 @@ public class Util {
      */
     public static ArrayList<String> newArray(String ... args) {
         return new ArrayList<String>(Arrays.asList(args));
+    }
+
+    public static void setGrid(GridBagConstraints gbc, int x, int y) {
+        gbc.gridx = x;
+        gbc.gridy = y;
     }
 }
