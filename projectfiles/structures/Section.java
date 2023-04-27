@@ -1,14 +1,10 @@
 package projectfiles.structures;
 
-import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 import java.awt.Insets;
 
 import javax.swing.JPanel;
-import javax.swing.BoxLayout;
-import javax.swing.JFrame;
 import javax.swing.JTextArea;
 
 import projectfiles.Config;

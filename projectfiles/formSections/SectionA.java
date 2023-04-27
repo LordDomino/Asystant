@@ -1,7 +1,6 @@
 package projectfiles.formSections;
 
 import java.util.ArrayList;
-import javax.swing.JPanel;
 
 import projectfiles.Util;
 import projectfiles.structures.Row;

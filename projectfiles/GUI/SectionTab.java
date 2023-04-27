@@ -1,15 +1,9 @@
 /**
  * Written by Loui Dominic Naquita
  */
-package projectfiles.GUI;
+package projectfiles.gui;
 
-import java.awt.FlowLayout;
-import java.awt.GridBagLayout;
-
-import javax.swing.BoxLayout;
-import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
-import javax.swing.JTextArea;
 
 import projectfiles.formSections.*;
 import projectfiles.structures.Section;

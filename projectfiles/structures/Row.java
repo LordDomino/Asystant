@@ -7,13 +7,9 @@ package projectfiles.structures;
 import java.awt.Color;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.awt.event.ComponentEvent;
-import java.awt.event.ComponentListener;
-import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 
 import javax.swing.border.MatteBorder;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;

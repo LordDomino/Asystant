@@ -1,17 +1,8 @@
 package projectfiles;
 
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.GridBagLayout;
-import java.util.ArrayList;
-
-import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 
-import projectfiles.formSections.*;
-import projectfiles.GUI.SectionTab;
-import projectfiles.structures.Row;
-import projectfiles.structures.Section;
+import projectfiles.gui.SectionTab;
 
 public class Mainapp extends JFrame{
 
