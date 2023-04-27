@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.GridBagConstraints;
+import java.util.concurrent.ThreadLocalRandom;
 
 import javax.swing.border.MatteBorder;
 import javax.swing.JPanel;
@@ -16,6 +17,7 @@ import javax.swing.JTextField;
 import java.util.ArrayList;
 
 import projectfiles.Config;
+import projectfiles.Util;
 
 
 /**
@@ -35,6 +37,9 @@ public class Row {
     public Row() {
         this.mainframe = new JPanel(); // instantiate JFrame class
         this.mainframe.setLayout(new GridBagLayout()); // set layout as FlowLayout to align left to right
+        
+        int[] color = Util.randomColor();
+        this.mainframe.setBackground(new Color(color[0], color[1], color[2]));
     }
 
     /**
@@ -56,16 +61,23 @@ public class Row {
         JPanel panel = new JPanel(new GridBagLayout()); // container panel for all fields
         MatteBorder border = new MatteBorder(1, 1, 1, 1, new Color(0, 0, 0)); // border for the panel
         
+        int[] panelColor = Util.randomColor();
+        panel.setBackground(new Color(panelColor[0], panelColor[1], panelColor[2]));
+
         if (label != "") {
+            
             GridBagConstraints gbc = new GridBagConstraints();
-            gbc.insets = new Insets(5, 10, 5, 10);
+            // gbc.insets = new Insets(5, 10, 5, 10);
             gbc.fill = GridBagConstraints.BOTH;
             gbc.weightx = 1;
             gbc.weighty = 1;
-
+            
             JTextArea panelLabel = new JTextArea(label);
             panelLabel.setFont(Config.defaultFont);
             panelLabel.setEditable(false);
+            
+            int[] color = Util.randomColor();
+            panelLabel.setBackground(new Color(color[0], color[1], color[2]));
         
             if (isWrappable) {
                 panelLabel.setLineWrap(true);
@@ -76,7 +88,7 @@ public class Row {
 
         for(String field : fields) {
             GridBagConstraints gbc = new GridBagConstraints();
-            gbc.insets = new Insets(5, 10, 5, 10);
+            // gbc.insets = new Insets(5, 10, 5, 10);
             gbc.fill = GridBagConstraints.BOTH;
             gbc.weightx = 1;
             gbc.weighty = 1;
@@ -84,6 +96,9 @@ public class Row {
             JTextArea fieldLabel = new JTextArea(field);
             fieldLabel.setFont(Config.defaultFont);
             fieldLabel.setEditable(false);
+
+            int[] color = Util.randomColor();
+            fieldLabel.setBackground(new Color(color[0], color[1], color[2]));
             
             if (isWrappable) {
                 fieldLabel.setLineWrap(true);
@@ -96,7 +111,7 @@ public class Row {
         if(showTextfields) {
             for(int i = 1; i <= fields.size(); i++) {
                 GridBagConstraints gbc = new GridBagConstraints();
-                gbc.insets = new Insets(0, 10, 5, 10);
+                // gbc.insets = new Insets(0, 10, 5, 10);
                 
                 if(label != "") {
                     gbc.gridx = i;
@@ -110,6 +125,9 @@ public class Row {
 
                 JTextField textField = new JTextField();
                 textField.setFont(Config.defaultFont);
+                
+                int[] color = Util.randomColor();
+                textField.setBackground(new Color(color[0], color[1], color[2]));
 
                 panel.add(textField, gbc);
             }

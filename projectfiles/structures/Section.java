@@ -30,12 +30,12 @@ public class Section extends JPanel {
         GridBagConstraints gbc = new GridBagConstraints();
 
         this.setLayout(new GridBagLayout());
-        gbc.gridx = 0;
+        gbc.gridx = 1;
         gbc.gridy = 0;
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
         
-        gbc.anchor = GridBagConstraints.WEST;
+        // gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.BOTH;
 
         this.add(titleLabel, gbc);
