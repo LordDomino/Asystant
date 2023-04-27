@@ -67,7 +67,7 @@ public class Row {
         if (label != "") {
             
             GridBagConstraints gbc = new GridBagConstraints();
-            // gbc.insets = new Insets(5, 10, 5, 10);
+            gbc.insets = new Insets(5, 10, 5, 10);
             gbc.fill = GridBagConstraints.BOTH;
             gbc.weightx = 1;
             gbc.weighty = 1;
@@ -88,7 +88,7 @@ public class Row {
 
         for(String field : fields) {
             GridBagConstraints gbc = new GridBagConstraints();
-            // gbc.insets = new Insets(5, 10, 5, 10);
+            gbc.insets = new Insets(5, 10, 5, 10);
             gbc.fill = GridBagConstraints.BOTH;
             gbc.weightx = 1;
             gbc.weighty = 1;
@@ -111,7 +111,7 @@ public class Row {
         if(showTextfields) {
             for(int i = 1; i <= fields.size(); i++) {
                 GridBagConstraints gbc = new GridBagConstraints();
-                // gbc.insets = new Insets(0, 10, 5, 10);
+                gbc.insets = new Insets(0, 10, 5, 10);
                 
                 if(label != "") {
                     gbc.gridx = i;
