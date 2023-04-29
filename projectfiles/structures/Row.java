@@ -4,21 +4,14 @@
 
 package projectfiles.structures;
 
-import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.awt.GridBagConstraints;
-import java.util.concurrent.ThreadLocalRandom;
 
 import javax.swing.border.MatteBorder;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import java.util.ArrayList;
 
-import projectfiles.Config;
-import projectfiles.Util;
 import projectfiles.gui.styles.Colors;
 
 
@@ -26,6 +19,8 @@ import projectfiles.gui.styles.Colors;
  * A {@code}Row{@code} is a structure containing a horizontal array of fields.
  */
 public class Row extends JPanel {
+
+    GridBagConstraints gbc = new GridBagConstraints();
 
     /**
      * Constructor for a {@code}Row{@code} instance.
@@ -37,8 +32,13 @@ public class Row extends JPanel {
     
     public void initialize() {
         this.setBackground(Colors.white);
-        this.setBorder(new MatteBorder(1, 0, 1, 0, Colors.black));
-        this.setLayout(new FlowLayout());
+        // this.setBorder(new MatteBorder(1, 0, 1, 0, Colors.black));
+        this.setLayout(new GridBagLayout());
+
+        gbc.insets = new Insets(3, 5, 3, 5);
+        gbc.weightx = 1;
+        gbc.weighty = 1;
+        gbc.fill = GridBagConstraints.BOTH;
     }
 
     /**
@@ -48,10 +48,12 @@ public class Row extends JPanel {
      */
     public void createPartition(String groupLabel, String[] fieldLabels) {
         FieldGroup fieldGroup = new FieldGroup(groupLabel, fieldLabels);
-        this.add(fieldGroup);
+
+        this.add(fieldGroup, gbc);
     }
 
     public void createPartition(String[] fieldLabels) {
-
+        FieldGroup fieldGroup = new FieldGroup(fieldLabels);
+        this.add(fieldGroup, gbc);
     }
 }

@@ -57,11 +57,11 @@ public class FieldGroup extends JPanel {
      */
     private void initialize() {
         this.setBackground(Colors.white);
-        this.setBorder(new MatteBorder(0, 1, 0, 1, Colors.black));
+        this.setBorder(new MatteBorder(1, 1, 1, 1, Colors.black));
         this.setLayout(new GridBagLayout());
 
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(5, 5, 5, 5);
+        gbc.insets = new Insets(7, 7, 5, 7);
         gbc.weightx = 1;
         gbc.weighty = 1;
         gbc.fill = GridBagConstraints.BOTH;
@@ -70,7 +70,7 @@ public class FieldGroup extends JPanel {
         int gridy = 0;
 
         Util.setGrid(gbc, gridx, gridy);
-
+        
         if(this.groupLabel != "") {
             FieldLabel label = new FieldLabel(groupLabel);
 
@@ -81,7 +81,7 @@ public class FieldGroup extends JPanel {
         
         for(String labelString : this.fieldLabels) {
             FieldLabel label = new FieldLabel(labelString);
-
+            
             Util.setGrid(gbc, gridx, gridy);
             this.add(label, gbc);
             gridx++;
@@ -89,7 +89,9 @@ public class FieldGroup extends JPanel {
         
         gridy++;
         gridx = 0;
-        
+
+        gbc.insets = new Insets(5, 7, 7, 7);
+
         if(this.groupLabel != "") {
             gridx = 1;
         }

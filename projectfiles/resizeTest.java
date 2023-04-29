@@ -6,7 +6,7 @@ import java.awt.GridBagLayout;
 
 import javax.swing.JFrame;
 
-import projectfiles.structures.FieldGroup;
+import projectfiles.structures.Row;
 
 public class resizeTest {
     public static void main(String[] args) {
@@ -17,10 +17,18 @@ public class resizeTest {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.weightx = 1;
         gbc.fill = GridBagConstraints.BOTH;
-        gbc.anchor = GridBagConstraints.FIRST_LINE_START;
         
-        FieldGroup group = new FieldGroup(new String[]{"Field 1", "Field 2", "Field 3 long blah blah blah blah blah blah"});
-        mainframe.add(group, gbc);
+        Row row1 = new Row();
+        Row row2 = new Row();
+        Row row3 = new Row();
+        row1.createPartition("Name", new String[]{"(Last name)", "(First name)", "(Middle initial)"});
+        row1.createPartition(new String[]{"Level/Section"});
+        row2.createPartition(new String[]{"Address"});
+        row3.createPartition(new String[]{"Mobile / Landline number"});
+
+        gbc.gridx = 0; gbc.gridy = 0; mainframe.add(row1, gbc); 
+        gbc.gridx = 0; gbc.gridy = 1; mainframe.add(row2, gbc); 
+        gbc.gridx = 0; gbc.gridy = 2; mainframe.add(row3, gbc); 
 
         mainframe.pack();
         mainframe.setVisible(true);
