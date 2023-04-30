@@ -1,3 +1,7 @@
+/**
+ * Written by Loui Dominic Naquita
+ */
+
 package projectfiles.gui.styles;
 
 import java.awt.Color;

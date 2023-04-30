@@ -1,18 +1,18 @@
+/**
+ * Written by Loui Dominic Naquita
+ */
+
 package projectfiles.structures;
 
-import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 
 import javax.swing.JPanel;
-import javax.swing.border.Border;
 import javax.swing.border.MatteBorder;
 
 import projectfiles.Util;
 import projectfiles.gui.styles.Colors;
-import projectfiles.gui.styles.Fonts;
 
 public class FieldGroup extends JPanel {
     
@@ -20,8 +20,8 @@ public class FieldGroup extends JPanel {
     private String[] fieldLabels;
 
     /**
-     * Constructor for a {@code}FieldGroup{@code} instance, intended to be used
-     * with a {@code}Row{@code} parent component. A {@code}FieldGroup{@code} is
+     * Creates a {@code}FieldGroup{@code} object, intended to be used with a
+     * {@code}Row{@code} parent component. A {@code}FieldGroup{@code} is
      * an entire JPanel that contains multiple text fields.
      * 
      * @param fieldLabels is an arbitrary number of String arguments
@@ -38,9 +38,9 @@ public class FieldGroup extends JPanel {
      * with a {@code}Row{@code} parent component. A {@code}FieldGroup{@code} is
      * an entire JPanel that contains multiple text fields.
      * 
-     * @param label is a label that does not contain a text field under it,
+     * @param label - a label that does not contain a text field under it,
      * serving as the label for the entire group.
-     * @param fieldLabels is an arbitrary number of String arguments
+     * @param fieldLabels - an arbitrary number of String arguments
      * representing a field label in a form.
      */
     public FieldGroup(String groupLabel, String[] fieldLabels) {
@@ -95,7 +95,7 @@ public class FieldGroup extends JPanel {
             gridx = 1;
         }
         
-        for(String labelString : this.fieldLabels) {
+        for(int i = 0; i < this.fieldLabels.length; i++) {
             Field field = new Field();
             
             Util.setGrid(gbc, gridx, gridy);

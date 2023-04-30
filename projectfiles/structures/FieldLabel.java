@@ -1,3 +1,7 @@
+/**
+ * Written by Loui Dominic Naquita
+ */
+
 package projectfiles.structures;
 
 import java.awt.Color;

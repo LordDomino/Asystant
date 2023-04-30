@@ -4,12 +4,10 @@
 
 package projectfiles.structures;
 
-import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 
-import javax.swing.border.MatteBorder;
 import javax.swing.JPanel;
 
 import projectfiles.gui.styles.Colors;
@@ -42,17 +40,16 @@ public class Row extends JPanel {
     }
 
     /**
-     * Creates a new split partition for the entire row.
-     * @param fields - string array of fields
-     * @param label - overall label for the entire partition
+     * Creates a new field group belonging to the current row.
+     * @param fields - the string array of fields
+     * @param label - the overall label for the entire field group
      */
-    public void createPartition(String groupLabel, String[] fieldLabels) {
+    public void createFieldGroup(String groupLabel, String[] fieldLabels) {
         FieldGroup fieldGroup = new FieldGroup(groupLabel, fieldLabels);
-
         this.add(fieldGroup, gbc);
     }
 
-    public void createPartition(String[] fieldLabels) {
+    public void createFieldGroup(String[] fieldLabels) {
         FieldGroup fieldGroup = new FieldGroup(fieldLabels);
         this.add(fieldGroup, gbc);
     }

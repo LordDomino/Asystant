@@ -3,10 +3,11 @@ package projectfiles;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
 
 import javax.swing.JFrame;
 
-import projectfiles.structures.Row;
+import projectfiles.formSections.SectionA;
 
 public class resizeTest {
     public static void main(String[] args) {
@@ -15,22 +16,16 @@ public class resizeTest {
         mainframe.setBackground(new Color(0, 0, 125));
 
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.weightx = 1;
+        gbc.insets = new Insets(10, 10, 10, 10);
+        gbc.weightx = gbc.weighty = 1;
         gbc.fill = GridBagConstraints.BOTH;
         
-        Row row1 = new Row();
-        Row row2 = new Row();
-        Row row3 = new Row();
-        row1.createPartition("Name", new String[]{"(Last name)", "(First name)", "(Middle initial)"});
-        row1.createPartition(new String[]{"Level/Section"});
-        row2.createPartition(new String[]{"Address"});
-        row3.createPartition(new String[]{"Mobile / Landline number"});
+        SectionA secA = new SectionA();
 
-        gbc.gridx = 0; gbc.gridy = 0; mainframe.add(row1, gbc); 
-        gbc.gridx = 0; gbc.gridy = 1; mainframe.add(row2, gbc); 
-        gbc.gridx = 0; gbc.gridy = 2; mainframe.add(row3, gbc); 
+        mainframe.add(secA, gbc);
 
         mainframe.pack();
+        mainframe.setMinimumSize(mainframe.getSize());
         mainframe.setVisible(true);
     }
 }
