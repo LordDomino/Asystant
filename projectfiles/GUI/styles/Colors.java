@@ -7,6 +7,7 @@ package projectfiles.gui.styles;
 import java.awt.Color;
 
 public class Colors {
-    public static Color black = new Color(0, 0, 0);
-    public static Color white = new Color(255, 255, 255);
+    public static Color BLACK = new Color(0, 0, 0);
+    public static Color WHITE = new Color(255, 255, 255);
+    public static Color GRAY = new Color(107, 107, 107);
 }

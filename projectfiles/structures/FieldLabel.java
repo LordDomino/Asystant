@@ -11,13 +11,20 @@ import javax.swing.JTextArea;
 import projectfiles.gui.styles.Fonts;
 
 public class FieldLabel extends JTextArea {
+
+    String label;
+
     public FieldLabel(String label) {
         super(label);
+        this.label = label;
         this.initialize();
     }
 
-    private void initialize() {
-        this.setFont(Fonts.default_fieldLabel);
+    protected void initialize() {
+        if (this.label.length() > 20) {
+            // this.setLineWrap(true);
+        }
+        this.setFont(Fonts.DEFAULT_FIELDLABEL);
         this.setEditable(false);
         this.setBackground(new Color(255, 255, 255));
     }

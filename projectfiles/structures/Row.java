@@ -29,14 +29,14 @@ public class Row extends JPanel {
     }
     
     public void initialize() {
-        this.setBackground(Colors.white);
+        this.setBackground(Colors.WHITE);
         // this.setBorder(new MatteBorder(1, 0, 1, 0, Colors.black));
         this.setLayout(new GridBagLayout());
 
-        gbc.insets = new Insets(3, 5, 3, 5);
-        gbc.weightx = 1;
-        gbc.weighty = 1;
-        gbc.fill = GridBagConstraints.BOTH;
+        this.gbc.insets = new Insets(3, 5, 3, 5);
+        this.gbc.weightx = 1;
+        this.gbc.weighty = 1;
+        this.gbc.fill = GridBagConstraints.BOTH;
     }
 
     /**
@@ -46,11 +46,11 @@ public class Row extends JPanel {
      */
     public void createFieldGroup(String groupLabel, String[] fieldLabels) {
         FieldGroup fieldGroup = new FieldGroup(groupLabel, fieldLabels);
-        this.add(fieldGroup, gbc);
+        this.add(fieldGroup, this.gbc);
     }
 
     public void createFieldGroup(String[] fieldLabels) {
         FieldGroup fieldGroup = new FieldGroup(fieldLabels);
-        this.add(fieldGroup, gbc);
+        this.add(fieldGroup, this.gbc);
     }
 }

@@ -15,6 +15,8 @@ import projectfiles.Util;
 import projectfiles.gui.styles.Colors;
 
 public class FieldGroup extends JPanel {
+
+    GridBagConstraints gbc = new GridBagConstraints();
     
     private String groupLabel = null; // This is the label of the field group.
     private String[] fieldLabels;
@@ -44,6 +46,7 @@ public class FieldGroup extends JPanel {
      * representing a field label in a form.
      */
     public FieldGroup(String groupLabel, String[] fieldLabels) {
+        super();
         this.groupLabel = groupLabel;
         this.fieldLabels = fieldLabels;
         this.initialize();
@@ -54,26 +57,25 @@ public class FieldGroup extends JPanel {
      * the method. Use this method to serve as a "common" constructor when using
      * multiple constructors.
      */
-    private void initialize() {
-        this.setBackground(Colors.white);
-        this.setBorder(new MatteBorder(1, 1, 1, 1, Colors.black));
+    protected void initialize() {
+        this.setBackground(Colors.WHITE);
+        this.setBorder(new MatteBorder(1, 1, 1, 1, Colors.GRAY));
         this.setLayout(new GridBagLayout());
 
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(7, 7, 5, 7);
-        gbc.weightx = 1;
-        gbc.weighty = 1;
-        gbc.fill = GridBagConstraints.BOTH;
+        this.gbc.insets = new Insets(7, 7, 5, 7);
+        this.gbc.weightx = 1;
+        this.gbc.weighty = 1;
+        this.gbc.fill = GridBagConstraints.BOTH;
 
         int gridx = 0;
         int gridy = 0;
 
-        Util.setGrid(gbc, gridx, gridy);
+        Util.setGrid(this.gbc, gridx, gridy);
         
         if(this.groupLabel != null) {
             FieldLabel label = new FieldLabel(groupLabel);
 
-            Util.setGrid(gbc, gridx, gridy);
+            Util.setGrid(this.gbc, gridx, gridy);
             this.add(label, gbc);
             gridx++;
         }
@@ -81,15 +83,15 @@ public class FieldGroup extends JPanel {
         for(String labelString : this.fieldLabels) {
             FieldLabel label = new FieldLabel(labelString);
             
-            Util.setGrid(gbc, gridx, gridy);
-            this.add(label, gbc);
+            Util.setGrid(this.gbc, gridx, gridy);
+            this.add(label, this.gbc);
             gridx++;
         }
         
         gridy++;
         gridx = 0;
 
-        gbc.insets = new Insets(5, 7, 7, 7);
+        this.gbc.insets = new Insets(5, 7, 7, 7);
 
         if(this.groupLabel != null) {
             gridx = 1;
@@ -98,8 +100,8 @@ public class FieldGroup extends JPanel {
         for(int i = 0; i < this.fieldLabels.length; i++) {
             Field field = new Field();
             
-            Util.setGrid(gbc, gridx, gridy);
-            this.add(field, gbc);
+            Util.setGrid(this.gbc, gridx, gridy);
+            this.add(field, this.gbc);
             gridx++;
         }
     }

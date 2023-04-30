@@ -7,6 +7,7 @@ import java.awt.Insets;
 
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.border.MatteBorder;
 
 import projectfiles.Util;
 import projectfiles.gui.styles.Colors;
@@ -37,7 +38,8 @@ public class Section extends JPanel {
     }
 
     private void initialize() {
-        this.setBackground(Colors.white);
+        this.setBackground(Colors.WHITE);
+        this.setBorder(new MatteBorder(1, 0, 1, 0, Colors.BLACK));
         this.setLayout(new GridBagLayout());
 
         gbc.weightx = 1;
@@ -49,7 +51,7 @@ public class Section extends JPanel {
         
         if (this.label != null) {
             JTextArea sectionLabel = new JTextArea(this.label);
-            sectionLabel.setFont(Fonts.default_sectionLabel);
+            sectionLabel.setFont(Fonts.DEFAULT_SECTIONLABEL);
             sectionLabel.setEditable(false);
             
             gbc.insets = new Insets(10, 10, 10, 10);

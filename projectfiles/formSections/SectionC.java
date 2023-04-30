@@ -8,16 +8,11 @@ import projectfiles.structures.Section;
 
 public class SectionC extends Section {
     public SectionC() {
-        super("HEALTH AND SAFETY CONDITIONS");
-        Row row1 = new Row(); row1.setShowTextfields(true);
+        super("C. HEALTH AND SAFETY CONDITIONS");
+        Row row1 = new Row();
 
-        ArrayList<String> row1_fields1 = Util.newArray("YES / NO");
         
-        String row1_label = "Is your child subject to seizures, fainting, epilepsy, bleeding, asthma or any other condition that may affect his or her safety?";
 
-        row1.createPartition(row1_fields1, row1_label);
-        row1.wrap();
-
-        addRow(row1);
+        this.add(row1);
     }
 }

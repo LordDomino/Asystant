@@ -10,11 +10,11 @@ import projectfiles.gui.styles.Fonts;
 
 public class Field extends JTextField {
     public Field() {
-        super("", 3);
+        super("", 10);
         this.initialize();
     }
     
-    private void initialize() {
-        this.setFont(Fonts.default_field);
+    protected void initialize() {
+        this.setFont(Fonts.DEFAULT_FIELD);
     }
 }
