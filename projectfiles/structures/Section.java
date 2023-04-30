@@ -2,55 +2,32 @@ package projectfiles.structures;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.Insets;
 
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 
-import projectfiles.Config;
+import projectfiles.gui.styles.Colors;
 
 public class Section extends JPanel {
 
-    JPanel container = new JPanel();
-    String sectionTitle;
-    int rowCount;
+    GridBagConstraints gbc = new GridBagConstraints();
+    String label = null;
 
-    public Section(String sectionTitle) {
-        this.sectionTitle = sectionTitle;
+    public Section() {
+        super();
         this.initialize();
     }
 
-    public void initialize() {
-        JTextArea titleLabel = new JTextArea(this.sectionTitle);
-        titleLabel.setFont(Config.defaultFont);
-        titleLabel.setEditable(false);
-        
-        container.setLayout(new GridBagLayout());
-        
-        GridBagConstraints gbc = new GridBagConstraints();
-
-        this.setLayout(new GridBagLayout());
-        gbc.gridx = 1;
-        gbc.gridy = 0;
-        gbc.gridwidth = 1;
-        gbc.gridheight = 1;
-        
-        // gbc.anchor = GridBagConstraints.WEST;
-        gbc.fill = GridBagConstraints.BOTH;
-
-        this.add(titleLabel, gbc);
-
-        gbc.gridy = 1;
-        this.add(container, gbc);
+    public Section(String label) {
+        super();
+        this.label = label;
+        this.initialize();
     }
 
-    public void addRow(Row row) {
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(3, 0, 3, 0);
-        gbc.gridy = rowCount;
-        gbc.weightx = gbc.weighty = 1;
-        gbc.fill = GridBagConstraints.BOTH;
-        this.rowCount++;
-        container.add(row.mainframe, gbc);
+    private void initialize() {
+        this.setBackground(Colors.white);
+        this.setLayout(new GridBagLayout());
+
+        gbc.weightx = 1;
+        gbc.weighty = 1;
     }
 }

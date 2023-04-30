@@ -16,7 +16,7 @@ import projectfiles.gui.styles.Fonts;
 
 public class FieldGroup extends JPanel {
     
-    private String groupLabel; // This is the label of the field group.
+    private String groupLabel = null; // This is the label of the field group.
     private String[] fieldLabels;
 
     /**
@@ -29,7 +29,6 @@ public class FieldGroup extends JPanel {
      */
     public FieldGroup(String[] fieldLabels) {
         super();
-        this.groupLabel = "";
         this.fieldLabels = fieldLabels;
         this.initialize();
     }
@@ -71,7 +70,7 @@ public class FieldGroup extends JPanel {
 
         Util.setGrid(gbc, gridx, gridy);
         
-        if(this.groupLabel != "") {
+        if(this.groupLabel != null) {
             FieldLabel label = new FieldLabel(groupLabel);
 
             Util.setGrid(gbc, gridx, gridy);
@@ -92,7 +91,7 @@ public class FieldGroup extends JPanel {
 
         gbc.insets = new Insets(5, 7, 7, 7);
 
-        if(this.groupLabel != "") {
+        if(this.groupLabel != null) {
             gridx = 1;
         }
         
