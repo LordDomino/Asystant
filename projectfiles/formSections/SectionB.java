@@ -9,7 +9,7 @@ public class SectionB extends Section {
 
         Row row1 = new Row();
         
-        row1.createFieldGroup("Name of contact person asdas asdas dasdas asd as asasdas dasd as asd sad ", new String[]{"Last name", "First name", "Middle initial"});
+        row1.createFieldGroup("Name of contact person", new String[]{"Last name", "First name", "Middle initial"});
         row1.createFieldGroup(new String[]{"Relationship"});
         row1.createFieldGroup(new String[]{"Contact number"});
 

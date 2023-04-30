@@ -6,11 +6,12 @@ package projectfiles.structures;
 
 import java.awt.Color;
 
+import javax.swing.JLabel;
 import javax.swing.JTextArea;
 
 import projectfiles.gui.styles.Fonts;
 
-public class FieldLabel extends JTextArea {
+public class FieldLabel extends JLabel {
 
     String label;
 
@@ -25,7 +26,7 @@ public class FieldLabel extends JTextArea {
             // this.setLineWrap(true);
         }
         this.setFont(Fonts.DEFAULT_FIELDLABEL);
-        this.setEditable(false);
+        // this.setEditable(false);
         this.setBackground(new Color(255, 255, 255));
     }
 }

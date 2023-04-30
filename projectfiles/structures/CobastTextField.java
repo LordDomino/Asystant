@@ -8,8 +8,8 @@ import javax.swing.JTextField;
 
 import projectfiles.gui.styles.Fonts;
 
-public class Field extends JTextField {
-    public Field() {
+public class CobastTextField extends JTextField {
+    public CobastTextField() {
         super("", 10);
         this.initialize();
     }
