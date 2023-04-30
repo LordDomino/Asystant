@@ -7,7 +7,6 @@ import javax.swing.ButtonGroup;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import javax.swing.JTextArea;
 
 import projectfiles.gui.styles.Colors;
 import projectfiles.gui.styles.Fonts;

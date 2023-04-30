@@ -7,7 +7,6 @@ package projectfiles.structures;
 import java.awt.Color;
 
 import javax.swing.JLabel;
-import javax.swing.JTextArea;
 
 import projectfiles.gui.styles.Fonts;
 
