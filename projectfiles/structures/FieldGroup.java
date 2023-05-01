@@ -8,6 +8,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.MatteBorder;
 
@@ -73,10 +74,15 @@ public class FieldGroup extends JPanel {
         Util.setGrid(this.gbc, gridx, gridy);
         
         if(this.groupLabel != null) {
-            FieldLabel label = new FieldLabel(groupLabel);
+            JLabel label = new FieldGroupLabel(groupLabel);
 
             Util.setGrid(this.gbc, gridx, gridy);
+            this.gbc.gridheight = 2;
+            this.gbc.weightx = 0;
             this.add(label, gbc);
+
+            this.gbc.gridheight = 1;
+            this.gbc.weightx = 1;
             gridx++;
         }
         

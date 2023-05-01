@@ -45,8 +45,8 @@ public class BinaryChoiceField extends JPanel {
 
         if (this.question != null) {
             JLabel questionText = new FieldLabel(this.question);
-            questionText.setFont(Fonts.DEFAULT_FIELDLABEL);
-            this.add(questionText);
+            questionText.setFont(Fonts.DEFAULT_FORMQUESTION);
+            this.add(questionText, gbc);
         }
 
         this.buttonGroupPanel.setBackground(Colors.WHITE);
@@ -66,8 +66,8 @@ public class BinaryChoiceField extends JPanel {
         this.buttonGroup.add(choice1Button);
         this.buttonGroup.add(choice2Button);
 
-        this.buttonGroupPanel.add(choice1Button);
-        this.buttonGroupPanel.add(choice2Button);
-        this.add(buttonGroupPanel);
+        this.buttonGroupPanel.add(choice1Button, buttonGroup_gbc);
+        this.buttonGroupPanel.add(choice2Button, buttonGroup_gbc);
+        this.add(buttonGroupPanel, gbc);
     }
 }

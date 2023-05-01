@@ -4,6 +4,7 @@
 
 package projectfiles.structures;
 
+import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -39,6 +40,11 @@ public class Row extends JPanel {
         this.gbc.fill = GridBagConstraints.BOTH;
     }
 
+    public void createFieldGroup(String[] fieldLabels) {
+        FieldGroup fieldGroup = new FieldGroup(fieldLabels);
+        this.add(fieldGroup, this.gbc);
+    }
+
     /**
      * Creates a new field group belonging to the current row.
      * @param fields - the string array of fields
@@ -49,8 +55,14 @@ public class Row extends JPanel {
         this.add(fieldGroup, this.gbc);
     }
 
-    public void createFieldGroup(String[] fieldLabels) {
-        FieldGroup fieldGroup = new FieldGroup(fieldLabels);
-        this.add(fieldGroup, this.gbc);
+    public void createBinaryChoiceField(String choice1, String choice2, String question) {
+        BinaryChoiceField bcf = new BinaryChoiceField(choice1, choice2, question);
+        this.add(bcf, this.gbc);
+    }
+
+    @Override
+    public Component add(Component c) {
+        this.add(c, this.gbc);
+        return c;
     }
 }
