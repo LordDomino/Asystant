@@ -4,17 +4,20 @@ import java.awt.GridBagLayout;
 
 import javax.swing.JFrame;
 
-import projectfiles.gui.MainMenu;
+import projectfiles.gui.MenuBar;
 
 public class mainMenuTest {
     public static void main(String args[]) {
         JFrame testFrame = new JFrame();
-        testFrame.setLayout(new GridBagLayout());
+        // testFrame.setLayout(new GridBagLayout());
 
-        MainMenu mainMenu = new MainMenu();
-
-        testFrame.add(mainMenu);
+        MenuBar menuBar = new MenuBar();
+            
+        testFrame.setJMenuBar(menuBar);
+        testFrame.setSize(200,200);
         testFrame.pack();
         testFrame.setVisible(true);
+
+        
     }
 }
