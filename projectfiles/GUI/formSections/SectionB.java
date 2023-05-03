@@ -1,4 +1,4 @@
-package projectfiles.formSections;
+package projectfiles.gui.formSections;
 
 import projectfiles.structures.Row;
 import projectfiles.structures.Section;

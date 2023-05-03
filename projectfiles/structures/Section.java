@@ -30,7 +30,7 @@ public class Section extends JPanel {
      * Creates a {@code}Section{@code} structure that contains a label rendered
      * at the top of the entire section.
      * @param label - the label written at the top of the entire section.
-     */
+    t */
     public Section(String label) {
         super();
         this.label = label;

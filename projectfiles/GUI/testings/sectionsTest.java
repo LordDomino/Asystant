@@ -1,4 +1,4 @@
-package projectfiles;
+package projectfiles.gui.testings;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -8,9 +8,10 @@ import java.awt.Insets;
 
 import javax.swing.JFrame;
 
-import projectfiles.formSections.*;
+import projectfiles.Util;
+import projectfiles.gui.formSections.*;
 
-public class resizeTest {
+public class sectionsTest {
     public static void main(String[] args) {
         JFrame mainframe = new JFrame();        
         mainframe.setLayout(new GridBagLayout());
