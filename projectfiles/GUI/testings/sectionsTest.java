@@ -30,7 +30,6 @@ public class sectionsTest {
         Util.setGrid(gbc, 0, 1); mainframe.add(secB, gbc);
         Util.setGrid(gbc, 0, 3); mainframe.add(secC, gbc);
         
-        
         mainframe.pack();
         mainframe.setMinimumSize(new Dimension(1000, mainframe.getHeight()));
         mainframe.setVisible(true);
