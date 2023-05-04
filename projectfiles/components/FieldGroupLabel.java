@@ -1,4 +1,4 @@
-package projectfiles.structures;
+package projectfiles.components;
 
 import java.awt.Color;
 
@@ -7,6 +7,7 @@ import javax.swing.JLabel;
 import projectfiles.gui.styles.Fonts;
 
 public class FieldGroupLabel extends JLabel{
+    
     String label;
 
     public FieldGroupLabel(String label) {

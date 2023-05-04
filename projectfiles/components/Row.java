@@ -2,12 +2,13 @@
  * Written by Loui Dominic Naquita
  */
 
-package projectfiles.structures;
+package projectfiles.components;
 
 import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
@@ -20,6 +21,7 @@ import projectfiles.gui.styles.Colors;
 public class Row extends JPanel {
 
     GridBagConstraints gbc = new GridBagConstraints();
+    ArrayList<FieldGroup> fieldGroups = new ArrayList<FieldGroup>();
 
     /**
      * Constructor for a {@code}Row{@code} instance.
@@ -31,7 +33,6 @@ public class Row extends JPanel {
     
     public void initialize() {
         this.setBackground(Colors.WHITE);
-        // this.setBorder(new MatteBorder(1, 0, 1, 0, Colors.black));
         this.setLayout(new GridBagLayout());
 
         this.gbc.insets = new Insets(3, 5, 3, 5);

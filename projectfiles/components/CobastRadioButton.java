@@ -1,4 +1,4 @@
-package projectfiles.structures;
+package projectfiles.components;
 
 import javax.swing.ImageIcon;
 import javax.swing.JRadioButton;

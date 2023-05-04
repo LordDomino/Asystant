@@ -2,7 +2,7 @@
  * Written by Loui Dominic Naquita
  */
 
-package projectfiles.structures;
+package projectfiles.components;
 
 import java.awt.Color;
 
@@ -24,7 +24,7 @@ public class FieldLabel extends JLabel {
         if (this.label.length() > 20) {
             // this.setLineWrap(true);
         }
-        this.setFont(Fonts.DEFAULT_FIELDLABEL);
+        this.setFont(Fonts.DEFAULT_LABEL);
         // this.setEditable(false);
         this.setBackground(new Color(255, 255, 255));
     }

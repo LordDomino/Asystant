@@ -1,4 +1,4 @@
-package projectfiles.structures;
+package projectfiles.components;
 
 import java.awt.Component;
 import java.awt.GridBagConstraints;

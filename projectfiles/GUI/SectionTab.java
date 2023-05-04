@@ -5,8 +5,8 @@ package projectfiles.gui;
 
 import javax.swing.JTabbedPane;
 
-import projectfiles.formSections.*;
-import projectfiles.structures.Section;
+import projectfiles.components.Section;
+import projectfiles.gui.formSections.*;
 
 public final class SectionTab extends JTabbedPane {
 

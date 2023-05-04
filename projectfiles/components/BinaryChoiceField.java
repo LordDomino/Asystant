@@ -1,4 +1,4 @@
-package projectfiles.structures;
+package projectfiles.components;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -60,8 +60,8 @@ public class BinaryChoiceField extends JPanel {
         JRadioButton choice1Button = new CobastRadioButton(this.choice1);
         JRadioButton choice2Button = new CobastRadioButton(this.choice2);
 
-        choice1Button.setFont(Fonts.DEFAULT_FIELDLABEL);
-        choice2Button.setFont(Fonts.DEFAULT_FIELDLABEL);
+        choice1Button.setFont(Fonts.DEFAULT_LABEL);
+        choice2Button.setFont(Fonts.DEFAULT_LABEL);
 
         this.buttonGroup.add(choice1Button);
         this.buttonGroup.add(choice2Button);

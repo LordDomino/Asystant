@@ -2,7 +2,7 @@
  * Written by Loui Dominic Naquita
  */
 
-package projectfiles.structures;
+package projectfiles.components;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -22,6 +22,11 @@ public class FieldGroup extends JPanel {
     private String groupLabel = null; // This is the label of the field group.
     private String[] fieldLabels;
 
+    public FieldGroup() {
+        super();
+        this.initialize();
+    }
+
     /**
      * Creates a {@code}FieldGroup{@code} object, intended to be used with a
      * {@code}Row{@code} parent component. A {@code}FieldGroup{@code} is
@@ -34,6 +39,7 @@ public class FieldGroup extends JPanel {
         super();
         this.fieldLabels = fieldLabels;
         this.initialize();
+        this.addFields();
     }
 
     /**
@@ -51,6 +57,7 @@ public class FieldGroup extends JPanel {
         this.groupLabel = groupLabel;
         this.fieldLabels = fieldLabels;
         this.initialize();
+        this.addFields();
     }
 
     /**
@@ -67,6 +74,10 @@ public class FieldGroup extends JPanel {
         this.gbc.weightx = 1;
         this.gbc.weighty = 1;
         this.gbc.fill = GridBagConstraints.BOTH;
+
+    }
+    
+    protected void addFields() {
 
         int gridx = 0;
         int gridy = 0;

@@ -8,7 +8,7 @@ import java.awt.Insets;
 
 import javax.swing.JFrame;
 
-import projectfiles.formSections.*;
+import projectfiles.gui.formSections.*;
 
 public class resizeTest {
     public static void main(String[] args) {

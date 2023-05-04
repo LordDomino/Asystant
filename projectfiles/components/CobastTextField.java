@@ -2,7 +2,7 @@
  * Written by Loui Dominic Naquita
  */
 
-package projectfiles.structures;
+package projectfiles.components;
 
 import javax.swing.JTextField;
 
