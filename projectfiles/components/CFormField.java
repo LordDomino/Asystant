@@ -1,7 +1,15 @@
 package projectfiles.components;
 
+import java.awt.GridBagLayout;
+
 import javax.swing.JPanel;
 
+/**
+ * {@code}CFormField{@code} is a Cobast component acting like Swing's
+ * {@code}JTextField{@code} but is customized to include a {@code}JLabel{@code}
+ * either to the left or to the top of the text field. It inherits from Swing's
+ * {@code}JPanel{@code}.
+ */
 public class CFormField extends JPanel {
     
     /**
@@ -16,8 +24,12 @@ public class CFormField extends JPanel {
      */
     public static final int VERTICAL = 1;
 
+    /**
+     * The string label to be written in the label
+     */
     String label;
     int orientation = CFormField.HORIZONTAL;
+    GridBagLayout layout = new GridBagLayout();
     
     /**
      * Creates a new {@code}CFormField{@code} object with the specified label
@@ -28,7 +40,7 @@ public class CFormField extends JPanel {
     public CFormField(String label) {
         super();
         this.label = label;
-        this.setLayout(new GridBagLayout());
+        this.setLayout(layout);
     }
 
     /**
@@ -38,12 +50,13 @@ public class CFormField extends JPanel {
      * 
      * @param label - the text label that will be rendered with the text field
      * @param orientation - the direction that determines how the label and the
-     * text field will be place, either from left to right or from top to
+     * text field will be placed, either from left to right or from top to
      * bottom
      */
     public CFormField(String label, int orientation) {
         super();
         this.label = label;
+        this.setLayout(layout);
         
         if (orientation == CFormField.HORIZONTAL) {
             this.orientation = orientation;
