@@ -17,7 +17,7 @@ import javax.swing.JTextField;
  * @see JLabel
  * @see JTextField
  */
-public class CFormField extends JPanel {
+public class CFormField extends CFieldGroup {
     
     /**
      * The horizontal orientation constant. This indicates a horizontal 
@@ -32,12 +32,26 @@ public class CFormField extends JPanel {
     public static final int VERTICAL = 1;
 
     /**
-     * The string label to be written in the label
+     * The string label to be displayed as the label.
      */
     String label;
+
+    /**
+     * The orientation of this form field indicating the placement of the label
+     * and the text field.
+     */
     int orientation = CFormField.HORIZONTAL;
-    GridBagLayout layout = new GridBagLayout();
-    
+ 
+    /**
+     * The component serving as this object's label.
+     */
+    JLabel labelComponent;
+
+    /**
+     * The component serving as this object's text field.
+     */
+    JTextField textFieldComponent;
+
     /**
      * Creates a new {@code}CFormField{@code} object with the specified label
      * for the field.
@@ -47,7 +61,6 @@ public class CFormField extends JPanel {
     public CFormField(String label) {
         super();
         this.label = label;
-        this.setLayout(layout);
     }
 
     /**
@@ -63,7 +76,6 @@ public class CFormField extends JPanel {
     public CFormField(String label, int orientation) {
         super();
         this.label = label;
-        this.setLayout(layout);
         
         if (orientation == CFormField.HORIZONTAL) {
             this.orientation = orientation;
@@ -71,6 +83,22 @@ public class CFormField extends JPanel {
             this.orientation = orientation;
         } else {
             throw new IllegalArgumentException("Value " + orientation + " is not a valid integer value for the parameter \"orientation\"");
+        }
+
+        this.constructComponents();
+    }
+
+    @Override
+    void constructComponents() {
+        this.labelComponent = new CLabel(this.label);
+        this.textFieldComponent = new CTextField();
+
+        if (this.orientation == CFormField.HORIZONTAL) {
+            this.addHorizontal(labelComponent);
+            this.addHorizontal(textFieldComponent);
+        } else if (this.orientation == CFormField.VERTICAL) {
+            this.addVertical(labelComponent);
+            this.addVertical(textFieldComponent);
         }
     }
 }
