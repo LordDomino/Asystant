@@ -2,13 +2,20 @@ package projectfiles.components;
 
 import java.awt.GridBagLayout;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 /**
  * {@code}CFormField{@code} is a Cobast component acting like Swing's
  * {@code}JTextField{@code} but is customized to include a {@code}JLabel{@code}
  * either to the left or to the top of the text field. It inherits from Swing's
  * {@code}JPanel{@code}.
+ * 
+ * @author Loui Dominic Naquita
+ * @see JPanel
+ * @see JLabel
+ * @see JTextField
  */
 public class CFormField extends JPanel {
     

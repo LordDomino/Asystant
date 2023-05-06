@@ -14,7 +14,8 @@ import projectfiles.gui.styles.Fonts;
 public class CTextField extends JTextField {
 
     /**
-     * Creates a {@code}CTextField{@code} object.
+     * Creates a {@code}CTextField{@code} object at a default of 10 columns
+     * that contains an empty string.
      */
     public CTextField() {
         super("", 10);
