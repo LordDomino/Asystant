@@ -57,8 +57,8 @@ public class BinaryChoiceField extends JPanel {
         buttonGroup_gbc.weighty = 1;
         buttonGroup_gbc.fill = GridBagConstraints.BOTH;
 
-        JRadioButton choice1Button = new CobastRadioButton(this.choice1);
-        JRadioButton choice2Button = new CobastRadioButton(this.choice2);
+        JRadioButton choice1Button = new CRadioButton(this.choice1);
+        JRadioButton choice2Button = new CRadioButton(this.choice2);
 
         choice1Button.setFont(Fonts.DEFAULT_LABEL);
         choice2Button.setFont(Fonts.DEFAULT_LABEL);

@@ -115,7 +115,7 @@ public class FieldGroup extends JPanel {
         }
         
         for(int i = 0; i < this.fieldLabels.length; i++) {
-            CobastTextField field = new CobastTextField();
+            CTextField field = new CTextField();
             
             Util.setGrid(this.gbc, gridx, gridy);
             this.add(field, this.gbc);

@@ -13,14 +13,6 @@ import projectfiles.gui.styles.Fonts;
  * @see JLabel
  */
 public class CLabel extends JLabel {
-
-    /**
-     * Creates a {@code}CLabel{@code} object.
-     */
-    public CLabel() {
-        super();
-    }
-
     /**
      * Creates a {@code}CLabel{@code} object with the specified string of text
      * to display.
