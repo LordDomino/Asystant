@@ -19,6 +19,18 @@ import projectfiles.Util;
  * @see JPanel
  */
 public class CFieldGroup extends JPanel {
+
+    /**
+     * The horizontal orientation constant. This indicates a horizontal 
+     * orientation (from left to right) of the components.
+     */
+    public static final int HORIZONTAL = 0;
+
+    /**
+     * The vertical orientation constant. This indicates a vertical orientation
+     * (from top to bottom) of the components.
+     */
+    public static final int VERTICAL = 1;
     
     /**
      * This object's {@code}GridBagConstraints{@code} providing the constraints 
@@ -36,7 +48,7 @@ public class CFieldGroup extends JPanel {
      * This object's {@code}Inset{@code} providing the side insets of every
      * component.
      */
-    public final Insets insets = new Insets(0, 0, 0, 0); // replace this instantiation with reference to a future 'default' margin
+    public final Insets insets = new Insets(2, 2, 2, 2); // replace this instantiation with reference to a future 'default' margin
 
     /**
      * This object's {@code}Color{@code} providing the background color of it.
@@ -44,12 +56,23 @@ public class CFieldGroup extends JPanel {
     public final Color bgColor = new Color(255, 255, 255);
 
     /**
+     * The default add component orientation if {@code}followOrientation{@code}
+     * is true.
+     */
+    public int orientation = CFieldGroup.HORIZONTAL;
+
+    /**
+     * The boolean that indicates whether or not the orientation is followed.
+     */
+    public boolean followOrientation = false;
+
+    /**
      * Creates a {@code}CFieldGroup{@code} object.
      * <p>
      * During the construction of the object, the appropriate layout manager
      * is set, calling the {@code}GridBagConstraints{@code} field
      * {@code}gbc{@code}, along with {@code}gbc{@code}'s layout specifications
-     * such as insets.
+     * such as insets and background color.
      */
     public CFieldGroup() {
         super();
@@ -60,12 +83,39 @@ public class CFieldGroup extends JPanel {
     }
 
     /**
+     * Creates a {@code}CFieldGroup{@code} object with the specified orientation
+     * of the components.
+     * <p>
+     * During the construction of the object, the appropriate layout manager
+     * is set, calling the {@code}GridBagConstraints{@code} field
+     * {@code}gbc{@code}, along with {@code}gbc{@code}'s layout specifications
+     * such as insets and background color.
+     */
+    public CFieldGroup(int orientation) {
+        super();
+        this.setLayout(this.layout);
+        Util.setGrid(this.gbc, 0, 0);
+        this.setGridBagConstraintValues();
+        this.setBackground(this.bgColor);
+
+        if (orientation == CFieldGroup.HORIZONTAL) {
+            this.orientation = orientation;
+        } else if (orientation == CFieldGroup.VERTICAL) {
+            this.orientation = orientation;
+        } else {
+            throw new IllegalArgumentException("Value " + orientation + " is not a valid integer value for the parameter \"orientation\"");
+        }
+    }
+
+
+    /**
      * This is a convenience method for modifying {@code}this.gbc{@code}'s
      * grid bag constraint values. This shall be called inside the current
      * class' constructor.
      */
     public void setGridBagConstraintValues() {
         this.gbc.insets = this.insets;
+        this.gbc.fill = GridBagConstraints.BOTH;
     }
 
     /**
@@ -74,7 +124,23 @@ public class CFieldGroup extends JPanel {
      */
     @Override
     public Component add(Component component) {
-        this.add(component, this.gbc);
+        if (this.followOrientation) {
+            if (this.orientation == CFieldGroup.HORIZONTAL) {
+                this.gbc.gridx++;
+            } else if (this.orientation == CFieldGroup.VERTICAL) {
+                this.gbc.gridy++;
+            }
+
+            this.add(component, this.gbc);
+        } else {
+            if (this.orientation == CFieldGroup.HORIZONTAL) {
+                this.gbc.gridx++;
+            } else if (this.orientation == CFieldGroup.VERTICAL) {
+                this.gbc.gridy++;
+            }
+
+            this.add(component, this.gbc);
+        }
         return component;
     }
 
@@ -83,10 +149,14 @@ public class CFieldGroup extends JPanel {
      * 
      * @param component - the component to add to this object horizontally
      */
-    public Component addHorizontal(Component component) {
-        this.add(component, this.gbc);
-        this.gbc.gridx++;
-        return component;
+    public Component addHorizontal(Component component) throws Exception {
+        if (this.followOrientation) {
+            throw new Exception("Cannot add the component horizontally while the orientation is being followed!");
+        } else {
+            this.gbc.gridx++;
+            this.add(component, this.gbc);
+            return component;
+        }
     }
 
     /** 
@@ -94,10 +164,14 @@ public class CFieldGroup extends JPanel {
      * 
      * @param component - the component to add to this object vertically
      */
-    public Component addVertical(Component component) {
-        this.add(component, this.gbc);
-        this.gbc.gridy++;
-        return component;
+    public Component addVertical(Component component) throws Exception {
+        if (this.followOrientation) {
+            throw new Exception("Cannot add the component vertically while the orientation is being followed!");
+        } else {
+            this.gbc.gridy++;
+            this.add(component, this.gbc);
+            return component;
+        }
     }
 
     /**
@@ -116,10 +190,16 @@ public class CFieldGroup extends JPanel {
         return component;
     }
 
+    public void setFollowOrientation(boolean b) {
+        this.followOrientation = b;
+        this.gbc.gridy = 0;
+        this.gbc.gridx = 0;
+    }
+
     /**
      * This is a convenience method for adding the necessary children
      * components of this container (if containing any subcomponents), intended
-     * to be called on constructors of this class.
+     * to be called inside constructors of this class.
      */
-    void constructComponents() {}
+    void constructComponents() throws Exception {}
 }
