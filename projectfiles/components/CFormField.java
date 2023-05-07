@@ -2,6 +2,7 @@ package projectfiles.components;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 /**
@@ -30,7 +31,7 @@ public class CFormField extends CFieldGroup {
 	/**
 	 * The component serving as this object's text field.
 	 */
-	JTextField textFieldComponent;
+	JTextArea textFieldComponent;
 
 	/**
 	 * Creates a new {@code}CFormField{@code} object with the specified label
@@ -69,11 +70,14 @@ public class CFormField extends CFieldGroup {
 	}
 
 	@Override
-	void constructComponents() throws Exception {
+	public void constructComponents() throws Exception {
 		this.labelComponent = new CLabel(this.label);
 		this.textFieldComponent = new CTextField();
-
+		
+		this.gbc.weightx = 0; this.gbc.weighty = 0;
 		this.add(labelComponent);
+		
+		this.gbc.weightx = 1; this.gbc.weighty = 1;
 		this.add(textFieldComponent);
 	}
 }

@@ -1,12 +1,13 @@
 package projectfiles.components;
 
 
+import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JLabel;
 
-public class CMultipleChoiceGroup extends CFieldGroup {
+public class CMultipleChoice extends CFieldGroup {
 
 	/**
 	 * The text string indicating the header of the multiple choices.
@@ -50,18 +51,21 @@ public class CMultipleChoiceGroup extends CFieldGroup {
 	 * @param headerOrientation - the value indicating the placement behavior of
 	 * @param choices - the array of multiple choices
 	 */
-	public CMultipleChoiceGroup(String header, int headerOrientation,
+	public CMultipleChoice(String header, int headerOrientation,
 	int choicesOrientation, String ... choices) throws Exception {
 			super();
 			this.header = header;
 			this.choices = choices;
 			
 			try {
-				this.headerPlacement = (int) matchValue(headerOrientation, CFormField.LEFT, CFormField.RIGHT, CFormField.TOP, CFormField.BOTTOM);
-				if (this.headerPlacement == CFormField.LEFT || this.headerPlacement == CFormField.RIGHT) {
-					this.orientation = CFormField.HORIZONTAL;
-				} else if (this.headerPlacement == CFormField.TOP || this.headerPlacement == CFormField.BOTTOM) {
-					this.orientation = CFormField.VERTICAL;
+				this.headerPlacement = (int) matchValue(
+					headerOrientation, CFieldGroup.LEFT, CFieldGroup.RIGHT,
+					CFieldGroup.TOP, CFieldGroup.BOTTOM, CFieldGroup.HORIZONTAL,
+					CFieldGroup.VERTICAL);
+				if (this.headerPlacement == CFieldGroup.LEFT || this.headerPlacement == CFieldGroup.RIGHT || this.headerPlacement == CFieldGroup.HORIZONTAL) {
+					this.orientation = CFieldGroup.HORIZONTAL;
+				} else if (this.headerPlacement == CFieldGroup.TOP || this.headerPlacement == CFieldGroup.BOTTOM || this.headerPlacement == CFieldGroup.VERTICAL) {
+					this.orientation = CFieldGroup.VERTICAL;
 				}
 			} catch (Exception e) {
 				throw new IllegalArgumentException("Invalid headerOrientation value!");
@@ -69,7 +73,7 @@ public class CMultipleChoiceGroup extends CFieldGroup {
 			
 			try {
 				this.choicesOrientation = (int) matchValue(choicesOrientation,
-				CFormField.HORIZONTAL, CFormField.VERTICAL);
+				CFieldGroup.HORIZONTAL, CFieldGroup.VERTICAL);
 			} catch (Exception e) {
 				throw new IllegalArgumentException("Invalid choicesOrientation value!");
 			}
@@ -79,7 +83,7 @@ public class CMultipleChoiceGroup extends CFieldGroup {
 	}
 
 	@Override
-	void constructComponents() throws Exception {
+	public void constructComponents() throws Exception {
 		this.headerComponent = new JLabel(this.header);
 		this.choicesGroupComponent = new CFieldGroup(this.choicesOrientation);
 		this.choicesGroup = new ButtonGroup();
@@ -90,16 +94,23 @@ public class CMultipleChoiceGroup extends CFieldGroup {
 			this.choicesGroup.add(choiceComponent);
 		}
 
-		if (this.headerPlacement == CFormField.LEFT || this.headerPlacement == CFormField.TOP) {
+		if (this.headerPlacement == CFieldGroup.LEFT || this.headerPlacement == CFieldGroup.TOP || this.headerPlacement == CFieldGroup.HORIZONTAL || this.headerPlacement == CFieldGroup.VERTICAL) {
+			this.gbc.weightx = 0; this.gbc.weighty = 1;
 			this.add(this.headerComponent);
 			this.add(this.choicesGroupComponent);
-		} else if (this.headerPlacement == CFormField.RIGHT || this.headerPlacement == CFormField.BOTTOM) {
+			this.gbc.weightx = 1; this.gbc.weighty = 1;
+		} else if (this.headerPlacement == CFieldGroup.RIGHT || this.headerPlacement == CFieldGroup.BOTTOM) {
+			this.gbc.weightx = 0; this.gbc.weighty = 1;
 			this.add(this.choicesGroupComponent);
 			this.add(this.headerComponent);
+			this.gbc.weightx = 1; this.gbc.weighty = 1;
 		}
 	}
 
 	void setGridBagConstraintValues() {
 		this.gbc.insets = new Insets(5, 5, 5, 5);
+		// this.gbc.weightx = 1;
+		// this.gbc.weighty = 1;
+		// this.gbc.fill = GridBagConstraints.BOTH;
 	}
 }

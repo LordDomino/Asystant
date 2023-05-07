@@ -7,8 +7,10 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 
 import javax.swing.JPanel;
+import javax.swing.border.MatteBorder;
 
 import projectfiles.Util;
+import projectfiles.gui.styles.Colors;
 
 /**
  * {@code}CFieldGroup{@code} is a container extending from Java Swing's
@@ -67,7 +69,7 @@ public class CFieldGroup extends JPanel {
 	 * This object's {@code}Inset{@code} providing the side insets of every
 	 * component.
 	 */
-	public final Insets insets = new Insets(2, 2, 2, 2); // replace this instantiation with a reference to a future 'default' margin
+	public final Insets insets = new Insets(3, 3, 3, 3); // replace this instantiation with a reference to a future 'default' margin
 
 	/**
 	 * This object's {@code}Color{@code} providing the background color of it.
@@ -95,10 +97,7 @@ public class CFieldGroup extends JPanel {
 	 */
 	public CFieldGroup() {
 		super();
-		this.setLayout(this.layout);
-		this.setGridBagConstraintValues();
-
-		this.setBackground(this.bgColor);
+		this.initialize();
 	}
 
 	/**
@@ -112,10 +111,7 @@ public class CFieldGroup extends JPanel {
 	 */
 	public CFieldGroup(int orientation) {
 		super();
-		this.setLayout(this.layout);
-		Util.setGrid(this.gbc, 0, 0);
-		this.setGridBagConstraintValues();
-		this.setBackground(this.bgColor);
+		this.initialize();
 
 		if (orientation == CFieldGroup.HORIZONTAL) {
 			this.orientation = orientation;
@@ -126,6 +122,13 @@ public class CFieldGroup extends JPanel {
 		}
 	}
 
+	public void initialize() {
+		this.setLayout(this.layout);
+		Util.setGrid(this.gbc, 0, 0);
+		this.setGridBagConstraintValues();
+		this.setBackground(this.bgColor);
+		// this.setBorder(new MatteBorder(1, 1, 1, 1, Colors.BLACK));
+	}
 
 	/**
 	 * This is a convenience method for modifying {@code}this.gbc{@code}'s
@@ -135,6 +138,8 @@ public class CFieldGroup extends JPanel {
 	private void setGridBagConstraintValues() {
 		this.gbc.insets = this.insets;
 		this.gbc.fill = GridBagConstraints.BOTH;
+		this.gbc.weightx = 1;
+		this.gbc.weighty = 1;
 	}
 
 	/**
@@ -224,7 +229,7 @@ public class CFieldGroup extends JPanel {
 	 * {@code}constructComponents(){@code} is used to manage custom field group
 	 * layouts and must be overridden when extending this current class.
 	 */
-	void constructComponents() throws Exception {}
+	public void constructComponents() throws Exception {}
 
 	/**
 	 * Returns the matching value if the specified value matched any of the

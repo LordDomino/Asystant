@@ -12,20 +12,20 @@ import projectfiles.gui.styles.Fonts;
 
 public class FieldLabel extends JLabel {
 
-    String label;
+	String label;
 
-    public FieldLabel(String label) {
-        super(label);
-        this.label = label;
-        this.initialize();
-    }
+	public FieldLabel(String label) {
+		super(label);
+		this.label = label;
+		this.initialize();
+	}
 
-    protected void initialize() {
-        if (this.label.length() > 20) {
-            // this.setLineWrap(true);
-        }
-        this.setFont(Fonts.DEFAULT_LABEL);
-        // this.setEditable(false);
-        this.setBackground(new Color(255, 255, 255));
-    }
+	protected void initialize() {
+		if (this.label.length() > 20) {
+			// this.setLineWrap(true);
+		}
+		this.setFont(Fonts.DEFAULT_LABEL);
+		// this.setEditable(false);
+		this.setBackground(new Color(255, 255, 255));
+	}
 }
