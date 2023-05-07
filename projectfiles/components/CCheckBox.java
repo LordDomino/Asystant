@@ -12,15 +12,15 @@ import projectfiles.gui.styles.Fonts;
  * @see JCheckBox
  */
 public class CCheckBox extends JCheckBox {
-    
-    /**
-     * Creates {@code}CCheckBox{@code} object with the specified text string to
-     * display.
-     * 
-     * @param text - the text string to display
-     */
-    public CCheckBox(String text) {
-        super(text);
-        this.setFont(Fonts.DEFAULT_LABEL);
-    }
+	
+	/**
+	 * Creates {@code}CCheckBox{@code} object with the specified text string to
+	 * display.
+	 * 
+	 * @param text - the text string to display
+	 */
+	public CCheckBox(String text) {
+		super(text);
+		this.setFont(Fonts.DEFAULT_LABEL);
+	}
 }

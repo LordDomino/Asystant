@@ -13,23 +13,23 @@ import projectfiles.gui.styles.Fonts;
  */
 public class CTextField extends JTextField {
 
-    /**
-     * Creates a {@code}CTextField{@code} object at a default of 10 columns
-     * that contains an empty string.
-     */
-    public CTextField() {
-        super("", 10);
-        this.setFont(Fonts.DEFAULT_FIELD);
-    }
+	/**
+	 * Creates a {@code}CTextField{@code} object at a default of 10 columns
+	 * that contains an empty string.
+	 */
+	public CTextField() {
+		super("", 10);
+		this.setFont(Fonts.DEFAULT_FIELD);
+	}
 
-    /**
-     * Creates a {@code}CTextField{@code} object with the specified pre-typed
-     * text.
-     * 
-     * @param text - the pre-typed text rendered with the text field
-     */
-    public CTextField(String text) {
-        super(text, 10);
-        this.setFont(Fonts.DEFAULT_FIELD);
-    }
+	/**
+	 * Creates a {@code}CTextField{@code} object with the specified pre-typed
+	 * text.
+	 * 
+	 * @param text - the pre-typed text rendered with the text field
+	 */
+	public CTextField(String text) {
+		super(text, 10);
+		this.setFont(Fonts.DEFAULT_FIELD);
+	}
 }

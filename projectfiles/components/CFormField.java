@@ -17,65 +17,63 @@ import javax.swing.JTextField;
  */
 public class CFormField extends CFieldGroup {
 
-    /**
-     * The string label to be displayed as the label.
-     */
-    String label;
+	/**
+	 * The string label to be displayed as the label.
+	 */
+	String label;
  
-    /**
-     * The component serving as this object's label.
-     */
-    JLabel labelComponent;
+	/**
+	 * The component serving as this object's label.
+	 */
+	JLabel labelComponent;
 
-    /**
-     * The component serving as this object's text field.
-     */
-    JTextField textFieldComponent;
+	/**
+	 * The component serving as this object's text field.
+	 */
+	JTextField textFieldComponent;
 
-    /**
-     * Creates a new {@code}CFormField{@code} object with the specified label
-     * for the field.
-     * 
-     * @param label - the text label that will be rendered with the text field 
-     */
-    public CFormField(String label) throws Exception {
-        super();
-        this.label = label;
+	/**
+	 * Creates a new {@code}CFormField{@code} object with the specified label
+	 * for the field.
+	 * 
+	 * @param label - the text label that will be rendered with the text field 
+	 */
+	public CFormField(String label) throws Exception {
+		super();
+		this.label = label;
 
-        this.constructComponents();
-    }
+		this.constructComponents();
+	}
 
-    /**
-     * Creates a new {@code}CFormField{@code} object with the specified label
-     * for the field and the orientation of the placement of the label and text
-     * field.
-     * 
-     * @param label - the text label that will be rendered with the text field
-     * @param orientation - the direction that determines how the label and the
-     * text field will be placed, either from left to right or from top to
-     * bottom
-     */
-    public CFormField(String label, int orientation) throws Exception {
-        super();
-        this.label = label;
-        
-        if (orientation == CFormField.HORIZONTAL) {
-            this.orientation = orientation;
-        } else if (orientation == CFormField.VERTICAL) {
-            this.orientation = orientation;
-        } else {
-            throw new IllegalArgumentException("Value " + orientation + " is not a valid integer value for the parameter \"orientation\"");
-        }
+	/**
+	 * Creates a new {@code}CFormField{@code} object with the specified label
+	 * for the field and the orientation of the placement of the label and text
+	 * field.
+	 * 
+	 * @param label - the text label that will be rendered with the text field
+	 * @param orientation - the direction that determines how the label and the
+	 * text field will be placed, either from left to right or from top to
+	 * bottom
+	 */
+	public CFormField(String label, int orientation) throws Exception {
+		super();
+		this.label = label;
 
-        this.constructComponents();
-    }
+		try {
+			this.orientation = (int) matchValue(orientation, CFieldGroup.HORIZONTAL, CFieldGroup.VERTICAL);
+		} catch (Exception e) {
+			throw new IllegalArgumentException("Invalid orientation value!");
+		}
 
-    @Override
-    void constructComponents() throws Exception {
-        this.labelComponent = new CLabel(this.label);
-        this.textFieldComponent = new CTextField();
+		this.constructComponents();
+	}
 
-        this.add(labelComponent);
-        this.add(textFieldComponent);
-    }
+	@Override
+	void constructComponents() throws Exception {
+		this.labelComponent = new CLabel(this.label);
+		this.textFieldComponent = new CTextField();
+
+		this.add(labelComponent);
+		this.add(textFieldComponent);
+	}
 }

@@ -5,7 +5,6 @@ import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.awt.LayoutManager;
 
 import javax.swing.JPanel;
 
@@ -20,186 +19,235 @@ import projectfiles.Util;
  */
 public class CFieldGroup extends JPanel {
 
-    /**
-     * The horizontal orientation constant. This indicates a horizontal 
-     * orientation (from left to right) of the components.
-     */
-    public static final int HORIZONTAL = 0;
+	/**
+	 * The horizontal orientation constant. This indicates a horizontal 
+	 * orientation (from left to right) of the components.
+	 */
+	public static final int HORIZONTAL = 0;
 
-    /**
-     * The vertical orientation constant. This indicates a vertical orientation
-     * (from top to bottom) of the components.
-     */
-    public static final int VERTICAL = 1;
-    
-    /**
-     * This object's {@code}GridBagConstraints{@code} providing the constraints 
-     * for every component.
-     */
-    public final GridBagConstraints gbc = new GridBagConstraints();
+	/**
+	 * The vertical orientation constant. This indicates a vertical orientation
+	 * (from top to bottom) of the components.
+	 */
+	public static final int VERTICAL = 1;
+	
+	/**
+	 * The left side placement constant.
+	 */
+	public static final int LEFT = 2;
 
-    /**
-     * The object's {@code}GridBagLayout{@code} providing the layout for every
-     * component.
-     */
-    public final GridBagLayout layout = new GridBagLayout();
+	/**
+	 * The right side placement constant.
+	 */
+	public static final int RIGHT = 3;
 
-    /**
-     * This object's {@code}Inset{@code} providing the side insets of every
-     * component.
-     */
-    public final Insets insets = new Insets(2, 2, 2, 2); // replace this instantiation with reference to a future 'default' margin
+	/**
+	 * The top side placement constant.
+	 */
+	public static final int TOP = 4;
 
-    /**
-     * This object's {@code}Color{@code} providing the background color of it.
-     */
-    public final Color bgColor = new Color(255, 255, 255);
+	/**
+	 * The bottom side placement constant.
+	 */
+	public static final int BOTTOM = 5;
 
-    /**
-     * The default add component orientation if {@code}followOrientation{@code}
-     * is true.
-     */
-    public int orientation = CFieldGroup.HORIZONTAL;
+	/**
+	 * This object's {@code}GridBagConstraints{@code} providing the constraints 
+	 * for every component.
+	 */
+	public final GridBagConstraints gbc = new GridBagConstraints();
 
-    /**
-     * The boolean that indicates whether or not the orientation is followed.
-     */
-    public boolean followOrientation = false;
+	/**
+	 * The object's {@code}GridBagLayout{@code} providing the layout for every
+	 * component.
+	 */
+	public final GridBagLayout layout = new GridBagLayout();
 
-    /**
-     * Creates a {@code}CFieldGroup{@code} object.
-     * <p>
-     * During the construction of the object, the appropriate layout manager
-     * is set, calling the {@code}GridBagConstraints{@code} field
-     * {@code}gbc{@code}, along with {@code}gbc{@code}'s layout specifications
-     * such as insets and background color.
-     */
-    public CFieldGroup() {
-        super();
-        this.setLayout(this.layout);
-        this.setGridBagConstraintValues();
+	/**
+	 * This object's {@code}Inset{@code} providing the side insets of every
+	 * component.
+	 */
+	public final Insets insets = new Insets(2, 2, 2, 2); // replace this instantiation with a reference to a future 'default' margin
 
-        this.setBackground(this.bgColor);
-    }
+	/**
+	 * This object's {@code}Color{@code} providing the background color of it.
+	 */
+	public final Color bgColor = new Color(255, 255, 255);
 
-    /**
-     * Creates a {@code}CFieldGroup{@code} object with the specified orientation
-     * of the components.
-     * <p>
-     * During the construction of the object, the appropriate layout manager
-     * is set, calling the {@code}GridBagConstraints{@code} field
-     * {@code}gbc{@code}, along with {@code}gbc{@code}'s layout specifications
-     * such as insets and background color.
-     */
-    public CFieldGroup(int orientation) {
-        super();
-        this.setLayout(this.layout);
-        Util.setGrid(this.gbc, 0, 0);
-        this.setGridBagConstraintValues();
-        this.setBackground(this.bgColor);
+	/**
+	 * The default add component orientation if {@code}followOrientation{@code}
+	 * is true.
+	 */
+	public int orientation = CFieldGroup.HORIZONTAL;
 
-        if (orientation == CFieldGroup.HORIZONTAL) {
-            this.orientation = orientation;
-        } else if (orientation == CFieldGroup.VERTICAL) {
-            this.orientation = orientation;
-        } else {
-            throw new IllegalArgumentException("Value " + orientation + " is not a valid integer value for the parameter \"orientation\"");
-        }
-    }
+	/**
+	 * The boolean that indicates whether or not the orientation is followed.
+	 */
+	public boolean followOrientation = false;
+
+	/**
+	 * Creates a {@code}CFieldGroup{@code} object.
+	 * <p>
+	 * During the construction of the object, the appropriate layout manager
+	 * is set, calling the {@code}GridBagConstraints{@code} field
+	 * {@code}gbc{@code}, along with {@code}gbc{@code}'s layout specifications
+	 * such as insets and background color.
+	 */
+	public CFieldGroup() {
+		super();
+		this.setLayout(this.layout);
+		this.setGridBagConstraintValues();
+
+		this.setBackground(this.bgColor);
+	}
+
+	/**
+	 * Creates a {@code}CFieldGroup{@code} object with the specified orientation
+	 * of the components.
+	 * <p>
+	 * During the construction of the object, the appropriate layout manager
+	 * is set, calling the {@code}GridBagConstraints{@code} field
+	 * {@code}gbc{@code}, along with {@code}gbc{@code}'s layout specifications
+	 * such as insets and background color.
+	 */
+	public CFieldGroup(int orientation) {
+		super();
+		this.setLayout(this.layout);
+		Util.setGrid(this.gbc, 0, 0);
+		this.setGridBagConstraintValues();
+		this.setBackground(this.bgColor);
+
+		if (orientation == CFieldGroup.HORIZONTAL) {
+			this.orientation = orientation;
+		} else if (orientation == CFieldGroup.VERTICAL) {
+			this.orientation = orientation;
+		} else {
+			throw new IllegalArgumentException("Value " + orientation + " is not a valid integer value for the parameter \"orientation\"");
+		}
+	}
 
 
-    /**
-     * This is a convenience method for modifying {@code}this.gbc{@code}'s
-     * grid bag constraint values. This shall be called inside the current
-     * class' constructor.
-     */
-    public void setGridBagConstraintValues() {
-        this.gbc.insets = this.insets;
-        this.gbc.fill = GridBagConstraints.BOTH;
-    }
+	/**
+	 * This is a convenience method for modifying {@code}this.gbc{@code}'s
+	 * grid bag constraint values. This shall be called inside the current
+	 * class' constructor.
+	 */
+	private void setGridBagConstraintValues() {
+		this.gbc.insets = this.insets;
+		this.gbc.fill = GridBagConstraints.BOTH;
+	}
 
-    /**
-     * Adds the specified component with this object's
-     * {@code}GridBagConstraints{@code}.
-     */
-    @Override
-    public Component add(Component component) {
-        if (this.followOrientation) {
-            if (this.orientation == CFieldGroup.HORIZONTAL) {
-                this.gbc.gridx++;
-            } else if (this.orientation == CFieldGroup.VERTICAL) {
-                this.gbc.gridy++;
-            }
+	/**
+	 * Adds the specified component with this object's
+	 * {@code}GridBagConstraints{@code}.
+	 */
+	@Override
+	public Component add(Component component) {
+		if (this.orientation == CFieldGroup.HORIZONTAL) {
+			this.gbc.gridx++;
+		} else if (this.orientation == CFieldGroup.VERTICAL) {
+			this.gbc.gridy++;
+		}
+		this.add(component, this.gbc);
 
-            this.add(component, this.gbc);
-        } else {
-            if (this.orientation == CFieldGroup.HORIZONTAL) {
-                this.gbc.gridx++;
-            } else if (this.orientation == CFieldGroup.VERTICAL) {
-                this.gbc.gridy++;
-            }
+		return component;
+	}
 
-            this.add(component, this.gbc);
-        }
-        return component;
-    }
+	/** 
+	 * Adds the specified component to this object in a horizontal manner.
+	 * 
+	 * @param component - the component to add to this object horizontally
+	 */
+	public Component addHorizontal(Component component) throws Exception {
+		if (this.followOrientation) {
+			throw new Exception("Cannot add the component horizontally while the orientation is being followed!");
+		} else {
+			this.gbc.gridx++;
+			this.add(component, this.gbc);
+			return component;
+		}
+	}
 
-    /** 
-     * Adds the specified component to this object in a horizontal manner.
-     * 
-     * @param component - the component to add to this object horizontally
-     */
-    public Component addHorizontal(Component component) throws Exception {
-        if (this.followOrientation) {
-            throw new Exception("Cannot add the component horizontally while the orientation is being followed!");
-        } else {
-            this.gbc.gridx++;
-            this.add(component, this.gbc);
-            return component;
-        }
-    }
+	/** 
+	 * Adds the specified component to this object in a vertical manner.
+	 * 
+	 * @param component - the component to add to this object vertically
+	 */
+	public Component addVertical(Component component) throws Exception {
+		if (this.followOrientation) {
+			throw new Exception("Cannot add the component vertically while the orientation is being followed!");
+		} else {
+			this.gbc.gridy++;
+			this.add(component, this.gbc);
+			return component;
+		}
+	}
 
-    /** 
-     * Adds the specified component to this object in a vertical manner.
-     * 
-     * @param component - the component to add to this object vertically
-     */
-    public Component addVertical(Component component) throws Exception {
-        if (this.followOrientation) {
-            throw new Exception("Cannot add the component vertically while the orientation is being followed!");
-        } else {
-            this.gbc.gridy++;
-            this.add(component, this.gbc);
-            return component;
-        }
-    }
+	/**
+	 * Adds the specified component to this object at a specified row and
+	 * column.
+	 * 
+	 * @param component - the component to add to this object at column x and
+	 * row y
+	 * @param x - the horizontal position of the component across the row
+	 * @param y - the vertical position of the component across the column
+	 * @return the component argument
+	 */
+	public Component addOnGrid(Component component, int x, int y) throws Exception {
+		if (this.followOrientation) {
+			throw new Exception("Cannot add the component to a grid position while the orientation is being followed!");
+		} else {
+			Util.setGrid(this.gbc, x, y);
+			this.add(component, this.gbc);
+			return component;
+		}
+	}
 
-    /**
-     * Adds the specified component to this object at a specified row and
-     * column.
-     * 
-     * @param component - the component to add to this object at column x and
-     * row y
-     * @param x - the horizontal position of the component across the row
-     * @param y - the vertical position of the component across the column
-     * @return the component argument
-     */
-    public Component addOnGrid(Component component, int x, int y) {
-        Util.setGrid(this.gbc, x, y);
-        this.add(component, this.gbc);
-        return component;
-    }
+	/**
+	 * Sets the boolean flag to whether or not this container follows horizontal
+	 * or vertical placement of components.
+	 * 
+	 * @param b - the boolean to whether or not this container follows
+	 * horizontal and vertical placement of components
+	 */
+	public void setFollowOrientation(boolean b) {
+		this.followOrientation = b;
+		// this.gbc.gridy = 0;
+		// this.gbc.gridx = 0;
+	}
 
-    public void setFollowOrientation(boolean b) {
-        this.followOrientation = b;
-        this.gbc.gridy = 0;
-        this.gbc.gridx = 0;
-    }
+	/**
+	 * This is a convenience method for adding the necessary children
+	 * components of this container (if containing any subcomponents), intended
+	 * to be called inside constructors of this class.
+	 * <p>
+	 * {@code}constructComponents(){@code} is used to manage custom field group
+	 * layouts and must be overridden when extending this current class.
+	 */
+	void constructComponents() throws Exception {}
 
-    /**
-     * This is a convenience method for adding the necessary children
-     * components of this container (if containing any subcomponents), intended
-     * to be called inside constructors of this class.
-     */
-    void constructComponents() throws Exception {}
+	/**
+	 * Returns the matching value if the specified value matched any of the
+	 * given match values.
+	 * 
+	 * @param value - the value to check if it matches any of the match values
+	 * @param matchValues - the expected desired value/s
+	 * @return {@code}true{@code} if the value matches any of the match values,
+	 * otherwise, {@code}false{@code}
+	 * @throws Exception
+	 */
+	Object matchValue(Object value, Object ... matchValues) throws Exception {
+		Object returnValue = null;
+		for (Object matchValue : matchValues) {
+			if (value == matchValue) {
+				returnValue = matchValue;
+			}
+		}
+
+		if (returnValue == null) {
+			throw new Exception("The specified value \"" + value + "\" did not match any of the given match values!");
+		} else {
+			return returnValue;
+		}
+	}
 }

@@ -15,17 +15,17 @@ import projectfiles.gui.styles.Fonts;
  */
 public class CRadioButton extends JRadioButton {
 
-    /**
-     * Creates a {@code}CRadioButton{@code} object with the specified label to
-     * display.
-     * 
-     * @param label - the text string to display
-     */
-    public CRadioButton(String label) {
-        super(label);
-        this.setBackground(Colors.WHITE);
-        this.setFont(Fonts.DEFAULT_FORMOPTION);
-        this.setIcon(new ImageIcon("projectfiles/gui/graphics/radiobutton.png"));
-        this.setSelectedIcon(new ImageIcon("projectfiles/gui/graphics/radiobutton_selected.png"));
-    }
+	/**
+	 * Creates a {@code}CRadioButton{@code} object with the specified label to
+	 * display.
+	 * 
+	 * @param label - the text string to display
+	 */
+	public CRadioButton(String label) {
+		super(label);
+		this.setBackground(Colors.WHITE);
+		this.setFont(Fonts.DEFAULT_FORMOPTION);
+		this.setIcon(new ImageIcon("projectfiles/gui/graphics/radiobutton.png"));
+		this.setSelectedIcon(new ImageIcon("projectfiles/gui/graphics/radiobutton_selected.png"));
+	}
 }
