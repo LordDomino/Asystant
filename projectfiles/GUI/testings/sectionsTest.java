@@ -8,7 +8,6 @@ import java.awt.Insets;
 
 import javax.swing.JFrame;
 
-import projectfiles.Util;
 import projectfiles.gui.formSections.*;
 
 public class sectionsTest {

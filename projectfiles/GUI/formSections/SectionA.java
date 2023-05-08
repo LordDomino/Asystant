@@ -1,7 +1,7 @@
 package projectfiles.gui.formSections;
 
-import projectfiles.structures.Row;
-import projectfiles.structures.Section;
+import projectfiles.components.Row;
+import projectfiles.components.Section;
 
 /**
  * Written by Loui Dominic Naquita
