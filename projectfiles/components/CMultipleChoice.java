@@ -53,33 +53,34 @@ public class CMultipleChoice extends CFieldGroup {
 	int choicesOrientation, String ... choices) throws Exception {
 			super();
 			this.header = header;
+			this.headerPlacement = headerPlacement;
+			this.choicesOrientation = choicesOrientation;
 			this.choices = choices;
 			
 			try {
-				this.headerPlacement = (int) matchValue(headerPlacement, CFieldGroup.LEFT, CFieldGroup.RIGHT,	CFieldGroup.TOP, CFieldGroup.BOTTOM, CFieldGroup.HORIZONTAL, CFieldGroup.VERTICAL);
-				if (this.headerPlacement == CFieldGroup.LEFT || this.headerPlacement == CFieldGroup.RIGHT || this.headerPlacement == CFieldGroup.HORIZONTAL) {
+				this.headerPlacement = (int) matchValue(headerPlacement, CFieldGroup.LEFT, CFieldGroup.RIGHT,	CFieldGroup.TOP, CFieldGroup.BOTTOM);
+				if (this.headerPlacement == CFieldGroup.LEFT || this.headerPlacement == CFieldGroup.RIGHT) {
 					this.orientation = CFieldGroup.HORIZONTAL;
-				} else if (this.headerPlacement == CFieldGroup.TOP || this.headerPlacement == CFieldGroup.BOTTOM || this.headerPlacement == CFieldGroup.VERTICAL) {
+				} else if (this.headerPlacement == CFieldGroup.TOP || this.headerPlacement == CFieldGroup.BOTTOM) {
 					this.orientation = CFieldGroup.VERTICAL;
 				}
 			} catch (Exception e) {
-				throw new IllegalArgumentException("Invalid headerOrientation value!");
+				throw new IllegalArgumentException("Invalid headerPlacement value!");
 			}
-			
+
 			try {
-				this.choicesOrientation = (int) matchValue(choicesOrientation,
-				CFieldGroup.HORIZONTAL, CFieldGroup.VERTICAL);
+				this.choicesOrientation = (int) matchValue(choicesOrientation, CFieldGroup.HORIZONTAL, CFieldGroup.VERTICAL);
 			} catch (Exception e) {
 				throw new IllegalArgumentException("Invalid choicesOrientation value!");
 			}
-			
+	
 			this.setGridBagConstraintValues();
 			this.constructComponents();
 	}
 
 	@Override
 	public void constructComponents() throws Exception {
-		this.headerComponent = new JLabel(this.header);
+		this.headerComponent = new CLabel(this.header);
 		this.choicesGroupComponent = new CFieldGroup(this.choicesOrientation);
 		this.choicesGroup = new ButtonGroup();
 
@@ -89,7 +90,7 @@ public class CMultipleChoice extends CFieldGroup {
 			this.choicesGroup.add(choiceComponent);
 		}
 
-		if (this.headerPlacement == CFieldGroup.LEFT || this.headerPlacement == CFieldGroup.TOP || this.headerPlacement == CFieldGroup.HORIZONTAL || this.headerPlacement == CFieldGroup.VERTICAL) {
+		if (this.headerPlacement == CFieldGroup.LEFT || this.headerPlacement == CFieldGroup.TOP) {
 			this.gbc.weightx = 0; this.gbc.weighty = 1;
 			this.add(this.headerComponent);
 			this.add(this.choicesGroupComponent);
