@@ -1,43 +1,68 @@
 package projectfiles.components;
 
-public class CDetailedMultipleChoice extends CMultipleChoice {
+public class CDetailedMultipleChoice extends CFieldGroup {
 
+  String header;
+  int headerPlacement;
   String detailsLabel;
+  int detailsPlacement;
+  int choicesOrientation;
+  String[] choices;
+
+  CMultipleChoice multipleChoiceComponent;
   CFormField detailsComponent;
 
   /**
    * 
    * @param header
    * @param detailsLabel
-   * @param orientation
+   * @param headerPlacement
    * @param choicesOrientation
    * @param choices
    * @throws Exception
    */
-  public CDetailedMultipleChoice(String header, String detailsLabel,
-    int orientation, int choicesOrientation, String ... choices) throws Exception {
-      super(header, orientation, choicesOrientation, choices);
+  public CDetailedMultipleChoice(String header, int headerPlacement, String detailsLabel,
+    int detailsPlacement, int choicesOrientation, String ... choices) throws Exception {
+      super();
+      this.header = header;
+      this.headerPlacement = headerPlacement;
       this.detailsLabel = detailsLabel;
+      this.detailsPlacement = detailsPlacement;
+      this.choicesOrientation = choicesOrientation;
+      this.choices = choices;
       // this.setFollowOrientation(true);
 
       try {
-		  	this.orientation = (int) matchValue(orientation, CFormField.HORIZONTAL, CFormField.VERTICAL);
-		  	if (this.orientation == CFormField.HORIZONTAL) {
-		  		this.orientation = CFormField.HORIZONTAL;
-		  	} else if (this.headerPlacement == CFormField.VERTICAL) {
-		  		this.orientation = CFormField.VERTICAL;
-		  	}
+		  	this.headerPlacement = (int) matchValue(headerPlacement, CFieldGroup.LEFT, CFieldGroup.RIGHT, CFieldGroup.TOP, CFieldGroup.BOTTOM);
 		  } catch (Exception e) {
-		  	throw new IllegalArgumentException("Invalid orientation value!");
+		  	throw new IllegalArgumentException("Invalid headerPlacement value!");
 		  }
 
-      super.constructComponents();
+      try {
+        this.detailsPlacement = (int) matchValue(detailsPlacement, CFieldGroup.LEFT, CFieldGroup.RIGHT, CFieldGroup.TOP, CFieldGroup.BOTTOM);
+        if (this.detailsPlacement == CFieldGroup.LEFT || this.detailsPlacement == CFieldGroup.RIGHT) {
+          this.orientation = CFieldGroup.HORIZONTAL;
+        } else if (this.detailsPlacement == CFieldGroup.TOP || this.detailsPlacement == CFieldGroup.BOTTOM) {
+          this.orientation = CFieldGroup.VERTICAL;
+        }
+      } catch (Exception e) {
+        throw new IllegalAccessException("Invalid detailsPlacement value!");
+      }
+
       this.constructComponents();
-      
-      this.add(this.detailsComponent);
     }
     
     public void constructComponents() throws Exception {
-      this.detailsComponent = new CFormField(this.detailsLabel, CFormField.VERTICAL);
-    } // leave this method as it is
+      this.multipleChoiceComponent = new CMultipleChoice(this.header, this.headerPlacement, this.choicesOrientation, this.choices);
+      this.detailsComponent = new CFormField(this.detailsLabel, CFieldGroup.VERTICAL);
+      this.detailsComponent.textFieldComponent.setRows(3);
+
+      if (this.detailsPlacement == CFieldGroup.LEFT || this.detailsPlacement == CFieldGroup.TOP) {
+        this.add(detailsComponent);
+        this.add(multipleChoiceComponent);
+      } else if (this.detailsPlacement == CFieldGroup.RIGHT || this.detailsPlacement == CFieldGroup.BOTTOM) {
+        this.add(multipleChoiceComponent);
+        this.add(detailsComponent);
+      }
+    }
 }

@@ -1,7 +1,5 @@
 package projectfiles.components;
 
-
-import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
 import javax.swing.ButtonGroup;
@@ -48,20 +46,17 @@ public class CMultipleChoice extends CFieldGroup {
 	 * 
 	 * @param header - the text string indicating the header of the multiple
 	 * choices
-	 * @param headerOrientation - the value indicating the placement behavior of
+	 * @param headerPlacement - the value indicating the placement behavior of
 	 * @param choices - the array of multiple choices
 	 */
-	public CMultipleChoice(String header, int headerOrientation,
+	public CMultipleChoice(String header, int headerPlacement,
 	int choicesOrientation, String ... choices) throws Exception {
 			super();
 			this.header = header;
 			this.choices = choices;
 			
 			try {
-				this.headerPlacement = (int) matchValue(
-					headerOrientation, CFieldGroup.LEFT, CFieldGroup.RIGHT,
-					CFieldGroup.TOP, CFieldGroup.BOTTOM, CFieldGroup.HORIZONTAL,
-					CFieldGroup.VERTICAL);
+				this.headerPlacement = (int) matchValue(headerPlacement, CFieldGroup.LEFT, CFieldGroup.RIGHT,	CFieldGroup.TOP, CFieldGroup.BOTTOM, CFieldGroup.HORIZONTAL, CFieldGroup.VERTICAL);
 				if (this.headerPlacement == CFieldGroup.LEFT || this.headerPlacement == CFieldGroup.RIGHT || this.headerPlacement == CFieldGroup.HORIZONTAL) {
 					this.orientation = CFieldGroup.HORIZONTAL;
 				} else if (this.headerPlacement == CFieldGroup.TOP || this.headerPlacement == CFieldGroup.BOTTOM || this.headerPlacement == CFieldGroup.VERTICAL) {
@@ -109,8 +104,5 @@ public class CMultipleChoice extends CFieldGroup {
 
 	void setGridBagConstraintValues() {
 		this.gbc.insets = new Insets(5, 5, 5, 5);
-		// this.gbc.weightx = 1;
-		// this.gbc.weighty = 1;
-		// this.gbc.fill = GridBagConstraints.BOTH;
 	}
 }

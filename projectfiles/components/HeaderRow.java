@@ -2,7 +2,7 @@ package projectfiles.components;
 
 import javax.swing.JLabel;
 
-public class HeaderRow extends Row {
+public class HeaderRow extends CRow {
 
     JLabel headerLabel;
     String text;

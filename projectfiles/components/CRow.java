@@ -18,15 +18,14 @@ import projectfiles.gui.styles.Colors;
 /**
  * A {@code}Row{@code} is a structure containing a horizontal array of fields.
  */
-public class Row extends JPanel {
+public class CRow extends JPanel {
 
     GridBagConstraints gbc = new GridBagConstraints();
-    ArrayList<FieldGroup> fieldGroups = new ArrayList<FieldGroup>();
 
     /**
      * Constructor for a {@code}Row{@code} instance.
      */
-    public Row() {
+    public CRow() {
         super();
         this.initialize();
     }

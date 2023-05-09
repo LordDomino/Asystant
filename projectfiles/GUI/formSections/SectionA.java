@@ -1,6 +1,6 @@
 package projectfiles.gui.formSections;
 
-import projectfiles.components.Row;
+import projectfiles.components.CRow;
 import projectfiles.components.Section;
 
 /**
@@ -10,11 +10,11 @@ public final class SectionA extends Section {
 
     public SectionA() {
         super("A. PERSONAL INFORMATION");
-        Row row1 = new Row();
-        Row row2 = new Row();
-        Row row3 = new Row();
-        Row row4 = new Row();
-        Row row5 = new Row();
+        CRow row1 = new CRow();
+        CRow row2 = new CRow();
+        CRow row3 = new CRow();
+        CRow row4 = new CRow();
+        CRow row5 = new CRow();
         
         row1.createFieldGroup("Name", new String[]{"(Last name)", "(First name)", "(Middle initial)"});
         row1.createFieldGroup(new String[]{"Level/Section"});

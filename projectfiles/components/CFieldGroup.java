@@ -7,10 +7,8 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 
 import javax.swing.JPanel;
-import javax.swing.border.MatteBorder;
 
 import projectfiles.Util;
-import projectfiles.gui.styles.Colors;
 
 /**
  * {@code}CFieldGroup{@code} is a container extending from Java Swing's
