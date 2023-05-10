@@ -25,11 +25,13 @@ public class CTextFieldGroup extends CFieldGroup {
 
     if (groupLabel != null) {
       this.groupLabelComponent = new CLabel(this.groupLabel);
+      this.gbc.weightx = 0;
       this.add(groupLabelComponent);
     }
 
     for (String fieldLabel : this.fieldLabels) {
       CFormField formField = new CFormField(fieldLabel, CFieldGroup.VERTICAL);
+      this.gbc.weightx = 1;
       this.add(formField);
     }
   }
