@@ -87,6 +87,8 @@ public class CFieldGroup extends JPanel {
 	 */
 	public boolean followOrientation = false;
 
+	public boolean isPaintGroup = false;
+
 	/**
 	 * Creates a {@code}CFieldGroup{@code} object.
 	 * <p>
@@ -140,6 +142,7 @@ public class CFieldGroup extends JPanel {
 		this.gbc.fill = GridBagConstraints.BOTH;
 		this.gbc.weightx = 1;
 		this.gbc.weighty = 1;
+		this.gbc.anchor = GridBagConstraints.WEST;
 	}
 
 	/**
@@ -255,4 +258,14 @@ public class CFieldGroup extends JPanel {
 			return returnValue;
 		}
 	}
+
+	public void setPaintGroup(boolean b) {
+    this.isPaintGroup = b;
+  }
+
+  void paintGroup() {
+    if (isPaintGroup) {
+      this.setBorder(new MatteBorder(1, 1, 1, 1, Colors.GRAY));
+    }
+  }
 }

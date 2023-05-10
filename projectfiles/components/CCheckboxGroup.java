@@ -1,5 +1,6 @@
 package projectfiles.components;
 
+<<<<<<< HEAD
 import java.awt.CheckboxGroup;
 import java.awt.Insets;
 
@@ -50,6 +51,95 @@ public class CCheckboxGroup extends CFieldGroup {
 		this.headerComponent = new JLabel(this.header);
 		this.choicesGroupComponent = new CFieldGroup(this.choicesOrientation);
 		// this.choicesGroup = new CheckboxGroup(choices);
+=======
+import java.awt.Insets;
+
+/**
+ * {@code}CheckboxGroup{@code} is a container for multiple
+ * {@code}CCheckbox{@code} components and a {@code}CLabel{@code} header.
+ * 
+ * @author Loui Dominic Naquita
+ */
+public class CCheckboxGroup extends CFieldGroup {
+
+  /**
+   * The text string displayed as the header of the group.
+   */
+  String header;
+
+  /**
+   * The placement side of the header.
+   */
+  int headerPlacement;
+
+  /**
+   * The placement orientation of the header.
+   */
+  int choicesOrientation;
+
+  /**
+   * The array of text string to be displayed as checkbox labels.
+   */
+  String[] choices;
+
+  /**
+   * The component object for the header.
+   */
+  CLabel headerComponent;
+
+  /**
+   * The {@code}CFieldGroup{@code} component object to contain the choices.
+   */
+  CFieldGroup choicesGroupComponent;
+
+  /**
+   * Creates a {@code}CCheckboxGroup{@code} object with the specified header,
+   * details label, and choices.
+   * 
+   * @param header - the text string displayed as the header of the group
+   * @param headerPlacement - the placement side of the header, which can either
+   * be {@code}LEFT{@code}, {@code}RIGHT{@code}, {@code}TOP{@code}, or
+   * {@code}BOTTOM{@code}
+   * @param choicesOrientation - the placement orientation of the choices, which
+   * can only be either {@code}HORIZONTAL{@code} or {@code}VERTICAL{@code}
+   * @param choices - the array of text string to display as checkbox labels
+   * @throws Exception
+   */
+  public CCheckboxGroup(String header, int headerPlacement,
+  int choicesOrientation, String ... choices) throws Exception {
+    super();
+    this.header = header;
+    this.headerPlacement = headerPlacement;
+    this.choicesOrientation = choicesOrientation;
+    this.choices = choices;
+
+    try {
+      this.headerPlacement = (int) matchValue(headerPlacement, CFieldGroup.LEFT, CFieldGroup.RIGHT, CFieldGroup.TOP, CFieldGroup.BOTTOM);
+      if (this.headerPlacement == CFieldGroup.LEFT || this.headerPlacement == CFieldGroup.RIGHT) {
+        this.orientation = CFieldGroup.HORIZONTAL;
+      } else if (this.headerPlacement == CFieldGroup.TOP || this.headerPlacement == CFieldGroup.BOTTOM) {
+        this.orientation = CFieldGroup.VERTICAL;
+      }
+    } catch (Exception e) {
+      throw new IllegalAccessException("Invalid headerPlacement value!");
+    }
+
+    try {
+      this.choicesOrientation = (int) matchValue(choicesOrientation, CFieldGroup.HORIZONTAL, CFieldGroup.VERTICAL);
+    } catch (Exception e) {
+      throw new IllegalAccessException("Invalid choicesOrientation value!");
+    }
+
+    setGridBagConstraintValues();
+    constructComponents();
+    paintGroup();
+  }
+
+  @Override
+	public void constructComponents() throws Exception {
+		this.headerComponent = new CLabel(this.header);
+		this.choicesGroupComponent = new CFieldGroup(this.choicesOrientation);
+>>>>>>> 003ab95b4aa51397bfefae3ea3254b5914ba87e2
 
 		for (String choice : this.choices) {
 			CCheckbox choiceComponent = new CCheckbox(choice);
@@ -69,7 +159,13 @@ public class CCheckboxGroup extends CFieldGroup {
 		}
 	}
 
+<<<<<<< HEAD
     void setGridBagConstraintValues() {
         this.gbc.insets = new Insets(5, 5, 5, 5);
     }
+=======
+  void setGridBagConstraintValues() {
+		this.gbc.insets = new Insets(5, 5, 5, 5);
+	} 
+>>>>>>> 003ab95b4aa51397bfefae3ea3254b5914ba87e2
 }

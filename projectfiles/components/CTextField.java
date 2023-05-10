@@ -1,7 +1,9 @@
 package projectfiles.components;
 
+import javax.swing.BorderFactory;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.MatteBorder;
 
 import projectfiles.gui.styles.Colors;
@@ -44,6 +46,7 @@ public class CTextField extends JTextArea {
 	public void initialize() {
 		this.setFont(Fonts.DEFAULT_FIELD);
 		this.setBorder(new MatteBorder(1, 1, 1, 1, Colors.GRAY));
+		this.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), new EmptyBorder(2, 2, 2, 2)));
 		this.setLineWrap(true);
 		this.setWrapStyleWord(true);
 	}

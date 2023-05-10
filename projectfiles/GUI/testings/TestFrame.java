@@ -3,6 +3,7 @@ package projectfiles.gui.testings;
 import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
 
 import javax.swing.JFrame;
 
@@ -17,7 +18,11 @@ public class TestFrame extends JFrame {
         this.gbc.gridx = 0;
         this.gbc.gridy = 0;
         this.gbc.weightx = 1;
+<<<<<<< HEAD
         // this.gbc.weighty = 1;
+=======
+        this.gbc.insets = new Insets(10, 10, 10, 10);
+>>>>>>> 003ab95b4aa51397bfefae3ea3254b5914ba87e2
     }
     
     @Override

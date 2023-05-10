@@ -8,7 +8,6 @@ import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
@@ -18,15 +17,14 @@ import projectfiles.gui.styles.Colors;
 /**
  * A {@code}Row{@code} is a structure containing a horizontal array of fields.
  */
-public class Row extends JPanel {
+public class CRow extends JPanel {
 
     GridBagConstraints gbc = new GridBagConstraints();
-    ArrayList<FieldGroup> fieldGroups = new ArrayList<FieldGroup>();
 
     /**
      * Constructor for a {@code}Row{@code} instance.
      */
-    public Row() {
+    public CRow() {
         super();
         this.initialize();
     }
