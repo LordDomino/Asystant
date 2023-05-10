@@ -1,5 +1,6 @@
 package projectfiles.gui.testings;
 
+import projectfiles.components.CDetailedFormField;
 import projectfiles.components.CDetailedListedBinaryChoice;
 import projectfiles.components.CListedBinaryChoice;
 
@@ -17,6 +18,7 @@ public class test_ListedBinaryChoice {
       "Each question is aligned with a choice 1 vs choice 2 component",
       "Is Java coding easy?", "Another question in here!");
 
+    dlbc.overrideField(0, new CDetailedFormField("Label 1", "Label 2"));
 
     tf.add(lbc);
     tf.add(dlbc);

@@ -1,5 +1,7 @@
 package projectfiles.gui.testings;
 
+import java.awt.FlowLayout;
+
 import projectfiles.components.CDetailedCheckboxGroup;
 import projectfiles.components.CDetailedMultipleChoice;
 import projectfiles.components.CFieldGroup;
@@ -9,6 +11,7 @@ import projectfiles.components.CMultipleChoice;
 public class test_MultipleChoice {
   public static void main(String args[]) throws Exception {
     TestFrame mainFrame = new TestFrame();
+    mainFrame.setLayout(new FlowLayout());
 
     CMultipleChoice mcg1 = new CMultipleChoice("Top header", CFormField.TOP, CFormField.VERTICAL, "Loui", "Lance", "Ryl", "Zeamon", "Sir Arnold");
     CMultipleChoice mcg2 = new CMultipleChoice("Bottom header", CFormField.BOTTOM, CFormField.VERTICAL, "Loui", "Lance", "Ryl", "Zeamon", "Sir Arnold");
