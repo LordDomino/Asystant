@@ -5,21 +5,19 @@ public class CDetailedCheckboxGroup extends CFieldGroup {
   String header;
   int headerPlacement;
   String detailsLabel;
-  int detailsPlacement;
   int choicesOrientation;
   String[] choices;
 
   CLabel headerComponent;
+  CLabel labelComponent;
   CFieldGroup choicesGroupComponent;
 
   public CDetailedCheckboxGroup(String header, int headerPlacement,
-  String detailsLabel, int detailsPlacement, int choicesOrientation,
-  String ... choices) throws Exception {
+  String detailsLabel, int choicesOrientation, String ... choices) throws Exception {
     super();
     this.header = header;
     this.headerPlacement = headerPlacement;
     this.detailsLabel = detailsLabel;
-    this.detailsPlacement = detailsPlacement;
     this.choicesOrientation = choicesOrientation;
     this.choices = choices;
 
@@ -46,32 +44,27 @@ public class CDetailedCheckboxGroup extends CFieldGroup {
   @Override
 	public void constructComponents() throws Exception {
 		this.headerComponent = new CLabel(this.header);
+    this.labelComponent = new CLabel(this.detailsLabel);
 		this.choicesGroupComponent = new CFieldGroup(this.choicesOrientation);
 
+    this.choicesGroupComponent.addOnGrid(this.labelComponent, 1, 0);
+    this.choicesGroupComponent.gbc.gridx = 0;
+
 		for (String choice : this.choices) {
-
-      int detailsOrientation;
-
-      if (this.detailsPlacement == CFieldGroup.LEFT || this.detailsPlacement == CFieldGroup.RIGHT) {
-        detailsOrientation = CFieldGroup.HORIZONTAL;
-      } else if (this.detailsPlacement == CFieldGroup.TOP || this.detailsPlacement == CFieldGroup.BOTTOM) {
-        detailsOrientation = CFieldGroup.VERTICAL;
-      } else {
-        throw new Exception("detailsPlacement value could not be identified!");
-      }
-
-      CFieldGroup choiceAndDetail = new CFieldGroup(detailsOrientation);
 			CCheckbox choiceComponent = new CCheckbox(choice);
+      CTextField detailsTextField = new CTextField();
 			this.choicesGroupComponent.add(choiceComponent);
+      this.choicesGroupComponent.addHorizontal(detailsTextField);
+      this.choicesGroupComponent.gbc.gridx = 0;
 		}
 
 		if (this.headerPlacement == CFieldGroup.LEFT || this.headerPlacement == CFieldGroup.TOP || this.headerPlacement == CFieldGroup.HORIZONTAL || this.headerPlacement == CFieldGroup.VERTICAL) {
-			this.gbc.weightx = 0; this.gbc.weighty = 1;
+			this.gbc.weightx = 1; this.gbc.weighty = 1;
 			this.add(this.headerComponent);
 			this.add(this.choicesGroupComponent);
 			this.gbc.weightx = 1; this.gbc.weighty = 1;
 		} else if (this.headerPlacement == CFieldGroup.RIGHT || this.headerPlacement == CFieldGroup.BOTTOM) {
-			this.gbc.weightx = 0; this.gbc.weighty = 1;
+			this.gbc.weightx = 1; this.gbc.weighty = 1;
 			this.add(this.choicesGroupComponent);
 			this.add(this.headerComponent);
 			this.gbc.weightx = 1; this.gbc.weighty = 1;

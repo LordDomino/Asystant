@@ -2,7 +2,6 @@ package projectfiles.components;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 /**
@@ -26,12 +25,12 @@ public class CFormField extends CFieldGroup {
 	/**
 	 * The component serving as this object's label.
 	 */
-	JLabel labelComponent;
+	CLabel labelComponent;
 
 	/**
 	 * The component serving as this object's text field.
 	 */
-	JTextArea textFieldComponent;
+	CTextField textFieldComponent;
 
 	/**
 	 * Creates a new {@code}CFormField{@code} object with the specified label

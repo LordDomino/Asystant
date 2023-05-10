@@ -15,7 +15,7 @@ import projectfiles.gui.styles.Fonts;
 public class CCheckbox extends JCheckBox {
 	
 	/**
-	 * Creates {@code}CCheckBox{@code} object with the specified text string to
+	 * Creates a {@code}CCheckBox{@code} object with the specified text string to
 	 * display.
 	 * 
 	 * @param text - the text string to display
