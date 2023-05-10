@@ -41,8 +41,7 @@ public class CDetailedCheckboxGroup extends CFieldGroup {
     this.constructComponents();
   }
 
-  @Override
-	public void constructComponents() throws Exception {
+	private void constructComponents() throws Exception {
 		this.headerComponent = new CLabel(this.header);
     this.labelComponent = new CLabel(this.detailsLabel);
 		this.choicesGroupComponent = new CFieldGroup(this.choicesOrientation);

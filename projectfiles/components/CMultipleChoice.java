@@ -78,8 +78,7 @@ public class CMultipleChoice extends CFieldGroup {
 			this.constructComponents();
 	}
 
-	@Override
-	public void constructComponents() throws Exception {
+	private void constructComponents() throws Exception {
 		this.headerComponent = new CLabel(this.header);
 		this.choicesGroupComponent = new CFieldGroup(this.choicesOrientation);
 		this.choicesGroup = new ButtonGroup();

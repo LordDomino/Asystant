@@ -12,9 +12,4 @@ public class CTextFieldGroup extends CFieldGroup {
     super();
     this.fields = fields;
   }
-
-  @Override
-  public void constructComponents() {
-    
-  }
 }

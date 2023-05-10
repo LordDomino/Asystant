@@ -83,8 +83,7 @@ public class CCheckboxGroup extends CFieldGroup {
     paintGroup();
   }
 
-  @Override
-	public void constructComponents() throws Exception {
+	private void constructComponents() throws Exception {
 		this.headerComponent = new CLabel(this.header);
 		this.choicesGroupComponent = new CFieldGroup(this.choicesOrientation);
 

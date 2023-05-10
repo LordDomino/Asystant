@@ -68,8 +68,7 @@ public class CFormField extends CFieldGroup {
 		this.constructComponents();
 	}
 
-	@Override
-	public void constructComponents() throws Exception {
+	private void constructComponents() throws Exception {
 		this.labelComponent = new CLabel(this.label);
 		this.textFieldComponent = new CTextField();
 		

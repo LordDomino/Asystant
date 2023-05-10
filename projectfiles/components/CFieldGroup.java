@@ -232,7 +232,7 @@ public class CFieldGroup extends JPanel {
 	 * {@code}constructComponents(){@code} is used to manage custom field group
 	 * layouts and must be overridden when extending this current class.
 	 */
-	public void constructComponents() throws Exception {}
+	private void constructComponents() throws Exception {}
 
 	/**
 	 * Returns the matching value if the specified value matched any of the

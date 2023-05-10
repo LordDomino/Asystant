@@ -16,7 +16,7 @@ public class test_MultipleChoice {
     CMultipleChoice mcg4 = new CMultipleChoice("Right header", CFormField.RIGHT, CFormField.HORIZONTAL, "Loui", "Lance", "Ryl", "Zeamon", "Sir Arnold");
     CDetailedMultipleChoice dmc = new CDetailedMultipleChoice("Testing", CFieldGroup.TOP, "Details label", CFieldGroup.RIGHT, CFieldGroup.VERTICAL, "ICT", "HE", "ABM", "STEM", "HUMSS");
 
-    CDetailedCheckboxGroup cbg1 = new CDetailedCheckboxGroup("Checkbox group header", CFieldGroup.TOP, "Details", CFieldGroup.RIGHT, CFieldGroup.VERTICAL, "Checkbox 1", "Checkbox 2", "Checkboxx 3");
+    CDetailedCheckboxGroup cbg1 = new CDetailedCheckboxGroup("Checkbox group header", CFieldGroup.TOP, "Details", CFieldGroup.VERTICAL, "Checkbox 1", "Checkbox 2", "Checkboxx 3");
 
     mainFrame.add(mcg1);
     mainFrame.add(mcg2);
