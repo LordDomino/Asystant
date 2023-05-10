@@ -2,6 +2,7 @@ package projectfiles.components;
 
 import javax.swing.JCheckBox;
 
+import projectfiles.gui.styles.Colors;
 import projectfiles.gui.styles.Fonts;
 
 /**
@@ -11,7 +12,7 @@ import projectfiles.gui.styles.Fonts;
  * @author Loui Dominic Naquita
  * @see JCheckBox
  */
-public class CCheckBox extends JCheckBox {
+public class CCheckbox extends JCheckBox {
 	
 	/**
 	 * Creates {@code}CCheckBox{@code} object with the specified text string to
@@ -19,8 +20,9 @@ public class CCheckBox extends JCheckBox {
 	 * 
 	 * @param text - the text string to display
 	 */
-	public CCheckBox(String text) {
+	public CCheckbox(String text) {
 		super(text);
 		this.setFont(Fonts.DEFAULT_LABEL);
+		this.setBackground(Colors.WHITE);
 	}
 }

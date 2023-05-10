@@ -17,6 +17,7 @@ public class TestFrame extends JFrame {
         this.gbc.gridx = 0;
         this.gbc.gridy = 0;
         this.gbc.weightx = 1;
+        // this.gbc.weighty = 1;
     }
     
     @Override

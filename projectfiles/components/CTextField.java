@@ -35,6 +35,11 @@ public class CTextField extends JTextArea {
 		super(text, 0, 10);
 		this.initialize();
 	}
+
+	public CTextField(String text, int rows, int columns) {
+		super(text, rows, columns);
+		this.initialize();
+	}
 	
 	public void initialize() {
 		this.setFont(Fonts.DEFAULT_FIELD);

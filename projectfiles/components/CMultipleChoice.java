@@ -1,7 +1,5 @@
 package projectfiles.components;
 
-
-import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
 import javax.swing.ButtonGroup;
@@ -24,7 +22,7 @@ public class CMultipleChoice extends CFieldGroup {
 	 */
 	String[] choices;
 
-	int headerPlacement;
+	int headerOrientation;
 
 	/**
 	 * The component serving as the header of this multiple choice group.
@@ -48,23 +46,24 @@ public class CMultipleChoice extends CFieldGroup {
 	 * 
 	 * @param header - the text string indicating the header of the multiple
 	 * choices
-	 * @param headerOrientation - the value indicating the placement behavior of
+	 * @param headerPlacement - the value indicating the placement behavior of
+	 * the header
 	 * @param choices - the array of multiple choices
 	 */
-	public CMultipleChoice(String header, int headerOrientation,
+	public CMultipleChoice(String header, int headerPlacement,
 	int choicesOrientation, String ... choices) throws Exception {
 			super();
 			this.header = header;
 			this.choices = choices;
 			
 			try {
-				this.headerPlacement = (int) matchValue(
-					headerOrientation, CFieldGroup.LEFT, CFieldGroup.RIGHT,
+				this.headerOrientation = (int) matchValue(
+					headerPlacement, CFieldGroup.LEFT, CFieldGroup.RIGHT,
 					CFieldGroup.TOP, CFieldGroup.BOTTOM, CFieldGroup.HORIZONTAL,
 					CFieldGroup.VERTICAL);
-				if (this.headerPlacement == CFieldGroup.LEFT || this.headerPlacement == CFieldGroup.RIGHT || this.headerPlacement == CFieldGroup.HORIZONTAL) {
+				if (this.headerOrientation == CFieldGroup.LEFT || this.headerOrientation == CFieldGroup.RIGHT || this.headerOrientation == CFieldGroup.HORIZONTAL) {
 					this.orientation = CFieldGroup.HORIZONTAL;
-				} else if (this.headerPlacement == CFieldGroup.TOP || this.headerPlacement == CFieldGroup.BOTTOM || this.headerPlacement == CFieldGroup.VERTICAL) {
+				} else if (this.headerOrientation == CFieldGroup.TOP || this.headerOrientation == CFieldGroup.BOTTOM || this.headerOrientation == CFieldGroup.VERTICAL) {
 					this.orientation = CFieldGroup.VERTICAL;
 				}
 			} catch (Exception e) {
@@ -94,12 +93,12 @@ public class CMultipleChoice extends CFieldGroup {
 			this.choicesGroup.add(choiceComponent);
 		}
 
-		if (this.headerPlacement == CFieldGroup.LEFT || this.headerPlacement == CFieldGroup.TOP || this.headerPlacement == CFieldGroup.HORIZONTAL || this.headerPlacement == CFieldGroup.VERTICAL) {
+		if (this.headerOrientation == CFieldGroup.LEFT || this.headerOrientation == CFieldGroup.TOP || this.headerOrientation == CFieldGroup.HORIZONTAL || this.headerOrientation == CFieldGroup.VERTICAL) {
 			this.gbc.weightx = 0; this.gbc.weighty = 1;
 			this.add(this.headerComponent);
 			this.add(this.choicesGroupComponent);
 			this.gbc.weightx = 1; this.gbc.weighty = 1;
-		} else if (this.headerPlacement == CFieldGroup.RIGHT || this.headerPlacement == CFieldGroup.BOTTOM) {
+		} else if (this.headerOrientation == CFieldGroup.RIGHT || this.headerOrientation == CFieldGroup.BOTTOM) {
 			this.gbc.weightx = 0; this.gbc.weighty = 1;
 			this.add(this.choicesGroupComponent);
 			this.add(this.headerComponent);
