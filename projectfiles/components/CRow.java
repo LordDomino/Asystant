@@ -5,11 +5,8 @@
 package projectfiles.components;
 
 import java.awt.Component;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-
-import javax.swing.JPanel;
+import javax.swing.JSeparator;
+import javax.swing.border.MatteBorder;
 
 import projectfiles.gui.styles.Colors;
 
@@ -17,51 +14,41 @@ import projectfiles.gui.styles.Colors;
 /**
  * A {@code}Row{@code} is a structure containing a horizontal array of fields.
  */
-public class CRow extends JPanel {
+public class CRow extends CFieldGroup {
 
-    GridBagConstraints gbc = new GridBagConstraints();
-
-    /**
-     * Constructor for a {@code}Row{@code} instance.
-     */
     public CRow() {
         super();
         this.initialize();
     }
     
-    public void initialize() {
-        this.setBackground(Colors.WHITE);
-        this.setLayout(new GridBagLayout());
+    public CRow(Component ... components) {
+        super();
+        this.initialize();
 
-        this.gbc.insets = new Insets(3, 5, 3, 5);
-        this.gbc.weightx = 1;
-        this.gbc.weighty = 1;
-        this.gbc.fill = GridBagConstraints.BOTH;
+        int index = 0;
+        for (Component component : components) {
+            super.add(component);
+            index++;
+            if (index <= components.length - 1) {
+                JSeparator separator = new JSeparator(JSeparator.VERTICAL);
+                separator.setBackground(Colors.BLACK);
+                separator.setForeground(Colors.BLACK);
+                super.add(separator);
+            }
+        }
     }
 
-    public void createFieldGroup(String[] fieldLabels) {
-        FieldGroup fieldGroup = new FieldGroup(fieldLabels);
-        this.add(fieldGroup, this.gbc);
-    }
-
-    /**
-     * Creates a new field group belonging to the current row.
-     * @param fields - the string array of fields
-     * @param label - the overall label for the entire field group
-     */
-    public void createFieldGroup(String groupLabel, String[] fieldLabels) {
-        FieldGroup fieldGroup = new FieldGroup(groupLabel, fieldLabels);
-        this.add(fieldGroup, this.gbc);
-    }
-
-    public void createBinaryChoiceField(String choice1, String choice2, String question) {
-        BinaryChoiceField bcf = new BinaryChoiceField(choice1, choice2, question);
-        this.add(bcf, this.gbc);
+    private void initialize() {
+        this.setFollowOrientation(true);
     }
 
     @Override
-    public Component add(Component c) {
-        this.add(c, this.gbc);
-        return c;
+    public Component add(Component component) {
+        JSeparator separator = new JSeparator(JSeparator.VERTICAL);
+        separator.setBackground(Colors.BLACK);
+        separator.setForeground(Colors.BLACK);
+        super.add(separator);
+        super.add(component);
+        return component;
     }
 }

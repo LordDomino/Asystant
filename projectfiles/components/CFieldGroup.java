@@ -124,7 +124,7 @@ public class CFieldGroup extends JPanel {
 		}
 	}
 
-	public void initialize() {
+	private void initialize() {
 		this.setLayout(this.layout);
 		Util.setGrid(this.gbc, 0, 0);
 		this.setGridBagConstraintValues();
@@ -151,12 +151,12 @@ public class CFieldGroup extends JPanel {
 	 */
 	@Override
 	public Component add(Component component) {
+		this.add(component, this.gbc);
 		if (this.orientation == CFieldGroup.HORIZONTAL) {
 			this.gbc.gridx++;
 		} else if (this.orientation == CFieldGroup.VERTICAL) {
 			this.gbc.gridy++;
 		}
-		this.add(component, this.gbc);
 
 		return component;
 	}
