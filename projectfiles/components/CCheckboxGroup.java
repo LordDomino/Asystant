@@ -1,57 +1,5 @@
 package projectfiles.components;
 
-<<<<<<< HEAD
-import java.awt.CheckboxGroup;
-import java.awt.Insets;
-
-import javax.swing.JLabel;
-
-public class CCheckboxGroup extends CFieldGroup {
-
-    String header;
-    int headerPlacement;
-    int choicesOrientation;
-    String[] choices;
-
-    JLabel headerComponent;
-    CFieldGroup choicesGroupComponent;
-
-    public CCheckboxGroup(String header, int headerPlacement,
-    int choicesOrientation, String ... choices) throws Exception {
-        super();
-        this.header = header;
-        this.choices = choices;
-
-        try {
-            this.headerPlacement = (int) matchValue(headerPlacement,
-                CFieldGroup.LEFT, CFieldGroup.RIGHT, CFieldGroup.TOP, CFieldGroup.BOTTOM,
-                CFieldGroup.HORIZONTAL, CFieldGroup.VERTICAL);
-                if (this.headerPlacement == CFieldGroup.LEFT || this.headerPlacement == CFieldGroup.RIGHT || this.headerPlacement == CFieldGroup.HORIZONTAL) {
-					this.orientation = CFieldGroup.HORIZONTAL;
-				} else if (this.headerPlacement == CFieldGroup.TOP || this.headerPlacement == CFieldGroup.BOTTOM || this.headerPlacement == CFieldGroup.VERTICAL) {
-					this.orientation = CFieldGroup.VERTICAL;
-				}
-        } catch (Exception e) {
-            throw new IllegalArgumentException("Invalid headerOrientation value!");
-        }
-
-        try {
-            this.choicesOrientation = (int) matchValue(choicesOrientation,
-            CFieldGroup.HORIZONTAL, CFieldGroup.VERTICAL);
-        } catch (Exception e) {
-            throw new IllegalArgumentException("Invalid choicesOrientation value!");
-        }
-
-        this.setGridBagConstraintValues();
-		this.constructComponents();
-    }
-
-    @Override
-	public void constructComponents() throws Exception {
-		this.headerComponent = new JLabel(this.header);
-		this.choicesGroupComponent = new CFieldGroup(this.choicesOrientation);
-		// this.choicesGroup = new CheckboxGroup(choices);
-=======
 import java.awt.Insets;
 
 /**
@@ -139,7 +87,6 @@ public class CCheckboxGroup extends CFieldGroup {
 	public void constructComponents() throws Exception {
 		this.headerComponent = new CLabel(this.header);
 		this.choicesGroupComponent = new CFieldGroup(this.choicesOrientation);
->>>>>>> 003ab95b4aa51397bfefae3ea3254b5914ba87e2
 
 		for (String choice : this.choices) {
 			CCheckbox choiceComponent = new CCheckbox(choice);
@@ -159,13 +106,7 @@ public class CCheckboxGroup extends CFieldGroup {
 		}
 	}
 
-<<<<<<< HEAD
-    void setGridBagConstraintValues() {
-        this.gbc.insets = new Insets(5, 5, 5, 5);
-    }
-=======
   void setGridBagConstraintValues() {
 		this.gbc.insets = new Insets(5, 5, 5, 5);
 	} 
->>>>>>> 003ab95b4aa51397bfefae3ea3254b5914ba87e2
 }

@@ -2,25 +2,6 @@ package projectfiles.components;
 
 public class CDetailedCheckboxGroup extends CFieldGroup {
 
-<<<<<<< HEAD
-    String header;
-    int headerPlacement;
-    String detailsLabel;
-    int detailsPlacement;
-    int choicesOrientation;
-    String[] choices;
-
-    public CDetailedCheckboxGroup(String header, int headerPlacement,
-    String detailsLabel, int detailsPlacement, int choicesOrientation,
-    String ... choices) throws Exception {
-        super();
-        this.header = header;
-        this.headerPlacement = headerPlacement;
-        this.detailsLabel = detailsLabel;
-        this.detailsPlacement = detailsPlacement;
-        // this.choicesOrientation = choicesOrientation
-    }
-=======
   String header;
   int headerPlacement;
   String detailsLabel;
@@ -89,5 +70,4 @@ public class CDetailedCheckboxGroup extends CFieldGroup {
 			this.gbc.weightx = 1; this.gbc.weighty = 1;
 		}
 	}
->>>>>>> 003ab95b4aa51397bfefae3ea3254b5914ba87e2
 }

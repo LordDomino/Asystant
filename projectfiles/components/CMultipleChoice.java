@@ -22,7 +22,7 @@ public class CMultipleChoice extends CFieldGroup {
 	 */
 	String[] choices;
 
-	int headerOrientation;
+	int headerPlacement;
 
 	/**
 	 * The component serving as the header of this multiple choice group.
@@ -47,10 +47,6 @@ public class CMultipleChoice extends CFieldGroup {
 	 * @param header - the text string indicating the header of the multiple
 	 * choices
 	 * @param headerPlacement - the value indicating the placement behavior of
-<<<<<<< HEAD
-	 * the header
-=======
->>>>>>> 003ab95b4aa51397bfefae3ea3254b5914ba87e2
 	 * @param choices - the array of multiple choices
 	 */
 	public CMultipleChoice(String header, int headerPlacement,
@@ -62,20 +58,10 @@ public class CMultipleChoice extends CFieldGroup {
 			this.choices = choices;
 			
 			try {
-<<<<<<< HEAD
-				this.headerOrientation = (int) matchValue(
-					headerPlacement, CFieldGroup.LEFT, CFieldGroup.RIGHT,
-					CFieldGroup.TOP, CFieldGroup.BOTTOM, CFieldGroup.HORIZONTAL,
-					CFieldGroup.VERTICAL);
-				if (this.headerOrientation == CFieldGroup.LEFT || this.headerOrientation == CFieldGroup.RIGHT || this.headerOrientation == CFieldGroup.HORIZONTAL) {
-					this.orientation = CFieldGroup.HORIZONTAL;
-				} else if (this.headerOrientation == CFieldGroup.TOP || this.headerOrientation == CFieldGroup.BOTTOM || this.headerOrientation == CFieldGroup.VERTICAL) {
-=======
 				this.headerPlacement = (int) matchValue(headerPlacement, CFieldGroup.LEFT, CFieldGroup.RIGHT,	CFieldGroup.TOP, CFieldGroup.BOTTOM);
 				if (this.headerPlacement == CFieldGroup.LEFT || this.headerPlacement == CFieldGroup.RIGHT) {
 					this.orientation = CFieldGroup.HORIZONTAL;
 				} else if (this.headerPlacement == CFieldGroup.TOP || this.headerPlacement == CFieldGroup.BOTTOM) {
->>>>>>> 003ab95b4aa51397bfefae3ea3254b5914ba87e2
 					this.orientation = CFieldGroup.VERTICAL;
 				}
 			} catch (Exception e) {
@@ -104,16 +90,12 @@ public class CMultipleChoice extends CFieldGroup {
 			this.choicesGroup.add(choiceComponent);
 		}
 
-<<<<<<< HEAD
-		if (this.headerOrientation == CFieldGroup.LEFT || this.headerOrientation == CFieldGroup.TOP || this.headerOrientation == CFieldGroup.HORIZONTAL || this.headerOrientation == CFieldGroup.VERTICAL) {
-=======
 		if (this.headerPlacement == CFieldGroup.LEFT || this.headerPlacement == CFieldGroup.TOP) {
->>>>>>> 003ab95b4aa51397bfefae3ea3254b5914ba87e2
 			this.gbc.weightx = 0; this.gbc.weighty = 1;
 			this.add(this.headerComponent);
 			this.add(this.choicesGroupComponent);
 			this.gbc.weightx = 1; this.gbc.weighty = 1;
-		} else if (this.headerOrientation == CFieldGroup.RIGHT || this.headerOrientation == CFieldGroup.BOTTOM) {
+		} else if (this.headerPlacement == CFieldGroup.RIGHT || this.headerPlacement == CFieldGroup.BOTTOM) {
 			this.gbc.weightx = 0; this.gbc.weighty = 1;
 			this.add(this.choicesGroupComponent);
 			this.add(this.headerComponent);
