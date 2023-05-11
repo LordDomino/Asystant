@@ -13,12 +13,12 @@ public class CDetailedCheckboxGroup extends CFieldGroup {
   CFieldGroup choicesGroupComponent;
 
   public CDetailedCheckboxGroup(String header, int headerPlacement,
-  String detailsLabel, int choicesOrientation, String ... choices) throws Exception {
+  String detailsLabel, String ... choices) throws Exception {
     super();
     this.header = header;
     this.headerPlacement = headerPlacement;
     this.detailsLabel = detailsLabel;
-    this.choicesOrientation = choicesOrientation;
+    this.choicesOrientation = CFormField.VERTICAL;
     this.choices = choices;
 
     try {
@@ -48,13 +48,16 @@ public class CDetailedCheckboxGroup extends CFieldGroup {
 
     this.choicesGroupComponent.addOnGrid(this.labelComponent, 1, 0);
     this.choicesGroupComponent.gbc.gridx = 0;
-
+    this.choicesGroupComponent.gbc.gridy = 1;
+    
 		for (String choice : this.choices) {
-			CCheckbox choiceComponent = new CCheckbox(choice);
+      CCheckbox choiceComponent = new CCheckbox(choice);
       CTextField detailsTextField = new CTextField();
 			this.choicesGroupComponent.add(choiceComponent);
+      this.choicesGroupComponent.gbc.gridy--;
       this.choicesGroupComponent.addHorizontal(detailsTextField);
       this.choicesGroupComponent.gbc.gridx = 0;
+      this.choicesGroupComponent.gbc.gridy++;
 		}
 
 		if (this.headerPlacement == CFieldGroup.LEFT || this.headerPlacement == CFieldGroup.TOP || this.headerPlacement == CFieldGroup.HORIZONTAL || this.headerPlacement == CFieldGroup.VERTICAL) {
