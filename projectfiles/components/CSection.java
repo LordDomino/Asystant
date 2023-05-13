@@ -5,6 +5,7 @@ import java.awt.Component;
 import javax.swing.JSeparator;
 
 import projectfiles.gui.styles.Colors;
+import projectfiles.gui.styles.Fonts;
 
 public class CSection extends CFieldGroup {
 
@@ -22,16 +23,8 @@ public class CSection extends CFieldGroup {
     this.label = label;
     this.initialize();
 
-    int index = 0;
     for (Component component : components) {
       super.addVertical(component);
-      index++;
-      if (index <= components.length - 1) {
-          JSeparator separator = new JSeparator(JSeparator.HORIZONTAL);
-          separator.setBackground(Colors.BLACK);
-          separator.setForeground(Colors.BLACK);
-          super.add(separator);
-      }
   }
   }
 
@@ -40,15 +33,12 @@ public class CSection extends CFieldGroup {
     this.setFollowOrientation(true);
 
     this.labelComponent = new CLabel(this.label);
+    this.labelComponent.setFont(Fonts.DEFAULT_SECTIONLABEL);
     super.add(this.labelComponent);
   }
 
   @Override
   public Component add(Component component) {
-    JSeparator separator = new JSeparator(JSeparator.HORIZONTAL);
-    separator.setBackground(Colors.BLACK);
-    separator.setForeground(Colors.BLACK);
-    super.add(separator);
     super.add(component);
     return component;
   }

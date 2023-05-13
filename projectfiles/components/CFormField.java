@@ -1,5 +1,6 @@
 package projectfiles.components;
 
+import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -30,7 +31,7 @@ public class CFormField extends CFieldGroup {
 	/**
 	 * The component serving as this object's text field.
 	 */
-	CTextField textFieldComponent;
+	public CTextField textFieldComponent;
 
 	/**
 	 * Creates a new {@code}CFormField{@code} object with the specified label
@@ -77,5 +78,15 @@ public class CFormField extends CFieldGroup {
 		
 		this.gbc.weightx = 1; this.gbc.weighty = 1;
 		this.add(textFieldComponent);
+	}
+	
+	public void overrideField(int index, JComponent newComponent) throws Exception {
+		
+		this.remove(this.textFieldComponent);
+		
+		this.gbc.weightx = 1; this.gbc.weighty = 1;
+		this.add(newComponent);
+		this.revalidate();
+		this.repaint();
 	}
 }

@@ -18,6 +18,7 @@ public class TestFrame extends JFrame {
         this.gbc.gridx = 0;
         this.gbc.gridy = 0;
         this.gbc.weightx = 1;
+        this.gbc.weighty = 1;
         this.gbc.insets = new Insets(10, 10, 10, 10);
     }
     
@@ -31,6 +32,7 @@ public class TestFrame extends JFrame {
     public void packFinalize() {
         this.pack();
         // this.setResizable(false);
+        this.setMaximumSize(this.getMinimumSize());
         this.setVisible(true);
     }
 }

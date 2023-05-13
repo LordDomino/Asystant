@@ -10,7 +10,7 @@ public class CDetailedMultipleChoice extends CFieldGroup {
   String[] choices;
 
   CMultipleChoice multipleChoiceComponent;
-  CFormField detailsComponent;
+  public CFormField detailsComponent;
 
   /**
    * 
