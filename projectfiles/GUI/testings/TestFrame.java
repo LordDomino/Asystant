@@ -31,7 +31,7 @@ public class TestFrame extends JFrame {
 
     public void packFinalize() {
         this.pack();
-        // this.setResizable(false);
+        this.setResizable(false);
         this.setMaximumSize(this.getMinimumSize());
         this.setVisible(true);
     }
