@@ -3,12 +3,10 @@ package projectfiles.gui.formSections;
 import javax.swing.JSeparator;
 
 import projectfiles.components.CDetailedCheckboxGroup;
-import projectfiles.components.CDetailedFormField;
 import projectfiles.components.CDetailedMultipleChoice;
 import projectfiles.components.CFieldGroup;
 import projectfiles.components.CSection;
 import projectfiles.components.CSeparator;
-import projectfiles.components.CTextFieldGroup;
 
 public class SectionC extends CSection {
     public SectionC() throws Exception {
