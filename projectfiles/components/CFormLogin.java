@@ -13,8 +13,7 @@ import javax.swing.JPasswordField;
  * either to the left or to the top of the text field. It inherits from Swing's
  * {@code}JPanel{@code}.
  * 
- * @author Loui Dominic Naquita 
- * @modified author Lance Resurreccion
+ * @author Lance Resurreccion
  * @see JPanel
  * @see JLabel
  * @see JTextField
