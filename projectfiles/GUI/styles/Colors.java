@@ -34,6 +34,6 @@ public class Colors {
     public static Color BUTTON1_OUTLINE                 = new Color(19, 85, 164);
     public static Color FIELD_FILL                      = new Color(220, 228, 244);
     public static Color FIELD_OUTLINE                   = new Color(33, 59, 105);
-    public static Color FOOTER                          = new Color(22, 25, 59);
-    public static Color FOOTER_TEXT                     = new Color(60, 99, 168);
+    public static Color STATUSBAR                          = new Color(22, 25, 59);
+    public static Color STATUSBAR_TEXT                     = new Color(60, 99, 168);
 }

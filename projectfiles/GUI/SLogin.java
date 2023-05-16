@@ -4,11 +4,14 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Image;
+import java.awt.Point;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.MatteBorder;
@@ -22,8 +25,6 @@ public class SLogin extends Screen {
   private static final Image icon = new ImageIcon("projectfiles/gui/graphics/icon.png").getImage();
 
   public static Screen self;
-
-  GridBagConstraints gbc = new GridBagConstraints();
 
   public SLogin() throws Exception {
     super(title, icon);
@@ -46,8 +47,24 @@ public class SLogin extends Screen {
     GUI_LoginBox loginBox = new GUI_LoginBox("Login", "Password", "Submit", new String[]{"Access name"});
     loginBox.buttonComponent.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent actionEvent) {
+
+        int newWidth = SLogin.self.getWidth();
+        int newHeight = SLogin.self.getHeight();
+        Point position = SLogin.self.getLocation(getLocation());
+        int extendedState = SLogin.self.getExtendedState();
+
         SWorkWindow newWindow = new SWorkWindow();
-        newWindow.finalizeAndShow(960, 720);
+        
+        if (extendedState == JFrame.MAXIMIZED_BOTH) {
+          newWindow.setExtendedState(extendedState);
+          newWindow.finalizeAndShow(Toolkit.getDefaultToolkit().getScreenSize().getWidth() * 0.75, Toolkit.getDefaultToolkit().getScreenSize().getHeight() * 0.75);
+          newWindow.setLocation((int) position.getX(), (int) position.getY());
+        } else {
+          newWindow.finalizeAndShow(newWidth, newHeight);
+          newWindow.setLocation((int) position.getX(), (int) position.getY());
+        }
+
+
         SLogin.self.dispose();
       }
     });
@@ -72,8 +89,8 @@ public class SLogin extends Screen {
     JLabel footer = new JLabel(Config.INFO_PRODUCT_STATUS + " v" + Config.INFO_VERSION + "  |  " + Config.INFO_CREDITS);
     footer.setFont(new Font("Arial", Font.PLAIN, 12));
     footer.setOpaque(true);
-    footer.setBackground(Colors.FOOTER);
-    footer.setForeground(Colors.FOOTER_TEXT);
+    footer.setBackground(Colors.STATUSBAR);
+    footer.setForeground(Colors.STATUSBAR_TEXT);
     int footerPadding = 5;
     footer.setBorder(BorderFactory.createEmptyBorder(footerPadding, footerPadding, footerPadding, footerPadding));
     
