@@ -1,5 +1,6 @@
 package projectfiles.gui;
 
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Image;
@@ -24,6 +25,7 @@ public class Screen extends JFrame {
   }
 
   public final void finalizeAndShow(double sizex, double sizey) {
+    this.setMinimumSize(new Dimension(520, 700));
     this.setTitle(title);
     this.setIconImage(icon);
     this.setSize((int) sizex, (int) sizey);
