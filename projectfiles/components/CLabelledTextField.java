@@ -5,8 +5,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import projectfiles.gui.styles.Colors;
-
 /**
  * {@code}CFormField{@code} is a Cobast component acting like Swing's
  * {@code}JTextField{@code} but is customized to include a {@code}JLabel{@code}
