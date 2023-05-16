@@ -9,7 +9,7 @@ public class test_Checkboxes {
     TestFrame mainFrame = new TestFrame();
 
     CCheckboxGroup cbg = new CCheckboxGroup("Header for a check box group", CFieldGroup.TOP, CFieldGroup.VERTICAL, "Checkbox 1", "Checkbox 2", "Checkbox 3");
-    CDetailedCheckboxGroup dcbg = new CDetailedCheckboxGroup("Header for a detailed check box group", CFieldGroup.TOP, "Details label", CFieldGroup.VERTICAL, "Checkbox 1", "Checkbox 2", "Checkbox 3");
+    CDetailedCheckboxGroup dcbg = new CDetailedCheckboxGroup("Header for a detailed check box group", CFieldGroup.TOP, "Details label", "Checkbox 1", "Checkbox 2", "Checkbox 3");
 
     mainFrame.add(cbg);
     mainFrame.add(dcbg);
