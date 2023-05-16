@@ -1,10 +1,10 @@
 package projectfiles;
 
-import projectfiles.gui.GUI_LoginScreen;
+import projectfiles.gui.SLoginScreen;
 
 public class Main {
   public static void main(String args[]) throws Exception {
-    final GUI_LoginScreen SCREEN_LOGIN = new GUI_LoginScreen();
+    final SLoginScreen SCREEN_LOGIN = new SLoginScreen();
     SCREEN_LOGIN.packFinalize();
   }
 }

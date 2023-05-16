@@ -1,19 +1,22 @@
 package projectfiles.gui;
 
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Toolkit;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.MatteBorder;
 
 import projectfiles.Config;
 import projectfiles.gui.styles.Colors;
 
-public class GUI_LoginScreen extends JFrame {
+public class SLoginScreen extends JFrame {
 
   public final String title = "Login - Records Asystant";
 
@@ -21,7 +24,7 @@ public class GUI_LoginScreen extends JFrame {
 
   GridBagConstraints gbc = new GridBagConstraints();
 
-  public GUI_LoginScreen() throws Exception {
+  public SLoginScreen() throws Exception {
     super();
     this.initialize();
 
@@ -45,6 +48,7 @@ public class GUI_LoginScreen extends JFrame {
     JPanel loginCard = new JPanel();
     loginCard.setLayout(new GridBagLayout());
     loginCard.setBackground(Colors.BACKGROUND_ACCENT_MID);
+    loginCard.setBorder(new MatteBorder(0, 2, 0, 2, Colors.WHITE));
     
     // The logoContainer contains both the product logo and the subtitle
     JPanel logoContainer = new JPanel();
@@ -57,7 +61,7 @@ public class GUI_LoginScreen extends JFrame {
     loginBoxContainer.setBackground(Colors.BACKGROUND_ACCENT_DARK);
 
     // Footer
-    JLabel footer = new JLabel(Config.INFO_PRODUCT_STATUS + " v" + Config.INFO_VERSION + " | " + Config.INFO_CREDITS);
+    JLabel footer = new JLabel(Config.INFO_PRODUCT_STATUS + " v" + Config.INFO_VERSION + "  |  " + Config.INFO_CREDITS);
     footer.setFont(new Font("Arial", Font.PLAIN, 12));
     footer.setOpaque(true);
     footer.setBackground(Colors.FOOTER);
@@ -106,11 +110,12 @@ public class GUI_LoginScreen extends JFrame {
     this.setLayout(new GridBagLayout());
     this.setBackground(Colors.BACKGROUND_ACCENT_LIGHT);
   }
-
+  
   public void packFinalize() {
     this.setTitle(this.title);
     this.setIconImage(this.icon.getImage());
     this.setSize(960, 720);
+    this.setLocationRelativeTo(null);
     this.setVisible(true);
   }
 }
