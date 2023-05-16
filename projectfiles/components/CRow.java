@@ -6,7 +6,6 @@ package projectfiles.components;
 
 import java.awt.Component;
 import javax.swing.JSeparator;
-import javax.swing.border.MatteBorder;
 
 import projectfiles.gui.styles.Colors;
 

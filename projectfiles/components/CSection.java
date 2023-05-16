@@ -2,9 +2,6 @@ package projectfiles.components;
 
 import java.awt.Component;
 
-import javax.swing.JSeparator;
-
-import projectfiles.gui.styles.Colors;
 import projectfiles.gui.styles.Fonts;
 
 public class CSection extends CFieldGroup {
