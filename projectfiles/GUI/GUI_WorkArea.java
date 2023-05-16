@@ -1,19 +1,15 @@
 package projectfiles.gui;
 
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-
-import javax.swing.JPanel;
+import javax.swing.JSplitPane;
 
 import projectfiles.gui.styles.Colors;
 
-public class GUI_WorkArea extends JPanel {
+public class GUI_WorkArea extends JSplitPane {
   
-  GridBagConstraints gbc = new GridBagConstraints();
 
   public GUI_WorkArea() {
     super();
-    setLayout(new GridBagLayout());
     setBackground(Colors.BACKGROUND_ACCENT_LIGHT);
+    this.setDividerSize(5);
   }
 }

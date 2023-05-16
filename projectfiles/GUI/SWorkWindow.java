@@ -15,10 +15,14 @@ public class SWorkWindow extends Screen {
   public SWorkWindow() {
     super(title, icon);
     SWorkWindow.self = this;
-
+    
+    GUI_Menubar menubar = new GUI_Menubar();
     GUI_WorkArea workArea = new GUI_WorkArea();
     GUI_StatusBar statusBar = new GUI_StatusBar();
     
+    setJMenuBar(menubar);
+    workArea.setLeftComponent(new GUI_RecordsPane());
+
     gbc.weightx = 1;
     gbc.weighty = 1;
     gbc.gridx = 0; gbc.gridy = 0;
