@@ -24,7 +24,7 @@ public final class CDetailedListedBinaryChoice extends CListedBinaryChoice {
 		this.detailsLabelComponent = new CLabel(this.detailsLabel);
 
 		for (int index = 1; index <= this.prompts.length; index++) {
-			CFormField detailsFieldComponent = new CFormField("", CFieldGroup.HORIZONTAL);
+			CLabelledTextField detailsFieldComponent = new CLabelledTextField("", CFieldGroup.HORIZONTAL);
 			detailsFieldComponent.putClientProperty("gridx", 3);
 			detailsFieldComponent.putClientProperty("gridy", index);
 			this.detailFieldsList.add(detailsFieldComponent);

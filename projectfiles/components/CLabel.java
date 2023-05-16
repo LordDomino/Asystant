@@ -2,6 +2,7 @@ package projectfiles.components;
 
 import javax.swing.JLabel;
 
+import projectfiles.gui.styles.Colors;
 import projectfiles.gui.styles.Fonts;
 
 /**
@@ -23,5 +24,6 @@ public class CLabel extends JLabel {
 	public CLabel(String text) {
 		super(text);
 		this.setFont(Fonts.DEFAULT_LABEL);
+		this.setForeground(Colors.TEXT_ACCENT1);
 	}
 }

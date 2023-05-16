@@ -2,7 +2,7 @@ package projectfiles.gui.formSections;
 
 import projectfiles.components.CDetailedFormField;
 import projectfiles.components.CDetailedListedBinaryChoice;
-import projectfiles.components.CFormField;
+import projectfiles.components.CLabelledTextField;
 import projectfiles.components.CSection;
 
 public class SectionE extends CSection {
@@ -36,7 +36,7 @@ public class SectionE extends CSection {
     );
 
     group1.overrideField(18, new CDetailedFormField(new String[]{"Right eye grade", "Left eye grade"}));
-    group1.overrideField(20, new CFormField("Please specify diagnoses, state of illness, and any ongoing medications:", CFormField.VERTICAL));
+    group1.overrideField(20, new CLabelledTextField("Please specify diagnoses, state of illness, and any ongoing medications:", CLabelledTextField.VERTICAL));
 
     this.add(group1);
   }

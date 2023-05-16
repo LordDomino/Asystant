@@ -11,7 +11,7 @@ public class CDetailedFormField extends CFieldGroup {
     this.setLayout(new FlowLayout(FlowLayout.LEFT, 2, 2));
 
     for (String label : this.labels) {
-      CFormField formField = new CFormField(label, CFieldGroup.HORIZONTAL);
+      CLabelledTextField formField = new CLabelledTextField(label, CFieldGroup.HORIZONTAL);
 
       this.add(formField);
     }

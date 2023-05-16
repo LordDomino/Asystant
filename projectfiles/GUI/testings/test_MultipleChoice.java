@@ -5,7 +5,7 @@ import java.awt.FlowLayout;
 import projectfiles.components.CDetailedCheckboxGroup;
 import projectfiles.components.CDetailedMultipleChoice;
 import projectfiles.components.CFieldGroup;
-import projectfiles.components.CFormField;
+import projectfiles.components.CLabelledTextField;
 import projectfiles.components.CMultipleChoice;
 
 public class test_MultipleChoice {
@@ -13,10 +13,10 @@ public class test_MultipleChoice {
     TestFrame mainFrame = new TestFrame();
     mainFrame.setLayout(new FlowLayout());
 
-    CMultipleChoice mcg1 = new CMultipleChoice("Top header", CFormField.TOP, CFormField.VERTICAL, "Loui", "Lance", "Ryl", "Zeamon", "Sir Arnold");
-    CMultipleChoice mcg2 = new CMultipleChoice("Bottom header", CFormField.BOTTOM, CFormField.VERTICAL, "Loui", "Lance", "Ryl", "Zeamon", "Sir Arnold");
-    CMultipleChoice mcg3 = new CMultipleChoice("Left header", CFormField.LEFT, CFormField.HORIZONTAL, "Loui", "Lance", "Ryl", "Zeamon", "Sir Arnold");
-    CMultipleChoice mcg4 = new CMultipleChoice("Right header", CFormField.RIGHT, CFormField.HORIZONTAL, "Loui", "Lance", "Ryl", "Zeamon", "Sir Arnold");
+    CMultipleChoice mcg1 = new CMultipleChoice("Top header", CLabelledTextField.TOP, CLabelledTextField.VERTICAL, "Loui", "Lance", "Ryl", "Zeamon", "Sir Arnold");
+    CMultipleChoice mcg2 = new CMultipleChoice("Bottom header", CLabelledTextField.BOTTOM, CLabelledTextField.VERTICAL, "Loui", "Lance", "Ryl", "Zeamon", "Sir Arnold");
+    CMultipleChoice mcg3 = new CMultipleChoice("Left header", CLabelledTextField.LEFT, CLabelledTextField.HORIZONTAL, "Loui", "Lance", "Ryl", "Zeamon", "Sir Arnold");
+    CMultipleChoice mcg4 = new CMultipleChoice("Right header", CLabelledTextField.RIGHT, CLabelledTextField.HORIZONTAL, "Loui", "Lance", "Ryl", "Zeamon", "Sir Arnold");
     CDetailedMultipleChoice dmc = new CDetailedMultipleChoice("Testing", CFieldGroup.TOP, "Details label", CFieldGroup.RIGHT, CFieldGroup.VERTICAL, "ICT", "HE", "ABM", "STEM", "HUMSS");
 
     CDetailedCheckboxGroup cbg1 = new CDetailedCheckboxGroup("Checkbox group header", CFieldGroup.TOP, "Details", "Checkbox 1", "Checkbox 2", "Checkboxx 3");

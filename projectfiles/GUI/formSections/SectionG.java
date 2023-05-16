@@ -7,7 +7,7 @@ import javax.swing.JSeparator;
 import projectfiles.components.CCheckboxGroup;
 import projectfiles.components.CDetailedMultipleChoice;
 import projectfiles.components.CFieldGroup;
-import projectfiles.components.CFormField;
+import projectfiles.components.CLabelledTextField;
 import projectfiles.components.CLabel;
 import projectfiles.components.CMultipleChoice;
 import projectfiles.components.CSection;
@@ -23,7 +23,7 @@ public class SectionG extends CSection {
     );
 
     CLabel question1_ifYes = new CLabel("If yes, please provide necessary information below:");
-    CFormField question1_a = new CFormField("a. Date/s contracted the virus");
+    CLabelledTextField question1_a = new CLabelledTextField("a. Date/s contracted the virus");
     CMultipleChoice question1_b = new CMultipleChoice("b. Undergone COVID-19 confirmatory test?", CFieldGroup.LEFT, CFieldGroup.HORIZONTAL, "YES", "NO");
     CCheckboxGroup question1_b_ifYes = new CCheckboxGroup("If yes, please check COVID-19 confirmatory test", CFieldGroup.LEFT, CFieldGroup.HORIZONTAL, "Swab test", "Saliva", "Others");
     CMultipleChoice question1_c = new CMultipleChoice("c. COVID-19 Classification and Diagnosis", CFieldGroup.LEFT, CFieldGroup.HORIZONTAL,
@@ -31,7 +31,7 @@ public class SectionG extends CSection {
     "Symptomatic (with symptoms and COVID positive)"
     );
     CMultipleChoice question1_d = new CMultipleChoice("d. Have been in a quarantine facility or home isolation?", CFieldGroup.LEFT, CFieldGroup.HORIZONTAL, "YES", "NO");
-    CFormField question1_d_ifYes = new CFormField(" If yes, please state the location and date of isolation/quarantine");
+    CLabelledTextField question1_d_ifYes = new CLabelledTextField(" If yes, please state the location and date of isolation/quarantine");
     CMultipleChoice question1_e = new CMultipleChoice("e. Total no. of days of isolation", CFieldGroup.LEFT, CFieldGroup.HORIZONTAL, "10 days", "14 days", "21 days");
     
     CDetailedMultipleChoice question2 = new CDetailedMultipleChoice("2. Was your child already given COVID-19 vaccine?", CFieldGroup.LEFT, "If no, state the reason", CFieldGroup.RIGHT, CFieldGroup.HORIZONTAL, "Yes", "NO");

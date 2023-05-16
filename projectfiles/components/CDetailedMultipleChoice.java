@@ -10,7 +10,7 @@ public class CDetailedMultipleChoice extends CFieldGroup {
   String[] choices;
 
   CMultipleChoice multipleChoiceComponent;
-  public CFormField detailsComponent;
+  public CLabelledTextField detailsComponent;
 
   /**
    * 
@@ -54,7 +54,7 @@ public class CDetailedMultipleChoice extends CFieldGroup {
     
     public void constructComponents() throws Exception {
       this.multipleChoiceComponent = new CMultipleChoice(this.header, this.headerPlacement, this.choicesOrientation, this.choices);
-      this.detailsComponent = new CFormField(this.detailsLabel, CFieldGroup.VERTICAL);
+      this.detailsComponent = new CLabelledTextField(this.detailsLabel, CFieldGroup.VERTICAL);
       this.detailsComponent.textFieldComponent.setRows(3);
 
       if (this.detailsPlacement == CFieldGroup.LEFT || this.detailsPlacement == CFieldGroup.TOP) {

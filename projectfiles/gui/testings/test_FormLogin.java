@@ -2,7 +2,7 @@ package projectfiles.gui.testings;
 
 import java.awt.FlowLayout;
 
-import projectfiles.components.CFormLogin;
+import projectfiles.gui.GUI_LoginBox;
 
 public class test_FormLogin {
 
@@ -10,8 +10,8 @@ public class test_FormLogin {
         TestFrame mainFrame = new TestFrame();
         mainFrame.setLayout(new FlowLayout());
         
-        //CFormLogin
-        CFormLogin formLogin1 = new CFormLogin("Login", CFormLogin.VERTICAL);
+        // GUI_LoginBox
+        GUI_LoginBox formLogin1 = new GUI_LoginBox("Login to Asystant", "Password", "Submit", new String[]{"Access name"});
 
         mainFrame.add(formLogin1);
 

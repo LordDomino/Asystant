@@ -2,7 +2,8 @@ package projectfiles.gui.testings;
 
 import java.awt.FlowLayout;
 
-import projectfiles.components.CFormField;
+import projectfiles.components.CLabelledPasswordField;
+import projectfiles.components.CLabelledTextField;
 
 public class test_FormField {
     public static void main(String args[]) throws Exception {
@@ -10,13 +11,15 @@ public class test_FormField {
         mainFrame.setLayout(new FlowLayout());
         
         // CFormField
-        CFormField formField1 = new CFormField("CFormField string only");
-        CFormField formField2 = new CFormField("CFormField horizontal", CFormField.HORIZONTAL);
-        CFormField formField3 = new CFormField("CFormField vertical", CFormField.VERTICAL);
+        CLabelledTextField formField1 = new CLabelledTextField("CFormField string only");
+        CLabelledTextField formField2 = new CLabelledTextField("CFormField horizontal", CLabelledTextField.HORIZONTAL);
+        CLabelledTextField formField3 = new CLabelledTextField("CFormField vertical", CLabelledTextField.VERTICAL);
+        CLabelledPasswordField clpf = new CLabelledPasswordField("Password field label");
 
         mainFrame.add(formField1);
         mainFrame.add(formField2);
         mainFrame.add(formField3);
+        mainFrame.add(clpf);
 
         mainFrame.packFinalize();
     }

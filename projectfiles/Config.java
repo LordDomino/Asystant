@@ -1,9 +1,11 @@
 package projectfiles;
 
-import java.awt.Font;
-
 public class Config {
-    public static Font defaultFont = new Font("Arial", 0, 18);
+
+    public static final String INFO_PRODUCT_STATUS = "Pre-alpha";
+    public static final String INFO_VERSION = "0.01";
+    public static final String INFO_CREDITS = "Developed by Loui Naquita, Lance Resurreccion, Ryl Pangilinan, and Zeamon Cruz";
+    
     private static boolean debug = false;
 
     /**

@@ -18,7 +18,7 @@ public class CDetailedCheckboxGroup extends CFieldGroup {
     this.header = header;
     this.headerPlacement = headerPlacement;
     this.detailsLabel = detailsLabel;
-    this.choicesOrientation = CFormField.VERTICAL;
+    this.choicesOrientation = CLabelledTextField.VERTICAL;
     this.choices = choices;
 
     try {

@@ -30,7 +30,7 @@ public class CTextFieldGroup extends CFieldGroup {
     }
 
     for (String fieldLabel : this.fieldLabels) {
-      CFormField formField = new CFormField(fieldLabel, CFieldGroup.VERTICAL);
+      CLabelledTextField formField = new CLabelledTextField(fieldLabel, CFieldGroup.VERTICAL);
       this.gbc.weightx = 1;
       this.add(formField);
     }

@@ -5,6 +5,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import projectfiles.gui.styles.Colors;
+
 /**
  * {@code}CFormField{@code} is a Cobast component acting like Swing's
  * {@code}JTextField{@code} but is customized to include a {@code}JLabel{@code}
@@ -16,7 +18,7 @@ import javax.swing.JTextField;
  * @see JLabel
  * @see JTextField
  */
-public class CFormField extends CFieldGroup {
+public class CLabelledTextField extends CFieldGroup {
 
 	/**
 	 * The string label to be displayed as the label.
@@ -26,7 +28,7 @@ public class CFormField extends CFieldGroup {
 	/**
 	 * The component serving as this object's label.
 	 */
-	CLabel labelComponent;
+	public CLabel labelComponent;
 
 	/**
 	 * The component serving as this object's text field.
@@ -39,7 +41,7 @@ public class CFormField extends CFieldGroup {
 	 * 
 	 * @param label - the text label that will be rendered with the text field 
 	 */
-	public CFormField(String label) throws Exception {
+	public CLabelledTextField(String label) throws Exception {
 		super();
 		this.label = label;
 
@@ -56,7 +58,7 @@ public class CFormField extends CFieldGroup {
 	 * text field will be placed, either from left to right or from top to
 	 * bottom
 	 */
-	public CFormField(String label, int orientation) throws Exception {
+	public CLabelledTextField(String label, int orientation) throws Exception {
 		super();
 		this.label = label;
 

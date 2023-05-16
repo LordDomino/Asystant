@@ -45,7 +45,8 @@ public class CTextField extends JTextArea {
 	
 	public void initialize() {
 		this.setFont(Fonts.DEFAULT_FIELD);
-		this.setBorder(new MatteBorder(1, 1, 1, 1, Colors.GRAY));
+		this.setBackground(Colors.FIELD_FILL);
+		this.setBorder(new MatteBorder(1, 1, 1, 1, Colors.FIELD_OUTLINE));
 		this.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), new EmptyBorder(2, 2, 2, 2)));
 		this.setLineWrap(true);
 		this.setWrapStyleWord(true);
