@@ -3,10 +3,10 @@ package projectfiles.gui;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Image;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.MatteBorder;
@@ -14,17 +14,15 @@ import javax.swing.border.MatteBorder;
 import projectfiles.Config;
 import projectfiles.gui.styles.Colors;
 
-public class SLoginScreen extends JFrame {
+public class SLogin extends Screen {
 
-  public final String title = "Login - Records Asystant";
-
-  public final ImageIcon icon = new ImageIcon("projectfiles/gui/graphics/icon.png");
+  private static final String title = "Login - Records Asystant";
+  private static final Image icon = new ImageIcon("projectfiles/gui/graphics/icon.png").getImage();
 
   GridBagConstraints gbc = new GridBagConstraints();
 
-  public SLoginScreen() throws Exception {
-    super();
-    this.initialize();
+  public SLogin() throws Exception {
+    super(title, icon);
 
     // Login area
     JPanel loginArea = new JPanel();
@@ -36,11 +34,11 @@ public class SLoginScreen extends JFrame {
     GUI_ProductLogo loginLogo = new GUI_ProductLogo(400);
     
     // Product subtitle
-    JLabel subtitle = new JLabel("A health profile records manager");
+    JLabel subtitle = new JLabel("A system assistant for health profile records management");
     subtitle.setFont(new Font("Arial", Font.PLAIN, 14));
     
     // Entire login box
-    GUI_LoginBox loginBox = new GUI_LoginBox("Login to Asystant", "Password", "Submit", new String[]{"Access name"});
+    GUI_LoginBox loginBox = new GUI_LoginBox("Login", "Password", "Submit", new String[]{"Access name"});
     
     // The login card is the entire column to contain all the graphics
     JPanel loginCard = new JPanel();
@@ -102,18 +100,5 @@ public class SLoginScreen extends JFrame {
     gbc.weighty = 0;
     gbc.gridy = 1;
     add(footer, gbc);
-  }
-
-  void initialize() {
-    this.setLayout(new GridBagLayout());
-    this.setBackground(Colors.BACKGROUND_ACCENT_LIGHT);
-  }
-  
-  public void packFinalize() {
-    this.setTitle(this.title);
-    this.setIconImage(this.icon.getImage());
-    this.setSize(960, 720);
-    this.setLocationRelativeTo(null);
-    this.setVisible(true);
   }
 }

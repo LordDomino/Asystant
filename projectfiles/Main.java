@@ -1,14 +1,14 @@
 package projectfiles;
 
-import projectfiles.gui.SLoginScreen;
-import java.awt.SplashScreen;
+import projectfiles.gui.SLogin;
 
 public class Main {
+
+  static final int SCREEN_LOGIN_X = 960;
+  static final int SCREEN_LOGIN_Y = 720;
+
   public static void main(String args[]) throws Exception {
-
-    SplashScreen ss = SplashScreen.getSplashScreen();
-
-    final SLoginScreen SCREEN_LOGIN = new SLoginScreen();
-    SCREEN_LOGIN.packFinalize();
+    final SLogin SCREEN_LOGIN = new SLogin();
+    SCREEN_LOGIN.finalizeAndShow(SCREEN_LOGIN_X, SCREEN_LOGIN_Y);
   }
 }

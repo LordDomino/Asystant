@@ -23,7 +23,7 @@ public class GUI_ProductLogo extends JPanel {
     this.setOpaque(false);
 
     // Reading the image logo using BufferedReader
-    BufferedImage originalImage = ImageIO.read(new File("projectfiles/gui/graphics/productLogo_with_name.png"));
+    BufferedImage originalImage = ImageIO.read(new File("projectfiles/gui/graphics/welcome.png"));
     Image image = originalImage.getScaledInstance(this.width, -1, Image.SCALE_SMOOTH);
 
     JLabel imageComponent = new JLabel(new ImageIcon(image));
