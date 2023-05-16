@@ -4,6 +4,8 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -19,11 +21,14 @@ public class SLogin extends Screen {
   private static final String title = "Login - Records Asystant";
   private static final Image icon = new ImageIcon("projectfiles/gui/graphics/icon.png").getImage();
 
+  public static Screen self;
+
   GridBagConstraints gbc = new GridBagConstraints();
 
   public SLogin() throws Exception {
     super(title, icon);
-
+    SLogin.self = this;
+ 
     // Login area
     JPanel loginArea = new JPanel();
     loginArea.setOpaque(true);
@@ -39,6 +44,13 @@ public class SLogin extends Screen {
     
     // Entire login box
     GUI_LoginBox loginBox = new GUI_LoginBox("Login", "Password", "Submit", new String[]{"Access name"});
+    loginBox.buttonComponent.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent actionEvent) {
+        SWorkWindow newWindow = new SWorkWindow();
+        newWindow.finalizeAndShow(960, 720);
+        SLogin.self.dispose();
+      }
+    });
     
     // The login card is the entire column to contain all the graphics
     JPanel loginCard = new JPanel();
@@ -64,7 +76,7 @@ public class SLogin extends Screen {
     footer.setForeground(Colors.FOOTER_TEXT);
     int footerPadding = 5;
     footer.setBorder(BorderFactory.createEmptyBorder(footerPadding, footerPadding, footerPadding, footerPadding));
-
+    
     // Add all the components
     GridBagConstraints gbc_logoContainer = new GridBagConstraints();
     gbc_logoContainer.gridy = 0; gbc_logoContainer.insets.top = 10;
