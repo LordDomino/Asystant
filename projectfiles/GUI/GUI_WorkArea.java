@@ -10,6 +10,6 @@ public class GUI_WorkArea extends JSplitPane {
   public GUI_WorkArea() {
     super();
     setBackground(Colors.BACKGROUND_ACCENT_LIGHT);
-    this.setDividerSize(5);
+    this.setDividerSize(0);
   }
 }
