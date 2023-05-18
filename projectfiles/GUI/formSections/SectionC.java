@@ -14,9 +14,9 @@ public class SectionC extends CSection {
   
         CDetailedMultipleChoice group1 = new CDetailedMultipleChoice(
             "1. Is your child subject to seizures, fainting, epilepsy, bleeding, asthma, or any other condition that may affect his or her safety?",
-            CFieldGroup.LEFT,
+            CFieldGroup.TOP,
             "If yes, specify details: (Name of Drug / Medication used)",
-            CFieldGroup.BOTTOM, CFieldGroup.HORIZONTAL,
+            CFieldGroup.BOTTOM, CFieldGroup.VERTICAL,
             "Yes", "No"
         );
 

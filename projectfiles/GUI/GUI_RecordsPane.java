@@ -7,6 +7,6 @@ import projectfiles.gui.styles.Colors;
 public class GUI_RecordsPane extends JPanel {
   public GUI_RecordsPane() {
     super();
-    this.setBackground(Colors.GRAY);
+    this.setBackground(Colors.BACKGROUND_ACCENT_MID);
   }
 }

@@ -17,17 +17,18 @@ public class SWorkWindow extends Screen {
     SWorkWindow.self = this;
     
     GUI_Menubar menubar = new GUI_Menubar();
-    GUI_WorkArea workArea = new GUI_WorkArea();
     GUI_StatusBar statusBar = new GUI_StatusBar();
     
+    try {
+      GUI_WorkArea workArea = new GUI_WorkArea();
+      gbc.weightx = 1;
+      gbc.weighty = 1;
+      gbc.gridx = 0; gbc.gridy = 0;
+      gbc.fill = GridBagConstraints.BOTH;
+      add(workArea, gbc);
+    } catch(Exception e) {}
+    
     setJMenuBar(menubar);
-    workArea.setLeftComponent(new GUI_RecordsPane());
-
-    gbc.weightx = 1;
-    gbc.weighty = 1;
-    gbc.gridx = 0; gbc.gridy = 0;
-    gbc.fill = GridBagConstraints.BOTH;
-    add(workArea, gbc);
     
     gbc.weighty = 0;
     gbc.weightx = 1;

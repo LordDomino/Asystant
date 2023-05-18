@@ -69,7 +69,7 @@ public class CFieldGroup extends JPanel {
 	 * This object's {@code}Inset{@code} providing the side insets of every
 	 * component.
 	 */
-	public final Insets insets = new Insets(3, 3, 3, 3); // replace this instantiation with a reference to a future 'default' margin
+	public final Insets insets = new Insets(2, 2, 2, 2); // replace this instantiation with a reference to a future 'default' margin
 
 	/**
 	 * This object's {@code}Color{@code} providing the background color of it.

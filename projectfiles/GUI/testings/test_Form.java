@@ -7,6 +7,7 @@ import javax.swing.JScrollPane;
 import projectfiles.gui.formSections.*;
 
 public class test_Form {
+
   public static void main(String args[]) throws Exception {
     TestFrame mainFrame = new TestFrame();
     TestPanel form = new TestPanel();

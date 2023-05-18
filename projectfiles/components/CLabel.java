@@ -1,6 +1,11 @@
 package projectfiles.components;
 
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
+
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
 
 import projectfiles.gui.styles.Colors;
 import projectfiles.gui.styles.Fonts;
@@ -23,6 +28,7 @@ public class CLabel extends JLabel {
 	 */
 	public CLabel(String text) {
 		super(text);
+		this.setOpaque(false);
 		this.setFont(Fonts.DEFAULT_LABEL);
 		this.setForeground(Colors.TEXT_ACCENT1);
 	}

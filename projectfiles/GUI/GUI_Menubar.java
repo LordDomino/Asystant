@@ -23,6 +23,14 @@ public class GUI_Menubar extends CMenuBar {
     CMenuItem menu1_item1 = new CMenuItem("New record...");
     CMenuItem menu1_item2 = new CMenuItem("Edit record...");
     CMenuItem menu1_item3 = new CMenuItem("Logout");
+    CMenuItem menu2_item1 = new CMenuItem("Logout");
+    CMenuItem menu2_item2 = new CMenuItem("Logout");
+    CMenuItem menu2_item3 = new CMenuItem("Logout");
+    CMenuItem menu2_item3 = new CMenuItem("Logout");
+    CMenuItem menu2_item3 = new CMenuItem("Logout");
+    CMenuItem menu2_item3 = new CMenuItem("Logout");
+    CMenuItem menu2_item3 = new CMenuItem("Logout");
+
     menu1_item3.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent actionEvent) {
         try {

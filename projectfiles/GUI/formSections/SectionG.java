@@ -26,7 +26,7 @@ public class SectionG extends CSection {
     CLabelledTextField question1_a = new CLabelledTextField("a. Date/s contracted the virus");
     CMultipleChoice question1_b = new CMultipleChoice("b. Undergone COVID-19 confirmatory test?", CFieldGroup.LEFT, CFieldGroup.HORIZONTAL, "YES", "NO");
     CCheckboxGroup question1_b_ifYes = new CCheckboxGroup("If yes, please check COVID-19 confirmatory test", CFieldGroup.LEFT, CFieldGroup.HORIZONTAL, "Swab test", "Saliva", "Others");
-    CMultipleChoice question1_c = new CMultipleChoice("c. COVID-19 Classification and Diagnosis", CFieldGroup.LEFT, CFieldGroup.HORIZONTAL,
+    CMultipleChoice question1_c = new CMultipleChoice("c. COVID-19 Classification and Diagnosis", CFieldGroup.LEFT, CFieldGroup.VERTICAL,
     "Asymptomatic (no symptoms at all, but COVID positive)",
     "Symptomatic (with symptoms and COVID positive)"
     );

@@ -27,7 +27,7 @@ public class CMultipleChoice extends CFieldGroup {
 	/**
 	 * The component serving as the header of this multiple choice group.
 	 */
-	JLabel headerComponent;
+	CLabel headerComponent;
 
 	/**
 	 * The component serving as the container of the radio buttons.
