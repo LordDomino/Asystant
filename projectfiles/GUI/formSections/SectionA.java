@@ -1,7 +1,10 @@
 package projectfiles.gui.formSections;
 
+import projectfiles.components.CFieldGroup;
+import projectfiles.components.CLabelledTextField;
 import projectfiles.components.CRow;
 import projectfiles.components.CSection;
+import projectfiles.components.CTextField;
 import projectfiles.components.CTextFieldGroup;
 
 
@@ -12,8 +15,8 @@ public final class SectionA extends CSection {
         CTextFieldGroup r1_g1 = new CTextFieldGroup("Name", new String[]{"Last name", "First name", "Middle Initial"});
         CTextFieldGroup r1_g2 = new CTextFieldGroup(new String[]{"Level/Section"});
         CTextFieldGroup r2_g1 = new CTextFieldGroup(new String[]{"Address:"});
-        CTextFieldGroup r3_g1 = new CTextFieldGroup("Contact Numbers:", new String[]{"(mobile/landline number):"});
-        CTextFieldGroup r3_g2 = new CTextFieldGroup(new String[]{"Date of Birth"});
+        CTextFieldGroup r3_g1 = new CTextFieldGroup("Contact Numbers:", new String[]{"(Mobile / Landline number):"});
+        CLabelledTextField r3_g2 = new CLabelledTextField("Date of birth", CFieldGroup.VERTICAL);
         CTextFieldGroup r3_g3 = new CTextFieldGroup(new String[]{"Age:"});
         CTextFieldGroup r3_g4 = new CTextFieldGroup(new String[]{"Height:(in ft.)"}); 
         CTextFieldGroup r3_g5 = new CTextFieldGroup(new String[]{"Weight:(kg.)"}); 

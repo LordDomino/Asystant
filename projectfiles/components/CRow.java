@@ -5,6 +5,8 @@
 package projectfiles.components;
 
 import java.awt.Component;
+import java.awt.GridBagConstraints;
+
 import javax.swing.JSeparator;
 
 import projectfiles.gui.styles.Colors;
@@ -32,7 +34,9 @@ public class CRow extends CFieldGroup {
                 JSeparator separator = new JSeparator(JSeparator.VERTICAL);
                 separator.setBackground(Colors.BLACK);
                 separator.setForeground(Colors.BLACK);
+                this.gbc.weightx = 0;
                 super.add(separator);
+                this.gbc.weightx = 1;
             }
         }
     }
@@ -46,7 +50,9 @@ public class CRow extends CFieldGroup {
         JSeparator separator = new JSeparator(JSeparator.VERTICAL);
         separator.setBackground(Colors.BLACK);
         separator.setForeground(Colors.BLACK);
+        this.gbc.weightx = 0;
         super.add(separator);
+        this.gbc.weightx = 1;
         super.add(component);
         return component;
     }

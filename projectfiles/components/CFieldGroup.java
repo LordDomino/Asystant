@@ -9,6 +9,7 @@ import java.awt.Insets;
 import javax.swing.JPanel;
 import javax.swing.border.MatteBorder;
 
+import projectfiles.Config;
 import projectfiles.Util;
 import projectfiles.gui.styles.Colors;
 
@@ -128,7 +129,12 @@ public class CFieldGroup extends JPanel {
 		this.setLayout(this.layout);
 		Util.setGrid(this.gbc, 0, 0);
 		this.setGridBagConstraintValues();
-		this.setBackground(this.bgColor);
+
+		if (Config.isDebugOn()) {
+			this.setBackground(new Color(Util.randomColor()[0], Util.randomColor()[0], Util.randomColor()[0]));
+		} else {
+			this.setBackground(this.bgColor);
+		}
 		// this.setBorder(new MatteBorder(1, 1, 1, 1, Colors.BLACK));
 	}
 
@@ -142,6 +148,8 @@ public class CFieldGroup extends JPanel {
 		this.gbc.fill = GridBagConstraints.BOTH;
 		this.gbc.weightx = 1;
 		this.gbc.weighty = 1;
+		// this.gbc.gridx = 1;
+		// this.gbc.gridy = 1;
 		this.gbc.anchor = GridBagConstraints.WEST;
 	}
 
@@ -151,7 +159,7 @@ public class CFieldGroup extends JPanel {
 	 */
 	@Override
 	public Component add(Component component) {
-		this.add(component, this.gbc);
+		super.add(component, this.gbc);
 		if (this.orientation == CFieldGroup.HORIZONTAL) {
 			this.gbc.gridx++;
 		} else if (this.orientation == CFieldGroup.VERTICAL) {
@@ -171,7 +179,7 @@ public class CFieldGroup extends JPanel {
 			throw new Exception("Cannot add the component horizontally while the orientation is being followed!");
 		} else {
 			this.gbc.gridx++;
-			this.add(component, this.gbc);
+			super.add(component, this.gbc);
 			return component;
 		}
 	}
@@ -186,7 +194,7 @@ public class CFieldGroup extends JPanel {
 			throw new Exception("Cannot add the component vertically while the orientation is being followed!");
 		} else {
 			this.gbc.gridy++;
-			this.add(component, this.gbc);
+			super.add(component, this.gbc);
 			return component;
 		}
 	}
