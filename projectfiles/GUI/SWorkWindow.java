@@ -10,6 +10,8 @@ public class SWorkWindow extends Screen {
   private static final String title = "Asystant";
   private static final Image icon = new ImageIcon("projectfiles/gui/graphics/icon.png").getImage();
 
+  public GUI_WorkArea WORKAREA;
+
   public static Screen self;
 
   public SWorkWindow() {
@@ -20,13 +22,16 @@ public class SWorkWindow extends Screen {
     GUI_StatusBar statusBar = new GUI_StatusBar();
     
     try {
-      GUI_WorkArea workArea = new GUI_WorkArea();
+      WORKAREA = new GUI_WorkArea();
       gbc.weightx = 1;
       gbc.weighty = 1;
       gbc.gridx = 0; gbc.gridy = 0;
       gbc.fill = GridBagConstraints.BOTH;
-      add(workArea, gbc);
-    } catch(Exception e) {}
+      add(WORKAREA, gbc);
+
+    } catch(Exception e) {
+      e.printStackTrace();
+    }
     
     setJMenuBar(menubar);
     

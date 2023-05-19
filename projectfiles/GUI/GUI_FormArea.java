@@ -9,6 +9,7 @@ import java.awt.Insets;
 import javax.swing.JPanel;
 
 import projectfiles.gui.formSections.*;
+import projectfiles.gui.styles.Colors;
 
 public class GUI_FormArea extends JPanel {
 
@@ -16,6 +17,7 @@ public class GUI_FormArea extends JPanel {
 
     public GUI_FormArea() {
         super();
+        this.setBackground(Colors.BACKGROUND_ACCENT_LIGHT);
         this.setLayout(new GridBagLayout());
         this.gbc.fill = GridBagConstraints.BOTH;
         this.gbc.gridx = 0;

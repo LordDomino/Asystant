@@ -8,6 +8,8 @@ import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -63,7 +65,17 @@ public class SLogin extends Screen {
           newWindow.finalizeAndShow(newWidth, newHeight);
           newWindow.setLocation((int) position.getX(), (int) position.getY());
         }
-
+        
+        double recordsPaneWidth = 0.4;
+        double propertiesPaneWidth = 0.25;
+        
+        newWindow.addComponentListener(new ComponentAdapter() {
+          @Override
+          public void componentResized(ComponentEvent e) {
+            newWindow.WORKAREA.RIGHT_COMPONENT.setDividerLocation(1-((1-recordsPaneWidth)*propertiesPaneWidth));
+            newWindow.WORKAREA.RIGHT_COMPONENT.getRightComponent().setSize(newWindow.WORKAREA.RIGHT_COMPONENT.getRightComponent().getPreferredSize());
+          }
+        });
 
         SLogin.self.dispose();
       }

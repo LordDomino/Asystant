@@ -26,6 +26,7 @@ public class Colors {
     public static Color BACKGROUND_ACCENT_LIGHT 		= new Color(204, 224, 249);
     public static Color BACKGROUND_ACCENT_MID 			= new Color(178, 209, 246);
     public static Color BACKGROUND_ACCENT_DARK 			= new Color(127, 178, 240);
+    public static Color BACKGROUND_CONTRAST_ACCENT1     = new Color(0, 0, 0);
     public static Color TEXT_ACCENT1 					= new Color(0, 0, 0);
     public static Color TEXT_ACCENT2 					= new Color(0, 0, 0);
     public static Color BUTTONTEXT_ACCENT1              = new Color(255, 255, 255);
@@ -34,6 +35,6 @@ public class Colors {
     public static Color BUTTON1_OUTLINE                 = new Color(19, 85, 164);
     public static Color FIELD_FILL                      = new Color(220, 228, 244);
     public static Color FIELD_OUTLINE                   = new Color(33, 59, 105);
-    public static Color STATUSBAR                          = new Color(22, 25, 59);
-    public static Color STATUSBAR_TEXT                     = new Color(60, 99, 168);
+    public static Color STATUSBAR                       = new Color(22, 25, 59);
+    public static Color STATUSBAR_TEXT                  = new Color(60, 99, 168);
 }
