@@ -7,6 +7,8 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 
 import javax.swing.JPanel;
+import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.MatteBorder;
 
 import projectfiles.Config;
@@ -21,6 +23,9 @@ import projectfiles.gui.styles.Colors;
  * @see JPanel
  */
 public class CFieldGroup extends JPanel {
+
+	private static final int borderAmount = 0;
+	private static final int insetsAmount = 2;
 
 	/**
 	 * The horizontal orientation constant. This indicates a horizontal 
@@ -70,12 +75,14 @@ public class CFieldGroup extends JPanel {
 	 * This object's {@code}Inset{@code} providing the side insets of every
 	 * component.
 	 */
-	public final Insets insets = new Insets(2, 2, 2, 2); // replace this instantiation with a reference to a future 'default' margin
+	public final Insets insets = new Insets(insetsAmount, insetsAmount, insetsAmount, insetsAmount); // replace this instantiation with a reference to a future 'default' margin
 
 	/**
 	 * This object's {@code}Color{@code} providing the background color of it.
 	 */
 	public final Color bgColor = new Color(255, 255, 255);
+
+	public final Border border = new EmptyBorder(borderAmount, borderAmount, borderAmount, borderAmount);
 
 	/**
 	 * The default add component orientation if {@code}followOrientation{@code}
@@ -127,8 +134,9 @@ public class CFieldGroup extends JPanel {
 
 	private void initialize() {
 		this.setLayout(this.layout);
-		Util.setGrid(this.gbc, 0, 0);
+		this.setBorder(this.border);
 		this.setGridBagConstraintValues();
+		Util.setGrid(this.gbc, 0, 0);
 
 		if (Config.isDebugOn()) {
 			this.setBackground(new Color(Util.randomColor()[0], Util.randomColor()[0], Util.randomColor()[0]));
